@@ -1,6 +1,12 @@
 import Layout from "../components/layout/layout";
 import "../styles/globals.css";
-import { Button, createTheme, ThemeProvider, Typography } from "@mui/material";
+import {
+  Button,
+  createTheme,
+  Grid,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
 
 const theme = createTheme({
   typography: {
@@ -15,8 +21,7 @@ const theme = createTheme({
     primary: {
       main: "#002161",
       light: "#757ce8",
-      dark: '#002884',
-
+      dark: "#002884",
     },
   },
 });
@@ -24,11 +29,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <Component {...pageProps} />
-        <Button color="primary" variant="contained">
-          Hi
-        </Button>
-        <Typography variant="h1">Jaran</Typography>
+        <Grid container spacing={2}>
+          <Grid item sx={12} sm={2}></Grid>
+          <Grid item sx={12} sm={8}>
+            <Component {...pageProps} />
+          </Grid>
+          <Grid item sx={12} sm={2}></Grid>
+        </Grid>
       </Layout>
     </ThemeProvider>
   );

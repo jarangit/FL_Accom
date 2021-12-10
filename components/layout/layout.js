@@ -1,4 +1,5 @@
 import React from "react";
+import Filter_bar from "./filter";
 import Footer from "./footer";
 import Menu from "./menu";
 
