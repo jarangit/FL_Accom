@@ -9,6 +9,7 @@ import Product_item from "../components/layout/product_item";
 import Nav_contact from "../components/layout/nav_contact";
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import Accordion_items from "../components/layout/accordion";
 
 
 export default function Home() {
@@ -67,6 +68,8 @@ export default function Home() {
           </Stack>
         </div>
       </Stack>
+
+      <Accordion_items/>
     </div>
   );
 }

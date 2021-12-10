@@ -30,11 +30,11 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <Layout>
         <Grid container spacing={2}>
-          <Grid item sx={12} sm={2}></Grid>
-          <Grid item sx={12} sm={8}>
+          <Grid item xs={12} sm={2}></Grid>
+          <Grid item xs={12} sm={8}>
             <Component {...pageProps} />
           </Grid>
-          <Grid item sx={12} sm={2}></Grid>
+          <Grid item xs={12} sm={2}></Grid>
         </Grid>
       </Layout>
     </ThemeProvider>

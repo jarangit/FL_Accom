@@ -10,7 +10,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { height } from "@mui/system";
 const Filter_bar = () => {
   return (
-    <Box sx = {{ margin: "20px 0" }} height={48} justifyContent="space-between">
+    <Box sx={{ margin: "20px 0" }} height={48} justifyContent="space-between">
       <TextField
         id="outlined-basic"
         label="Keyword"
@@ -53,9 +53,7 @@ const Filter_bar = () => {
       <Button
         variant="contained"
         color="primary"
-        marginLeft={2}
-        sx={{ height: "100%",
-    marginLeft: "5px" }}
+        sx={{ height: "100%", marginLeft: "5px" }}
       >
         Save Search
       </Button>
