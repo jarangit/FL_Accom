@@ -24,23 +24,19 @@ const Div = styled.div`
     border-radius: 5px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
     z-index: 2;
-    margin-top: 12px;
-    ul {
+    min-width: 160px;
+    text-align: left;
+    margin-top: 5px;
+    h4 {
+      padding: 12px 16px;
+    }
+    a {
+      display: block;
+      padding: 12px 16px;
       text-align: left;
-      padding: 0;
-      h4 {
-        margin-left: 20px;
-      }
-      li {
-        list-style-type: none;
-        margin: 10px 0;
-        a {
-          padding: 0 20px;
-        }
-        a:hover {
-          background-color: whitesmoke;
-        }
-      }
+    }
+    a:hover {
+      background-color: #f1f1f1;
     }
   }
 
@@ -50,6 +46,8 @@ const Div = styled.div`
   .but_blue {
     padding: 8px 15px;
     border-radius: 5px;
+    display: inline-block;
+
   }
   .but_blue:hover {
     background-color: #65acf0;
@@ -83,21 +81,11 @@ const Menu = () => {
                 Rent
               </a>
               <div className="dropdown-content">
-                <ul>
-                  <Typography variant="h4">Bangkok, Thailand</Typography>
-                  <li>
-                    <a href="#">House for rent in Bangkok</a>
-                  </li>
-                  <li>
-                    <a href="#">House for rent in Bangkok</a>
-                  </li>
-                  <li>
-                    <a href="#">House for rent in Bangkok</a>
-                  </li>
-                  <li>
-                    <a href="#">House for rent in Bangkok</a>
-                  </li>
-                </ul>
+                <Typography variant="h4">Bangkok, Thailand</Typography>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
               </div>
             </div>
 
@@ -111,14 +99,6 @@ const Menu = () => {
             <a href="/">Guide</a>
             <a href="/">Agent partner</a>
             <a href="/">Eng</a>
-            {/* <List>
-              <ListItem>
-                <ListItemText primary="Eng" />
-                <ListItemIcon>
-                  <LanguageIcon />
-                </ListItemIcon>
-              </ListItem>
-            </List> */}
             <Button variant="contained" style={{ background: "#65acf0" }}>
               Sign in
             </Button>
