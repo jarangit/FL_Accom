@@ -60,16 +60,6 @@ const Div = styled.div`
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  /* .but_blue_menuP {
-    padding: 8px 15px;
-    border-radius: 5px;
-    display: inline-block;
-  }
-  .but_blue_menuP:hover {
-    background-color: #65acf0;
-    transition: 0.51s;
-    color: white;
-  } */
 `;
 const Menu = () => {
   return (
