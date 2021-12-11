@@ -14,10 +14,11 @@ import LanguageIcon from "@mui/icons-material/Language";
 
 const Div = styled.div`
   background-color: #f9f9f9;
-  padding: 0 60px;
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
+  /* height: 100px; */
+  .jr_container {
+    display: flex;
+    justify-content: space-between;
+  }
   a {
     padding: 8px 15px;
     border-radius: 5px;
@@ -72,44 +73,49 @@ const Div = styled.div`
 `;
 const Menu = () => {
   return (
-    <Div className="jr_container">
-      <Stack
-        spacing={5}
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-      >
-        <img
-          src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
-          width="80"
-        />
-        <div className="dropdown">
-          <a className="but_blue_menuP " href="/">
-            Rent
-          </a>
-          <div className="dropdown-content">
-            <Typography variant="h4">Bangkok, Thailand</Typography>
-            <a href="#">House for rent in Bangkok</a>
-            <a href="#">House for rent in Bangkok</a>
-            <a href="#">House for rent in Bangkok</a>
-            <a href="#">House for rent in Bangkok</a>
+    <Div>
+      <div className="jr_container">
+        <Stack
+          spacing={5}
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <img
+            src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
+            width="80"
+          />
+          <div className="dropdown">
+            <a className="but_blue_menuP " href="/">
+              Rent
+            </a>
+            <div className="dropdown-content">
+              <Typography variant="h4">Bangkok, Thailand</Typography>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+            </div>
           </div>
-        </div>
-        <a href="/">Buy</a>
-        <a href="/">Projects</a>
-      </Stack>
-      <Stack
-        spacing={5}
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        textAlign="right"
-      >
-        <a href="/">Guide</a>
-        <a href="/">Agent partner</a>
-        <a href="/">Eng</a>
-        <button className="but_blue">Sign in</button>
-      </Stack>
+          <a href="/">Buy</a>
+          <a href="/">Projects</a>
+        </Stack>
+        <Stack
+          spacing={5}
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          textAlign="right"
+        >
+          <a href="/">Guide</a>
+          <a href="/">Agent partner</a>
+          <a href="/">
+            Eng
+            <LanguageIcon sx={{ verticalAlign: "middle" }} />
+          </a>
+          <button className="but_blue">Sign in</button>
+        </Stack>
+      </div>
     </Div>
   );
 };

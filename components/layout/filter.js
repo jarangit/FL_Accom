@@ -8,56 +8,119 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { height } from "@mui/system";
+import styled from "styled-components";
+import CircleIcon from "@mui/icons-material/Circle";
+import SyncAltIcon from "@mui/icons-material/SyncAlt";
+
+const Div = styled.div`
+  .jr_icon {
+    opacity: 0;
+    transition: 0.5s;
+    margin-right: 2px;
+  }
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .input_search {
+    border-radius: 8px;
+    border: 2px solid #d8d8d8;
+    padding: 11px;
+  }
+  .but_search {
+    /* font-size: 1.25rem; */
+    border-radius: 8px;
+    position: relative;
+    left: -10px;
+    z-index: 1;
+    padding: 11px;
+    background-color: #002161;
+    color: white;
+  }
+  a {
+    padding: 11px;
+  }
+  a:hover {
+    .jr_icon {
+      opacity: 1;
+    }
+    background-color: red;
+    padding: 11px;
+    border-radius: 8px;
+    background-color: rgba(101, 172, 240, 0.2);
+    transition: 0.5s;
+  }
+`;
 const Filter_bar = () => {
   return (
-    <Box sx={{ margin: "20px 0" }} height={48} justifyContent="space-between">
-      <TextField
-        id="outlined-basic"
-        label="Keyword"
-        variant="outlined"
-        sx={{ height: "48px" }}
-        size="medium"
-        inputProps={{
-          style: {
-            padding: 10,
-            height: 28,
-          },
-        }}
-      />
-      <Button
-        variant="contained"
-        color="primary"
-        sx={{
-          height: "100%",
-          padding: "0",
-          marginLeft: "-16px",
-          borderRadius: "10px",
-        }}
-      >
-        <SearchIcon sx={{ padding: "0", fontSize: "35px" }} />
-      </Button>
-
-      <Button variant="containerd" sx={{ height: "100%" }}>
-        Rent
-      </Button>
-      <Button variant="containerd" sx={{ height: "100%" }}>
-        Propperty type
-      </Button>
-      <Button variant="containerd" sx={{ height: "100%" }}>
-        Price range
-      </Button>
-
-      <Button variant="outlined" color="primary" sx={{ height: "100%" }}>
+    <Div>
+      <div>
+        <input
+          className="input_search"
+          type="text"
+          autocomplete="off"
+          placeholder="Keyword"
+        />
+        <button className="but_search">
+          <SearchIcon sx={{ verticalAlign: "middle" }} />
+        </button>
+      </div>
+      <div>
+        <a href="/">
+          <CircleIcon
+            className="jr_icon"
+            sx={{ fontSize: "10px", color: "#65acf0" }}
+          />
+          Rent
+        </a>
+      </div>
+      <div>
+        <CircleIcon
+          className="jr_icon"
+          sx={{ fontSize: "10px", color: "#65acf0" }}
+        />
+        <a href="/">
+          {" "}
+          <CircleIcon
+            className="jr_icon"
+            sx={{ fontSize: "10px", color: "#65acf0" }}
+          />
+          Property Type
+        </a>
+      </div>
+      <div>
+        <a href="/">
+          {" "}
+          <CircleIcon
+            className="jr_icon"
+            sx={{ fontSize: "10px", color: "#65acf0" }}
+          />
+          Price range
+        </a>
+      </div>
+      <div>
+        <a href="/">
+          {" "}
+          <CircleIcon
+            className="jr_icon"
+            sx={{ fontSize: "10px", color: "#65acf0" }}
+          />
+          Bads
+        </a>
+      </div>
+      <button className="but_primary_w">
         Filters
-      </Button>
-      <Button
-        variant="contained"
-        color="primary"
-        sx={{ height: "100%", marginLeft: "5px" }}
+        <SyncAltIcon
+          sx={{ verticalAlign: "middle", marginLeft: "5px" }}
+          color="primary"
+        />
+      </button>
+      <button
+        className="but_primary"
       >
         Save Search
-      </Button>
-    </Box>
+      </button>
+    </Div>
   );
 };
 

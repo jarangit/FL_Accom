@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const Copy_right = () => {
   return (
-    <div>
+    <div className="jr_container">
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <div>
           <a>Logo</a>

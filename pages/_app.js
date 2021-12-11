@@ -29,13 +29,16 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <Grid container spacing={2}>
+        <div className="jr_container">
+        <Component {...pageProps} />
+
+        </div>
+        {/* <Grid container spacing={2}>
           <Grid item xs={12} sm={2}></Grid>
           <Grid item xs={12} sm={8}>
-            <Component {...pageProps} />
           </Grid>
           <Grid item xs={12} sm={2}></Grid>
-        </Grid>
+        </Grid> */}
       </Layout>
     </ThemeProvider>
   );

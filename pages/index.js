@@ -7,16 +7,25 @@ import styles from "../styles/Home.module.css";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Product_item from "../components/layout/product_item";
 import Nav_contact from "../components/layout/nav_contact";
-import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import Accordion_items from "../components/layout/accordion";
-
 
 export default function Home() {
   const label = { inputProps: { "aria-label": "Switch demo" } };
 
   return (
     <div>
+      <Head>
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+      </Head>
       <Filter_bar />
       <CustomSeparator />
       <div>
@@ -57,19 +66,16 @@ export default function Home() {
             <Button variant="contained" color="primary">
               <ArrowLeftIcon />
             </Button>
-            <Button variant="outlined" >
-              10
-            </Button>
-            <Button variant="text" >
-              of 420
-            </Button>            <Button variant="contained" color="primary">
+            <Button variant="outlined">10</Button>
+            <Button variant="text">of 420</Button>{" "}
+            <Button variant="contained" color="primary">
               <ArrowRightIcon />
             </Button>
           </Stack>
         </div>
       </Stack>
 
-      <Accordion_items/>
+      <Accordion_items />
     </div>
   );
 }
