@@ -5,6 +5,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+input,
+button,
+submit {
+  border: none;
+}
 
 a {
   color: inherit;
@@ -13,4 +18,17 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+.jr_container{
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.but_blue {
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: #65acf0;
+  color:white;
 }
