@@ -29,7 +29,7 @@ export default function Home() {
       <Filter_bar />
       <CustomSeparator />
       <div>
-        <Typography variant="h1" color="primary">
+        <Typography variant="h1" className="jr_sky">
           Property for sale in Bangkok, Thailand
         </Typography>
         <Typography variant="h2">
@@ -42,11 +42,11 @@ export default function Home() {
         </Typography>
       </div>
 
-      <Stack direction="row" justifyContent="space-between">
-        <Button variant="outlined" color="primary">
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <button className="but_primary_w">
           Learn more
-          <ArrowDownwardIcon />
-        </Button>
+          <ArrowDownwardIcon className="jr_icon" />
+        </button>
         <div>
           map
           <Switch {...label} />

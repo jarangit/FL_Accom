@@ -7,15 +7,30 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
+import { fontWeight, letterSpacing } from "@mui/system";
 
 const theme = createTheme({
   typography: {
     fontSize: 12,
-    h1: 32,
-    h2: 24,
+    fontWeight: "100px",
+
+    h1: {
+      fontSize:32,
+      lineHeight:2,
+      fontWeight: "100px"
+    },
+    h2:{
+      lineHeight:2,
+      fontSize: 24,
+      fontWeight: "100px"
+
+    },
     h3: 18,
     h4: 14,
-    body1: 16,
+    body1:{
+      lineHeight: 2,
+      fontSize:"16px",
+    },
   },
   palette: {
     primary: {

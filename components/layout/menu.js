@@ -16,8 +16,10 @@ const Div = styled.div`
   background-color: #f9f9f9;
   /* height: 100px; */
   .jr_container {
+    width:100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
   a {
     padding: 8px 15px;
