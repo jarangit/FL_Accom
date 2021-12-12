@@ -15,21 +15,20 @@ const theme = createTheme({
     fontWeight: "100px",
 
     h1: {
-      fontSize:32,
-      lineHeight:2,
-      fontWeight: "100px"
+      fontSize: 32,
+      lineHeight: 2,
+      fontWeight: "100px",
     },
-    h2:{
-      lineHeight:2,
+    h2: {
+      lineHeight: 1,
       fontSize: 24,
-      fontWeight: "100px"
-
+      fontWeight: "100px",
     },
     h3: 18,
     h4: 14,
-    body1:{
+    body1: {
       lineHeight: 2,
-      fontSize:"16px",
+      fontSize: "16px",
     },
   },
   palette: {
@@ -44,16 +43,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <div className="jr_container">
-        <Component {...pageProps} />
-
+        <div>
+          <Component {...pageProps} />
         </div>
-        {/* <Grid container spacing={2}>
-          <Grid item xs={12} sm={2}></Grid>
-          <Grid item xs={12} sm={8}>
-          </Grid>
-          <Grid item xs={12} sm={2}></Grid>
-        </Grid> */}
       </Layout>
     </ThemeProvider>
   );
