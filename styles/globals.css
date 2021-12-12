@@ -76,7 +76,7 @@ a {
 
 }
 .dropdown-content {
-  display: block;
+  display: none;
   position: absolute;
   background-color: white;
   border-radius: 5px;
@@ -90,4 +90,8 @@ a {
   padding: 12px 16px;
   text-align: left;
   color: gray;
+}
+
+.dropdown_jr:hover .dropdown-content{
+  display: block;
 }

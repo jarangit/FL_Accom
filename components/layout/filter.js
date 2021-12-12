@@ -75,6 +75,27 @@ const Filter_bar = () => {
     property: false,
   });
 
+
+  const menu_api = [
+    {
+      name: "Rent",
+      sub_menu: null,
+    },
+    {
+      name: "Property type",
+      sub_menu: null,
+    },
+    {
+      name: "Price range",
+      sub_menu: null,
+    },
+    {
+      name: "Bads",
+      sub_menu: null,
+    },
+  ]
+  console.log(menu_api)
+
   return (
     <Div>
       <div>
@@ -88,13 +109,14 @@ const Filter_bar = () => {
           <SearchIcon sx={{ verticalAlign: "middle" }} />
         </button>
       </div>
-      <div>
+      {menu_api.map((items, key)=>(
+        <div className="dropdown_jr" key = {key}>
         <button className="but_menu" name="rent">
           <CircleIcon
             className="jr_icon"
             sx={{ fontSize: "10px", color: "#65acf0", verticalAlign: "middle" }}
           />
-          Rent
+          {items.name}
         </button>
         <div className="dropdown-content">
           <Typography variant="h4">Bangkok, Thailand</Typography>
@@ -138,36 +160,7 @@ const Filter_bar = () => {
           </FormGroup>
         </div>
       </div>
-      <div>
-        <button
-          className={toggle_active.property === true ? "active" : ""}
-          name="property"
-        >
-          <CircleIcon
-            className="jr_icon"
-            sx={{ fontSize: "10px", color: "#65acf0" }}
-          />
-          Rent
-        </button>
-      </div>
-      <div>
-        <button className={toggle_active === true ? "active" : ""}>
-          <CircleIcon
-            className="jr_icon"
-            sx={{ fontSize: "10px", color: "#65acf0" }}
-          />
-          Rent
-        </button>
-      </div>
-      <div>
-        <button className={toggle_active === true ? "active" : ""}>
-          <CircleIcon
-            className="jr_icon"
-            sx={{ fontSize: "10px", color: "#65acf0" }}
-          />
-          Rent
-        </button>
-      </div>
+      ))}
 
       <button className="but_primary_w" style={{ minWidth: "110px" }}>
         Filters

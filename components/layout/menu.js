@@ -76,7 +76,7 @@ const Menu = () => {
             width="80"
           />
           <div className="dropdown">
-            <a className="but_blue_menuP " href="/">
+            <a className="but_blue_menuP " href="#">
               Rent
             </a>
             <div className="dropdown-content">
@@ -87,8 +87,8 @@ const Menu = () => {
               <a href="#">House for rent in Bangkok</a>
             </div>
           </div>
-          <a href="/">Buy</a>
-          <a href="/">Projects</a>
+          <a href="#">Buy</a>
+          <a href="#">Projects</a>
         </Stack>
         <Stack
           spacing={5}
@@ -97,9 +97,9 @@ const Menu = () => {
           alignItems="center"
           textAlign="right"
         >
-          <a href="/">Guide</a>
-          <a href="/">Agent partner</a>
-          <a href="/">
+          <a href="#">Guide</a>
+          <a href="#">Agent partner</a>
+          <a href="#">
             Eng
             <LanguageIcon sx={{ verticalAlign: "middle" }} />
           </a>

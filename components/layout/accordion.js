@@ -12,12 +12,7 @@ export default function Accordion_items() {
       <Typography variant="h2">Welcome To Bangkok, Thailand!</Typography>
       <Typography variant="body1">
         Bangkok is the capital and largest city of Thailand. It was a small
-        fishing village 800 years ago, but now it's a bustling metropolis with a
-        population of more than 8 million people, known to be magnificent for
-        both tourism and business. With so many people living, working,
-        visiting, and ultimately, retiring in Bangkok every year, there's plenty
-        to do and see! Bangkok is just one of those cities that you can't really
-        put into words - it's too big, too vibrant and it's constantly
+       
       </Typography>
         <Button variant="text">Read more</Button>
       <Accordion
@@ -37,7 +32,6 @@ export default function Accordion_items() {
         <AccordionDetails>
           <Typography>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
           </Typography>
         </AccordionDetails>
       </Accordion>
