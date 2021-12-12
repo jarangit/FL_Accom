@@ -9,12 +9,12 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Menu />
-      <Grid container columnSpacing={2} className="jr_container">
-        <Grid item sx = {12} sm = {9}>
-        {children}
+      <Grid container spacing={2} className="jr_container">
+        <Grid item sx={12} sm={10}>
+          {children}
         </Grid>
-        <Grid item sx = {12} sm = {3}>
-          <History/>
+        <Grid item sx={12} sm={2}>
+          <History />
         </Grid>
       </Grid>
       <Footer />

@@ -5,14 +5,15 @@ const Product_item = () => {
     <div>
       <Grid
         container
-        spacing={2}
+        spacing={1}
         // rowSpacing={2}
         // columnSpacing={5}
         alignItems="center"
         sx={{
+          
           border: "1px solid #dbdbdb",
           margin: "10px 0",
-          // padding: "5px"
+          padding: "5px"
         }}
       >
         <Grid item xs={12} sm={4} justifyContent="center">
@@ -29,16 +30,20 @@ const Product_item = () => {
             4,200 properties available on Accomasia for sale in Bangkok,
             Thailand
           </Typography>
-          <Typography variant="body1">
+        <div>
+        <Typography variant="body1">
             <Stack direction="row" spacing={2}>
               <div>items</div>
               <div>items</div>
               <div>items</div>
             </Stack>
           </Typography>
+        </div>
 
-          <p className="jr_sky">Lumphini, Pathumwan, Bangkok (Ploenchit)</p>
-          <p className="jr_sky">BTS Chitlom ( 500 M )</p>
+          <div>
+            <p className="jr_sky">Lumphini, Pathumwan, Bangkok (Ploenchit)</p>
+            <p className="jr_sky">BTS Chitlom ( 500 M )</p>
+          </div>
 
           <Typography variant="body2">
             <Stack direction="row" spacing={2}>
@@ -48,19 +53,21 @@ const Product_item = () => {
             </Stack>
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={2}>
-          <Typography variant="body1" >
-            <strong   style = {{ background: "#65acf0", padding: "5px 10px"}}>FOR SALE</strong>
+        <Grid item xs={12} sm={2} sx = {{ border: "1px solid gray", borderStyle: "none none none solid" }} >
+          <Typography variant="body1">
+            <strong style={{ background: "#9bdeff", color: "#002161", padding: "5px 10px" }}>
+              FOR SALE
+            </strong>
           </Typography>
           <p>7200</p>
           <Typography variant="body1">
-            <strong style = {{ background: "#65acf0", padding: "5px 10px"}}>FOR SALE</strong>
+          <strong style={{ background: "#9bdeff", color: "#002161", padding: "5px 10px" }}>
+              FOR SALE
+            </strong>
           </Typography>
           <li>7200</li>
           <Typography variant="body1">
-            <strong>
-            Code: AA64564
-            </strong>
+            <strong>Code: AA64564</strong>
           </Typography>
         </Grid>
       </Grid>

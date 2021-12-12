@@ -8,6 +8,7 @@ const Div = styled.div`
   padding: 14px;
   border-radius: 5px;
   margin: 10px 0;
+  width: 100%;
 `;
 const Nav_contact = () => {
   return (

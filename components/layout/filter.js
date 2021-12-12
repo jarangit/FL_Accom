@@ -23,7 +23,7 @@ const Div = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-flow: wrap;
-  row-gap: 1rem;
+  /* row-gap: 1rem; */
 
   .jr_icon {
     opacity: 0;
@@ -34,7 +34,7 @@ const Div = styled.div`
     border-radius: 8px;
     border: 2px solid #d8d8d8;
     padding: 11px;
-    min-width: 290px;
+    /* min-width: 290px; */
   }
   .but_search {
     /* font-size: 1.25rem; */
@@ -54,7 +54,7 @@ const Div = styled.div`
     .jr_icon {
       opacity: 1;
     }
-   
+
     background-color: red;
     padding: 11px;
     border-radius: 8px;
@@ -62,8 +62,8 @@ const Div = styled.div`
     transition: 0.5s;
   }
   .but_menu:hover.dropdown-content {
-      display: none;
-    }
+    display: none;
+  }
   .dropdown-content {
     padding: 8px 16px;
     min-width: 300px;
@@ -74,7 +74,6 @@ const Filter_bar = () => {
     rent: false,
     property: false,
   });
-
 
   const menu_api = [
     {
@@ -93,8 +92,8 @@ const Filter_bar = () => {
       name: "Bads",
       sub_menu: null,
     },
-  ]
-  console.log(menu_api)
+  ];
+  console.log(menu_api);
 
   return (
     <Div>
@@ -109,57 +108,61 @@ const Filter_bar = () => {
           <SearchIcon sx={{ verticalAlign: "middle" }} />
         </button>
       </div>
-      {menu_api.map((items, key)=>(
-        <div className="dropdown_jr" key = {key}>
-        <button className="but_menu" name="rent">
-          <CircleIcon
-            className="jr_icon"
-            sx={{ fontSize: "10px", color: "#65acf0", verticalAlign: "middle" }}
-          />
-          {items.name}
-        </button>
-        <div className="dropdown-content">
-          <Typography variant="h4">Bangkok, Thailand</Typography>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  icon={<CircleOutlinedIcon />}
-                  checkedIcon={<CircleIcon />}
-                />
-              }
-              label="item"
+      {menu_api.map((items, key) => (
+        <div className="dropdown_jr" key={key}>
+          <button className="but_menu" name="rent">
+            <CircleIcon
+              className="jr_icon"
+              sx={{
+                fontSize: "10px",
+                color: "#65acf0",
+                verticalAlign: "middle",
+              }}
             />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  icon={<CircleOutlinedIcon />}
-                  checkedIcon={<CircleIcon />}
-                />
-              }
-              label="item"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  icon={<CircleOutlinedIcon />}
-                  checkedIcon={<CircleIcon />}
-                />
-              }
-              label="item"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  icon={<CircleOutlinedIcon />}
-                  checkedIcon={<CircleIcon />}
-                />
-              }
-              label="item"
-            />
-          </FormGroup>
+            {items.name}
+          </button>
+          <div className="dropdown-content">
+            <Typography variant="h4">Bangkok, Thailand</Typography>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    icon={<CircleOutlinedIcon />}
+                    checkedIcon={<CircleIcon />}
+                  />
+                }
+                label="item"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    icon={<CircleOutlinedIcon />}
+                    checkedIcon={<CircleIcon />}
+                  />
+                }
+                label="item"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    icon={<CircleOutlinedIcon />}
+                    checkedIcon={<CircleIcon />}
+                  />
+                }
+                label="item"
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    icon={<CircleOutlinedIcon />}
+                    checkedIcon={<CircleIcon />}
+                  />
+                }
+                label="item"
+              />
+            </FormGroup>
+          </div>
         </div>
-      </div>
       ))}
 
       <button className="but_primary_w" style={{ minWidth: "110px" }}>
