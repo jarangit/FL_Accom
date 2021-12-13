@@ -16,11 +16,9 @@ const theme = createTheme({
 
     h1: {
       fontSize: 32,
-      lineHeight: 2,
       fontWeight: "100px",
     },
     h2: {
-      lineHeight: 1,
       fontSize: 24,
       fontWeight: "100px",
     },
