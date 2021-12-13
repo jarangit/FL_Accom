@@ -10,10 +10,10 @@ const Layout = ({ children }) => {
     <div>
       <Menu />
       <Grid container spacing={2} className="jr_container">
-        <Grid item sx={12} sm={10}>
+        <Grid item sx={12} sm={9} >
           {children}
         </Grid>
-        <Grid item sx={12} sm={2}>
+        <Grid item sx={12} sm={3}>
           <History />
         </Grid>
       </Grid>

@@ -34,7 +34,7 @@ p{
 }
 
 .jr_container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -122,6 +122,13 @@ p{
   line-height:14px;
 }
 
+
+.text_color_primary{
+  color: #002161
+}
+.text_color_sky{
+  color: #65acf0;
+}
 .jr_chip:active{
   border: 1px solid red;
 
