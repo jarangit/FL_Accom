@@ -6,8 +6,8 @@ const Div = styled.div`
   background-color: white;
   padding: 30px;
   border-radius: 15px;
-  min-width: 320px;
   max-width: 480px;
+  margin-bottom: 20px;
   .but_blue {
     font-size: 16px;
     padding: 10px 15px;

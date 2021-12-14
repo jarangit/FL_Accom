@@ -15,6 +15,7 @@ export default function Accordion_items() {
       <Typography variant="h2">Welcome To Bangkok, Thailand!</Typography>
       <div>
         <Typography variant="body1">
+          {`
           Bangkok is the capital and largest city of Thailand. It was a small
           fishing village 800 years ago, but now it's a bustling metropolis with
           a population of more than 8 million people, known to be magnificent
@@ -22,11 +23,12 @@ export default function Accordion_items() {
           visiting, and ultimately, retiring in Bangkok every year, there's
           plenty to do and see! Bangkok is just one of those cities that you
           can't really put into words - it's too big, too vibrant and it's
-          constantly
+          constantly`}
         </Typography>
 
         {open_readMore ? (
           <Typography variant="body1" mt={2}>
+            {`
             Bangkok is the capital and largest city of Thailand. It was a small
             fishing village 800 years ago, but now it's a bustling metropolis
             with a population of more than 8 million people, known to be
@@ -34,7 +36,7 @@ export default function Accordion_items() {
             living, working, visiting, and ultimately, retiring in Bangkok every
             year, there's plenty to do and see! Bangkok is just one of those
             cities that you can't really put into words - it's too big, too
-            vibrant and it's constantly
+            vibrant and it's constantly`}
           </Typography>
         ) : (
           ""
@@ -68,6 +70,7 @@ export default function Accordion_items() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
+            {`
             Bangkok, Thailand is more than just temples and street food though;
             it's also home to nightclubs, bars and restaurants that cater to
             every taste. Even with all those attractions - you can find some
@@ -83,7 +86,8 @@ export default function Accordion_items() {
             of the road. Either way, it’s an experience unique to Thailand.
             However, there are also a vast variety of food choices apart from
             Thai food. There are also a lot of Western, and other Asian cuisines
-            you can please your taste buds with.{" "}
+            you can please your taste buds with.
+            `}
           </Typography>
         </AccordionDetails>
       </Accordion>
