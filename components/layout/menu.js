@@ -68,9 +68,8 @@ const Menu = () => {
     <Div>
       <div className="jr_container">
         <Stack
-          spacing={5}
-          direction="row"
-          justifyContent="space-between"
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={{ xs: 1, sm: 2, md: 4 }}          justifyContent="space-between"
           alignItems="center"
         >
           <img
@@ -93,9 +92,8 @@ const Menu = () => {
           <a href="#">Projects</a>
         </Stack>
         <Stack
-          spacing={5}
-          direction="row"
-          justifyContent="space-between"
+          direction={{ xs: 'column', sm: 'row' }}
+          spacing={{ xs: 1, sm: 2, md: 4 }}          justifyContent="space-between"
           alignItems="center"
           textAlign="right"
         >
