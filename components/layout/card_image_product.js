@@ -11,7 +11,7 @@ const Div = styled.div`
   .bottom_right {
     position: absolute;
     bottom: 12px;
-    right: 12px;
+    right: 0;
     color:white;
     font-size:1.5vh;
     background-color:rgb(0, 0, 0, 0.5);

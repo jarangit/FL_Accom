@@ -10,7 +10,8 @@ import Nav_contact from "../components/layout/nav_contact";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import Accordion_items from "../components/layout/accordion";
-
+import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
+import Pagination_jr from "../components/layout/pagination";
 export default function Home() {
   const label = { inputProps: { "aria-label": "Switch demo" } };
 
@@ -56,24 +57,7 @@ export default function Home() {
       <Product_item />
       <Nav_contact />
 
-      <Stack direction="row" justifyContent="space-between">
-        <Button variant="outlined" color="primary">
-          Back to top
-          <ArrowDownwardIcon />
-        </Button>
-        <div>
-          <Stack direction="row">
-            <Button variant="contained" color="primary">
-              <ArrowLeftIcon />
-            </Button>
-            <Button variant="outlined">10</Button>
-            <Button variant="text">of 420</Button>{" "}
-            <Button variant="contained" color="primary">
-              <ArrowRightIcon />
-            </Button>
-          </Stack>
-        </div>
-      </Stack>
+      <Pagination_jr />
 
       <Accordion_items />
     </div>
