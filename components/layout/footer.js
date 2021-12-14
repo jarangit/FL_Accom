@@ -36,7 +36,7 @@ const Footer = () => {
               Accom Asia Co, Ltd <br />
               3388/93 Sirinrat Building, floor 25 <br />
               Rama 4 Road, Klongton, Klongtoey, <br />
-              Bangkok 10110
+              Bangkok 10110000
             </p>
           </div>
 
