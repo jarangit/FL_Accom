@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Grid } from "@mui/material";
 const ProD_items_his = () => {
   const fake_data = [
@@ -32,7 +32,6 @@ const ProD_items_his = () => {
     },
   ];
   return (
-    <div>
       <Grid container spacing={2}>
         {fake_data.map((items, key) => (
           <>
@@ -53,7 +52,6 @@ const ProD_items_his = () => {
           </>
         ))}
       </Grid>
-    </div>
   );
 };
 

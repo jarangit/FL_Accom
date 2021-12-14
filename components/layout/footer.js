@@ -10,8 +10,8 @@ import Contact_me_form from "../form/contact_me_form";
 const Footer = () => {
   return (
     <div style={{ background: "#002161", padding: "30px", color: "white" }}>
-      <Grid container spacing={2} className="jr_container">
-        <Grid item xs={12} sm={6}>
+      <Grid container spacing={2} >
+        <Grid item xs={12} md = {6} sm={8}>
           <Typography variant="h2" className="jr_sky">
             Send your message to AccomAsia agent
           </Typography>
@@ -36,7 +36,7 @@ const Footer = () => {
               Accom Asia Co, Ltd <br />
               3388/93 Sirinrat Building, floor 25 <br />
               Rama 4 Road, Klongton, Klongtoey, <br />
-              Bangkok 10110
+              Bangkok 10110000
             </p>
           </div>
 
@@ -46,7 +46,7 @@ const Footer = () => {
             <FacebookIcon fontSize="large" />
           </Stack>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} md = {6} sm={4}>
           <Contact_me_form/>
         </Grid>
       </Grid>

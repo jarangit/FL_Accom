@@ -4,11 +4,19 @@ import styled from "styled-components";
 
 const Copy_right = () => {
   return (
-    <div className="jr_container" style={{ border: "1px solid white" ,borderStyle: "solid none none none" }}>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
+    <div
+      className="jr_container"
+      style={{ border: "1px solid white", borderStyle: "solid none none none" }}
+    >
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={{ xs: 1, sm: 2, md: 4 }}
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Stack
-          spacing={5}
-          direction="row"
+          direction={{ xs: "column", sm: "row" }}
+          spacing={{ xs: 1, sm: 2 }}
           justifyContent="space-between"
           alignItems="center"
         >
