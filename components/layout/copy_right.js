@@ -1,19 +1,27 @@
 import { Stack } from "@mui/material";
 import React from "react";
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 const Copy_right = () => {
   return (
-    <div className="jr_container">
+    <div className="jr_container" style={{ border: "1px solid white" ,borderStyle: "solid none none none" }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <div>
-          <a>Logo</a>
-          <a>Contact us</a>
-          <a>Career</a>
-          <a>Policy</a>
-          <a>Policy</a>
-        </div>
+        <Stack
+          spacing={5}
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <img
+            src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
+            width="80"
+          />
+          <a href="#">About us</a>
+          <a href="#">Contact us</a>
+          <a href="#">Career</a>
+          <a href="#">Policy</a>
+          <a href="#">Sitemap</a>
+        </Stack>
         <div>
           <p>Copyright © 2021 Accom Group. All rights reserved.</p>
         </div>
