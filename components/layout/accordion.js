@@ -7,7 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
 import { Button } from "@mui/material";
 export default function Accordion_items() {
-  const [open_readMore, setopen_readMore] = useState(true);
+  const [open_readMore, setopen_readMore] = useState(false);
 
   console.log(open_readMore);
   return (

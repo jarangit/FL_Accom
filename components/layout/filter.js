@@ -17,6 +17,8 @@ import CircleIcon from "@mui/icons-material/Circle";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
+
+
 const Div = styled.div`
   margin: 15px 0;
   display: flex;
@@ -93,7 +95,6 @@ const Filter_bar = () => {
       sub_menu: null,
     },
   ];
-  console.log(menu_api);
 
   return (
     <Div>
