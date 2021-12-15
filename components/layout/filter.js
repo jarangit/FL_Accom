@@ -70,6 +70,13 @@ const Div = styled.div`
     padding: 8px 16px;
     min-width: 300px;
   }
+
+  @media (max-width: 1024px){
+    .dropdown_jr, #save_search{
+      display:none;
+    }
+    
+  }
 `;
 const Filter_bar = () => {
   const [toggle_active, settoggle_active] = useState({
@@ -173,7 +180,7 @@ const Filter_bar = () => {
           color="primary"
         />
       </button>
-      <button className="but_primary" style={{ minWidth: "140px" }}>
+      <button id = "save_search" className="but_primary" style={{ minWidth: "140px" }}>
         Save Search
         <FavoriteBorderIcon
           sx={{ verticalAlign: "middle", marginLeft: "5px" }}

@@ -4,6 +4,7 @@ import Filter_bar from "./filter";
 import Footer from "./footer";
 import History from "./history";
 import Menu from "./menu";
+import Show_menu_mb from "./menu/show_menu_mb";
 import Properties_for_sale from "./properties_for_sale";
 import Ultimate_guide from "./ultimate_guide";
 

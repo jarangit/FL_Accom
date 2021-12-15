@@ -11,6 +11,7 @@ import {
 import React from "react";
 import styled from "styled-components";
 import LanguageIcon from "@mui/icons-material/Language";
+import Menu_mobile from "./menu/menu_mobile";
 
 const Div = styled.div`
   background-color: #f9f9f9;
@@ -58,15 +59,26 @@ const Div = styled.div`
   }
   .dropdow {
     display: inline-block;
+    background-color: red;
   }
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+
+  @media (max-width: 768px){
+    .dt_menu{
+      display:none;
+    }
+    .md_menu{
+      display:block;
+    }
   }
 `;
 const Menu = () => {
   return (
     <Div>
-      <div className="jr_container">
+      <Menu_mobile />
+      <div className="jr_container  dt_menu">
         <Stack
           direction={{ xs: "column", sm: "row" }}
           spacing={{ xs: 1, sm: 2, md: 4 }}
@@ -77,7 +89,7 @@ const Menu = () => {
             src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
             width="80"
           />
-          <div className="dropdown">
+          <div   id = "link_items" className="dropdown link_items">
             <a className="but_blue_menuP " href="#">
               Rent
             </a>
@@ -89,8 +101,30 @@ const Menu = () => {
               <a href="#">House for rent in Bangkok</a>
             </div>
           </div>
-          <a href="#">Buy</a>
-          <a href="#">Projects</a>
+          <div className="dropdown link_items">
+            <a className="but_blue_menuP " href="#">
+              Buy
+            </a>
+            <div className="dropdown-content ">
+              <Typography variant="h4">Bangkok, Thailand</Typography>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+            </div>
+          </div>
+          <div className="dropdown link_items">
+            <a className="but_blue_menuP " href="#">
+              Projects
+            </a>
+            <div className="dropdown-content">
+              <Typography variant="h4">Bangkok, Thailand</Typography>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+              <a href="#">House for rent in Bangkok</a>
+            </div>
+          </div>
         </Stack>
         <Stack
           direction={{ xs: "column", sm: "row" }}
@@ -99,13 +133,13 @@ const Menu = () => {
           alignItems="center"
           textAlign="right"
         >
-          <a href="#">Guide</a>
-          <a href="#">Agent partner</a>
-          <a href="#">
+          <a  className="link_items" href="#">Guide</a>
+          <a  className="link_items" href="#">Agent partner</a>
+          <a  className="link_items" href="#">
             Eng
             <LanguageIcon sx={{ verticalAlign: "middle" }} />
           </a>
-          <button className="but_blue">Sign in</button>
+          <button className="but_blue link_items">Sign in</button>
         </Stack>
       </div>
     </Div>
