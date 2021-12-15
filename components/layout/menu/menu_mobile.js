@@ -42,7 +42,7 @@ const Menu_mobile = () => {
         display={open_md_menu === true ? "block" : "none"}
       >
         <Stack direction="column" textAlign="center">
-            <h3>Menu</h3>
+            <h3>Menus</h3>
           <div id="link_items" className="dropdown link_items">
             <a className="but_blue_menuP " href="#">
               Rent
