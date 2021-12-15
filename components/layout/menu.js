@@ -16,7 +16,7 @@ const Div = styled.div`
   background-color: #f9f9f9;
   /* height: 100px; */
   .jr_container {
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -68,8 +68,9 @@ const Menu = () => {
     <Div>
       <div className="jr_container">
         <Stack
-          direction={{ xs: 'column', sm: 'row' }}
-          spacing={{ xs: 1, sm: 2, md: 4 }}          justifyContent="space-between"
+          direction={{ xs: "column", sm: "row" }}
+          spacing={{ xs: 1, sm: 2, md: 4 }}
+          justifyContent="space-between"
           alignItems="center"
         >
           <img
@@ -92,8 +93,9 @@ const Menu = () => {
           <a href="#">Projects</a>
         </Stack>
         <Stack
-          direction={{ xs: 'column', sm: 'row' }}
-          spacing={{ xs: 1, sm: 2, md: 4 }}          justifyContent="space-between"
+          direction={{ xs: "column", sm: "row" }}
+          spacing={{ xs: 1, sm: 2, md: 4 }}
+          justifyContent="space-between"
           alignItems="center"
           textAlign="right"
         >
