@@ -2,7 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import styled from "styled-components";
-
+import CloseIcon from '@mui/icons-material/Close';
 const Div = styled.div`
   display: none;
   @media (max-width: 768px) {
@@ -11,12 +11,12 @@ const Div = styled.div`
 `;
 
 const Div_mb_menu = styled.div`
-  display: ${(props) => props.display || "none"};
   height: ${(props) => props.open || "0vh"};
   background-color: white;
   position: relative;
   z-index: 1;
   transition: 0.5s;
+  overflow: hidden;
 `;
 
 const Menu_mobile = () => {
@@ -25,11 +25,19 @@ const Menu_mobile = () => {
   return (
     <Div style={{ paddingLeft: "16px" }}>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <MenuIcon
-          fontSize="large"
-          color="primary"
-          onClick={() => setopen_md_menu(!open_md_menu)}
-        />
+        {open_md_menu === true ? (
+          <CloseIcon
+            fontSize="large"
+            color="primary"
+            onClick={() => setopen_md_menu(!open_md_menu)}
+          />
+        ) : (
+          <MenuIcon
+            fontSize="large"
+            color="primary"
+            onClick={() => setopen_md_menu(!open_md_menu)}
+          />
+        )}
         <img
           src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
           width="80"
@@ -42,7 +50,7 @@ const Menu_mobile = () => {
         display={open_md_menu === true ? "block" : "none"}
       >
         <Stack direction="column" textAlign="center">
-            <h3>Menus</h3>
+          <h3>Menus</h3>
           <div id="link_items" className="dropdown link_items">
             <a className="but_blue_menuP " href="#">
               Rent

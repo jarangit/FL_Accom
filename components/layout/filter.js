@@ -75,7 +75,6 @@ const Div = styled.div`
     .dropdown_jr, #save_search{
       display:none;
     }
-    
   }
 `;
 const Filter_bar = () => {
@@ -173,7 +172,7 @@ const Filter_bar = () => {
         </div>
       ))}
 
-      <button className="but_primary_w" style={{ minWidth: "110px" }}>
+      <button id = "fillter" className="but_primary_w" style={{ minWidth: "110px" }}>
         Filters
         <SyncAltIcon
           sx={{ verticalAlign: "middle", marginLeft: "5px" }}
