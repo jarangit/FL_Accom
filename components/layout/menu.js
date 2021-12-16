@@ -72,6 +72,9 @@ const Div = styled.div`
     .md_menu{
       display:block;
     }
+    img{
+      text-align: center;
+    }
   }
 `;
 const Menu = () => {
