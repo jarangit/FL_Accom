@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Menu />
-      <Grid container spacing={2} className="jr_container">
+      <Grid container  className="jr_container">
         <Grid item xs={12} sm={8} >
           {children}
         </Grid>
