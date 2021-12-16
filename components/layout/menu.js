@@ -79,8 +79,9 @@ const Div = styled.div`
 `;
 const Menu = () => {
   return (
-    <Div>
+    <>
       <Menu_mobile />
+    <Div>
       <div className="jr_container  dt_menu">
         <Stack
           direction={{ xs: "column", sm: "row" }}
@@ -146,6 +147,7 @@ const Menu = () => {
         </Stack>
       </div>
     </Div>
+    </>
   );
 };
 
