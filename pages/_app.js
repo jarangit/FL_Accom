@@ -12,18 +12,30 @@ import { fontWeight, letterSpacing } from "@mui/system";
 const theme = createTheme({
   typography: {
     fontSize: 12,
-    // fontWeight: 300,
+    fontFamily: ["Montserrat", " sans-serif"].join(','),
 
     h1: {
       fontSize: 32,
       fontWeight: "100px",
+      marginTop: 5,
+      marginBottom: 5,
     },
     h2: {
       fontSize: 24,
       fontWeight: "100px",
+      marginTop: 5,
+      marginBottom: 5,
     },
-    h3: 18,
-    h4: 14,
+    h3:{
+      fontSize: 18,
+      marginTop: 5,
+      marginBottom: 5,
+    },
+    h4:{
+      fontSize: 16,
+      marginTop: 5,
+      marginBottom: 5,
+    },
     body1: {
       lineHeight: 2,
       // fontSize: "16px",

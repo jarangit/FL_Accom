@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 const Div = styled.div`
+
   display: none;
   @media (max-width: 768px) {
     display: block;
@@ -16,6 +17,8 @@ const Div = styled.div`
 `;
 
 const Div_mb_menu = styled.div`
+font-family: 'Prompt', sans-serif;
+
   height: ${(props) => props.open || "0vh"};
   background-color: white;
   position: relative;
@@ -33,8 +36,6 @@ const Menu_mobile = () => {
       <Grid
         container
         className="nav_grid"
-        justifyContent="center"
-        alignItem="center"
       >
         <Grid item xs={2}>
           {open_md_menu === true ? (
@@ -59,7 +60,7 @@ const Menu_mobile = () => {
             width="80"
           />
         </Grid>
-        <Grid item xs={2}></Grid>
+        <Grid item xs={2}><p>จรัญ</p></Grid>
       </Grid>
 
       <Div_mb_menu

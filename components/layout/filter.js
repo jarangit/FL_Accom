@@ -25,7 +25,6 @@ const Div = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-flow: wrap;
-  /* row-gap: 1rem; */
 
   .jr_icon {
     opacity: 0;
@@ -36,7 +35,6 @@ const Div = styled.div`
     border-radius: 8px;
     border: 2px solid #d8d8d8;
     padding: 11px;
-    /* min-width: 290px; */
   }
   .but_search {
     /* font-size: 1.25rem; */
@@ -47,6 +45,7 @@ const Div = styled.div`
     padding: 11px;
     background-color: #002161;
     color: white;
+    width: auto;
   }
   .but_menu {
     padding: 11px;
@@ -74,6 +73,9 @@ const Div = styled.div`
   @media (max-width: 1024px){
     .dropdown_jr, #save_search{
       display:none;
+    }
+    .hid_mb{
+      display: none;
     }
   }
 `;
@@ -172,8 +174,8 @@ const Filter_bar = () => {
         </div>
       ))}
 
-      <button id = "fillter" className="but_primary_w" style={{ minWidth: "110px" }}>
-        Filters
+      <button id = "fillter" className="but_primary_w">
+        <span  className="hid_mb">Filters</span>
         <SyncAltIcon
           sx={{ verticalAlign: "middle", marginLeft: "5px" }}
           color="primary"
