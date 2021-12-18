@@ -17,11 +17,7 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <Head>
 
-        </Head>
-      </Head>
       <Filter_bar />
       <CustomSeparator />
       <div>

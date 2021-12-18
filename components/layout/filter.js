@@ -17,7 +17,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-
+import Price_range_sub_menu from "./fillter/price_range_sub_menu";
 
 const Div = styled.div`
   margin: 15px 0;
@@ -70,43 +70,66 @@ const Div = styled.div`
     min-width: 300px;
   }
 
-  @media (max-width: 1024px){
-    .dropdown_jr, #save_search{
-      display:none;
+  @media (max-width: 1024px) {
+    .dropdown_jr,
+    #save_search {
+      display: none;
     }
-    .hid_mb{
+    .hid_mb {
       display: none;
     }
   }
 `;
-const Filter_bar = () => {
-  const [toggle_active, settoggle_active] = useState({
-    rent: false,
-    property: false,
-  });
 
+const Dropdown_jr = styled.div`
+  display: ${(props) => props.toggled};
+`;
+const Filter_bar = () => {
+  const [toggle, settoggle] = useState(false);
+  const [getName_main_menu, setgetName_main_menu] = useState("");
   const menu_api = [
     {
       name: "Rent",
-      sub_menu: null,
+      sub_menu: ["Rent", "Sale"],
     },
     {
       name: "Property type",
-      sub_menu: null,
+      sub_menu: ["Condominium", "Apartment", "House"],
     },
     {
       name: "Price range",
-      sub_menu: null,
+      sub_menu: "",
     },
     {
       name: "Bads",
-      sub_menu: null,
+      sub_menu: "",
     },
   ];
 
+  const onOpen_dropdown = (e) => {
+    for (let i = 0; i < menu_api.length; i++) {
+      const element = menu_api[i];
+      // console.log(element.name)
+    }
+    setgetName_main_menu(e.target.name);
+    settoggle(!toggle);
+  };
+  // console.log(getName_main_menu);
+
+  const ShowDropDown = (props) => {
+    if (props.dataSub.name === "Price range") {
+      return <div>Function price</div>;
+    } else if (props.dataSub.name === "Bads") {
+      return <div>Function price</div>;
+    } else{
+      return(
+        <div>Drop down</div>
+      )
+    }
+  };
   return (
-    <Div>
-      <div>
+    <Div className="jr_mb_close">
+      <div style={{ alignItems: "center" }}>
         <input
           className="input_search"
           type="text"
@@ -119,7 +142,11 @@ const Filter_bar = () => {
       </div>
       {menu_api.map((items, key) => (
         <div className="dropdown_jr" key={key}>
-          <button className="but_menu" name="rent">
+          <button
+            name={items.name}
+            className="but_menu"
+            onClick={onOpen_dropdown}
+          >
             <CircleIcon
               className="jr_icon"
               sx={{
@@ -130,58 +157,48 @@ const Filter_bar = () => {
             />
             {items.name}
           </button>
-          <div className="dropdown-content">
-            <Typography variant="h4">Bangkok, Thailand</Typography>
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon />}
-                    checkedIcon={<CircleIcon />}
-                  />
-                }
-                label="item"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon />}
-                    checkedIcon={<CircleIcon />}
-                  />
-                }
-                label="item"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon />}
-                    checkedIcon={<CircleIcon />}
-                  />
-                }
-                label="item"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon />}
-                    checkedIcon={<CircleIcon />}
-                  />
-                }
-                label="item"
-              />
-            </FormGroup>
-          </div>
+          {items.name === getName_main_menu ? (
+            <ShowDropDown dataSub={items} />
+          ) : (
+            ""
+          )}
+
+          {/* // <div className="dropdown-content">
+            //   <Typography variant="h4">Bangkok, Thailand</Typography>
+            //   <FormGroup>
+            //     {items.sub_menu && (
+            //       <div>
+            //         {items.sub_menu.map((sub_items, key) => (
+            //           <FormControlLabel
+            //             key={key}
+            //             control={
+            //               <Checkbox
+            //                 icon={<CircleOutlinedIcon />}
+            //                 checkedIcon={<CircleIcon />}
+            //               />
+            //             }
+            //             label={sub_items}
+            //           />
+            //         ))}
+            //       </div>
+            //     )}
+            //   </FormGroup>
+            // </div> */}
         </div>
       ))}
 
-      <button id = "fillter" className="but_primary_w">
-        <span  className="hid_mb">Filters</span>
+      <button id="fillter" className="but_primary_w">
+        <span className="hid_mb">Filters</span>
         <SyncAltIcon
           sx={{ verticalAlign: "middle", marginLeft: "5px" }}
           color="primary"
         />
       </button>
-      <button id = "save_search" className="but_primary" style={{ minWidth: "140px" }}>
+      <button
+        id="save_search"
+        className="but_primary"
+        style={{ minWidth: "140px" }}
+      >
         Save Search
         <FavoriteBorderIcon
           sx={{ verticalAlign: "middle", marginLeft: "5px" }}

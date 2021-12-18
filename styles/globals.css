@@ -1,42 +1,41 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
 
-input, button {
+input,
+button {
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-
+  font-family: "Montserrat", sans-serif;
 }
 input,
 button,
 submit {
   border: none;
 }
-li{
+li {
   list-style: none;
 }
 a {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: inherit;
   text-decoration: none;
 }
-h1, h2 {
+h1,
+h2 {
   margin: 15px 0;
 }
-h1{
+h1 {
   font-size: 32px;
 }
-p{
+p {
   margin: 5px 0;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
-
+  font-family: "Montserrat", sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -57,47 +56,43 @@ p{
   font-size: 2vh;
 }
 
-.jr_icon{
+.jr_icon {
   vertical-align: middle;
   /* margin: 0 5px; */
 }
 
-.but_primary_w{
+.but_primary_w {
   padding: 11px;
   border: 1px solid #002161;
   background-color: white;
   border-radius: 5px;
-  color:#002161;
+  color: #002161;
   margin: 10px 0;
 }
-.but_primary_w:hover  svg{
+.but_primary_w:hover svg {
   fill: white;
   transition: all ease 0.2s;
-
-
 }
 .but_primary_w:hover {
   background-color: #002161;
   color: white;
   transition: 0.5s;
   fill: #fce57e;
-
 }
-.but_primary{
+.but_primary {
   padding: 11px;
   border: 1px solid #002161;
   background-color: #002161;
   border-radius: 8px;
-  color:white;
+  color: white;
 }
 
-.but_primary:hover{
+.but_primary:hover {
   background-color: #0f388a;
   transition: 0.5s;
-
 }
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
   background-color: white;
   border-radius: 5px;
@@ -113,14 +108,19 @@ p{
   color: gray;
 }
 
-.dropdown_jr:hover .dropdown-content{
+/* .dropdown_jr:hover .dropdown-content {
   display: block;
+} */
+
+#triggle:checked + .dropdown_jr:hover .dropdown-content{
+  display: block;
+
 }
 
-.jr_sky{
-  color:#65acf0;
+.jr_sky {
+  color: #65acf0;
 }
-.jr_chip{
+.jr_chip {
   font-size: 12px;
   border: 1px solid #002161;
   background-color: white;
@@ -128,24 +128,29 @@ p{
   text-align: center;
   padding: 2px 5px;
   width: fit-content;
-  line-height:14px;
+  line-height: 14px;
 }
 
-
-.text_color_primary{
-  color: #002161
+.text_color_primary {
+  color: #002161;
 }
-.text_color_sky{
+.text_color_sky {
   color: #65acf0;
 }
-.jr_chip:active{
+.jr_chip:active {
   border: 1px solid red;
-
 }
 
-.jr_f14{
+.jr_f14 {
   font-size: 14px;
 }
-.jr_f12{
+.jr_f12 {
   font-size: 12px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .jr_mb_close{
+   display: none;
+  }
 }

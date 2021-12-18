@@ -12,6 +12,7 @@ import React from "react";
 import styled from "styled-components";
 import LanguageIcon from "@mui/icons-material/Language";
 import Menu_mobile from "./menu/menu_mobile";
+import Fillter_mb from "./fillter/fillter_mb";
 
 const Div = styled.div`
   background-color: #f9f9f9;
@@ -65,14 +66,14 @@ const Div = styled.div`
     display: block;
   }
 
-  @media (max-width: 768px){
-    .dt_menu{
-      display:none;
+  @media (max-width: 768px) {
+    .dt_menu {
+      display: none;
     }
-    .md_menu{
-      display:block;
+    .md_menu {
+      display: block;
     }
-    img{
+    img {
       text-align: center;
     }
   }
@@ -81,72 +82,76 @@ const Menu = () => {
   return (
     <>
       <Menu_mobile />
-    <Div>
-      <div className="jr_container  dt_menu">
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={{ xs: 1, sm: 2, md: 4 }}
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <img
-            src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
-            width="80"
-          />
-          <div   id = "link_items" className="dropdown link_items">
-            <a className="but_blue_menuP " href="#">
-              Rent
-            </a>
-            <div className="dropdown-content">
-              <Typography variant="h4">Bangkok, Thailand</Typography>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
+      <Div>
+        <div className="jr_container  dt_menu">
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={{ xs: 1, sm: 2, md: 4 }}
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <img
+              src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
+              width="80"
+            />
+            <div id="link_items" className="dropdown link_items">
+              <a className="but_blue_menuP " href="#">
+                Rent
+              </a>
+              <div className="dropdown-content">
+                <Typography variant="h4">Bangkok, Thailand</Typography>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+              </div>
             </div>
-          </div>
-          <div className="dropdown link_items">
-            <a className="but_blue_menuP " href="#">
-              Buy
-            </a>
-            <div className="dropdown-content ">
-              <Typography variant="h4">Bangkok, Thailand</Typography>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
+            <div className="dropdown link_items">
+              <a className="but_blue_menuP " href="#">
+                Buy
+              </a>
+              <div className="dropdown-content ">
+                <Typography variant="h4">Bangkok, Thailand</Typography>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+              </div>
             </div>
-          </div>
-          <div className="dropdown link_items">
-            <a className="but_blue_menuP " href="#">
-              Projects
-            </a>
-            <div className="dropdown-content">
-              <Typography variant="h4">Bangkok, Thailand</Typography>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
-              <a href="#">House for rent in Bangkok</a>
+            <div className="dropdown link_items">
+              <a className="but_blue_menuP " href="#">
+                Projects
+              </a>
+              <div className="dropdown-content">
+                <Typography variant="h4">Bangkok, Thailand</Typography>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+                <a href="#">House for rent in Bangkok</a>
+              </div>
             </div>
-          </div>
-        </Stack>
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={{ xs: 1, sm: 2, md: 4 }}
-          justifyContent="space-between"
-          alignItems="center"
-          textAlign="right"
-        >
-          <a  className="link_items" href="#">Guide</a>
-          <a  className="link_items" href="#">Agent partner</a>
-          <a  className="link_items" href="#">
-            Eng
-            <LanguageIcon sx={{ verticalAlign: "middle" }} />
-          </a>
-          <button className="but_blue link_items">Sign in</button>
-        </Stack>
-      </div>
-    </Div>
+          </Stack>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={{ xs: 1, sm: 2, md: 4 }}
+            justifyContent="space-between"
+            alignItems="center"
+            textAlign="right"
+          >
+            <a className="link_items" href="#">
+              Guide
+            </a>
+            <a className="link_items" href="#">
+              Agent partner
+            </a>
+            <a className="link_items" href="#">
+              Eng
+              <LanguageIcon sx={{ verticalAlign: "middle" }} />
+            </a>
+            <button className="but_blue link_items">Sign in</button>
+          </Stack>
+        </div>
+      </Div>
     </>
   );
 };

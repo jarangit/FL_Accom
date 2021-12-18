@@ -53,7 +53,7 @@ const Div_mb_menu = styled.div`
 `;
 
 const Menu_mobile = () => {
-  const [open_md_menu, setopen_md_menu] = useState(true);
+  const [open_md_menu, setopen_md_menu] = useState(false);
 
   return (
     <Div style={{ paddingLeft: "16px" }}>
@@ -93,7 +93,7 @@ const Menu_mobile = () => {
           <div className="menu_item">
             <p className="main_menu" href="#">
               Rents
-              <span style = {{ float: "right"}} >
+              <span style = {{ position: "absolute", right: "15px"}} >
                 <ArrowDropDownIcon/>
               </span>
             </p>
