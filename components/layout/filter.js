@@ -118,7 +118,11 @@ const Filter_bar = () => {
 
   const ShowDropDown = (props) => {
     if (props.dataSub.name === "Price range") {
-      return <div>Function price</div>;
+      return (
+        <div className="dropdown-content">
+          <Price_range_sub_menu/>
+        </div>
+      );
     } else if (props.dataSub.name === "Bads") {
       return <div>Function price</div>;
     } else {
@@ -127,7 +131,7 @@ const Filter_bar = () => {
           <Typography variant="h4">Bangkok, Thailand</Typography>
           <FormGroup>
             {props.dataSub && (
-              <div>
+              <>
                 {props.dataSub.sub_menu.map((sub_items, key) => (
                   <FormControlLabel
                     key={key}
@@ -140,7 +144,7 @@ const Filter_bar = () => {
                     label={sub_items}
                   />
                 ))}
-              </div>
+              </>
             )}
           </FormGroup>
         </div>
