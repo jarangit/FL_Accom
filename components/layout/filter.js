@@ -121,10 +121,30 @@ const Filter_bar = () => {
       return <div>Function price</div>;
     } else if (props.dataSub.name === "Bads") {
       return <div>Function price</div>;
-    } else{
-      return(
-        <div>Drop down</div>
-      )
+    } else {
+      return (
+        <div className="dropdown-content">
+          <Typography variant="h4">Bangkok, Thailand</Typography>
+          <FormGroup>
+            {props.dataSub && (
+              <div>
+                {props.dataSub.sub_menu.map((sub_items, key) => (
+                  <FormControlLabel
+                    key={key}
+                    control={
+                      <Checkbox
+                        icon={<CircleOutlinedIcon />}
+                        checkedIcon={<CircleIcon />}
+                      />
+                    }
+                    label={sub_items}
+                  />
+                ))}
+              </div>
+            )}
+          </FormGroup>
+        </div>
+      );
     }
   };
   return (
@@ -157,33 +177,15 @@ const Filter_bar = () => {
             />
             {items.name}
           </button>
-          {items.name === getName_main_menu ? (
-            <ShowDropDown dataSub={items} />
-          ) : (
-            ""
+          {toggle && (
+            <div>
+              {items.name === getName_main_menu ? (
+                <ShowDropDown dataSub={items} />
+              ) : (
+                ""
+              )}
+            </div>
           )}
-
-          {/* // <div className="dropdown-content">
-            //   <Typography variant="h4">Bangkok, Thailand</Typography>
-            //   <FormGroup>
-            //     {items.sub_menu && (
-            //       <div>
-            //         {items.sub_menu.map((sub_items, key) => (
-            //           <FormControlLabel
-            //             key={key}
-            //             control={
-            //               <Checkbox
-            //                 icon={<CircleOutlinedIcon />}
-            //                 checkedIcon={<CircleIcon />}
-            //               />
-            //             }
-            //             label={sub_items}
-            //           />
-            //         ))}
-            //       </div>
-            //     )}
-            //   </FormGroup>
-            // </div> */}
         </div>
       ))}
 
