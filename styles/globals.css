@@ -80,6 +80,8 @@ p {
   fill: #fce57e;
 }
 .but_primary {
+  margin: 10px 0;
+
   padding: 11px;
   border: 1px solid #002161;
   background-color: #002161;
@@ -153,4 +155,9 @@ p {
   .jr_mb_close{
    display: none;
   }
+}
+
+.jr_underline_text{
+  border: 1px solid gray;
+  border-style: none none solid none;
 }

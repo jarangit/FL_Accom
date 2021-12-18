@@ -5,6 +5,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import React, { useState } from "react";
 import { Typography } from "@mui/material";
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 export default function Price_range_sub_menu() {
   const [age, setAge] = React.useState("");
 
@@ -13,8 +14,8 @@ export default function Price_range_sub_menu() {
   };
 
   return (
-    <div>
-      <Typography variant="h4">Price range</Typography>
+    <div style={{ alignItems: "center" }} >
+      <Typography variant="h4" className = "jr_underline_text" >Price range</Typography>
 
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <Select
@@ -31,6 +32,7 @@ export default function Price_range_sub_menu() {
           <MenuItem value={30}>Thirty</MenuItem>
         </Select>
       </FormControl>
+      {/* <span><HorizontalRuleIcon className="jr_icon" /></span> */}
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <Select
           value={age}

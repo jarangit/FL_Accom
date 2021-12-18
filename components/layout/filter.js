@@ -18,6 +18,7 @@ import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import Price_range_sub_menu from "./fillter/price_range_sub_menu";
+import Bads_sub_menu from "./fillter/bads_sub_menu";
 
 const Div = styled.div`
   margin: 15px 0;
@@ -111,8 +112,13 @@ const Filter_bar = () => {
       const element = menu_api[i];
       // console.log(element.name)
     }
+    if(e.target.name !== getName_main_menu){
+      settoggle(true)
+    }else{
+
+      settoggle(!toggle);
+    }
     setgetName_main_menu(e.target.name);
-    settoggle(!toggle);
   };
   // console.log(getName_main_menu);
 
@@ -124,7 +130,11 @@ const Filter_bar = () => {
         </div>
       );
     } else if (props.dataSub.name === "Bads") {
-      return <div>Function price</div>;
+      return(
+        <div className="dropdown-content">
+          <Bads_sub_menu/>
+        </div>
+      )
     } else {
       return (
         <div className="dropdown-content">
