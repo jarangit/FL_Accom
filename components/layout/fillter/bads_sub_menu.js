@@ -7,6 +7,7 @@ const Div = styled.div`
     button {
       margin-left: -3px;
       border-radius:  0px 5px 5px 0px;
+      border-color: #464646;
     }
   }
 `;

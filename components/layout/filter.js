@@ -19,6 +19,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import Price_range_sub_menu from "./fillter/price_range_sub_menu";
 import Bads_sub_menu from "./fillter/bads_sub_menu";
+import Fillter_but_item from "./fillter/fillter_but_item";
 
 const Div = styled.div`
   margin: 15px 0;
@@ -82,9 +83,6 @@ const Div = styled.div`
   }
 `;
 
-const Dropdown_jr = styled.div`
-  display: ${(props) => props.toggled};
-`;
 const Filter_bar = () => {
   const [toggle, settoggle] = useState(false);
   const [getName_main_menu, setgetName_main_menu] = useState("");
@@ -108,14 +106,10 @@ const Filter_bar = () => {
   ];
 
   const onOpen_dropdown = (e) => {
-    for (let i = 0; i < menu_api.length; i++) {
-      const element = menu_api[i];
-      // console.log(element.name)
-    }
-    if(e.target.name !== getName_main_menu){
-      settoggle(true)
-    }else{
-
+    console.log(e.target.name);
+    if (e.target.name !== getName_main_menu) {
+      settoggle(true);
+    } else {
       settoggle(!toggle);
     }
     setgetName_main_menu(e.target.name);
@@ -123,18 +117,25 @@ const Filter_bar = () => {
   // console.log(getName_main_menu);
 
   const ShowDropDown = (props) => {
+    console.log(props.dataSub);
     if (props.dataSub.name === "Price range") {
       return (
         <div className="dropdown-content">
-          <Price_range_sub_menu/>
+          <Price_range_sub_menu />
         </div>
       );
     } else if (props.dataSub.name === "Bads") {
-      return(
+      return (
         <div className="dropdown-content">
-          <Bads_sub_menu/>
+          <Bads_sub_menu />
         </div>
-      )
+      );
+    } else if (props.dataSub === "but_fillter") {
+      return (
+        <div className="dropdown-content">
+          <Fillter_but_item/>
+        </div>
+      );
     } else {
       return (
         <div className="dropdown-content">
@@ -161,6 +162,7 @@ const Filter_bar = () => {
       );
     }
   };
+
   return (
     <Div className="jr_mb_close">
       <div style={{ alignItems: "center" }}>
@@ -203,13 +205,34 @@ const Filter_bar = () => {
         </div>
       ))}
 
-      <button id="fillter" className="but_primary_w">
-        <span className="hid_mb">Filters</span>
-        <SyncAltIcon
-          sx={{ verticalAlign: "middle", marginLeft: "5px" }}
-          color="primary"
-        />
-      </button>
+      <div className="dropdown_jr">
+        <button
+          name="but_fillter"
+          className="but_primary_w"
+          onClick={onOpen_dropdown}
+        >
+          {/* <span className="hid_mb" name="but_fillter" onClick={onOpen_dropdown}> */}
+            Filters
+          {/* </span> */}
+          <SyncAltIcon
+            sx={{ verticalAlign: "middle", marginLeft: "5px", zIndex: "0" }}
+            color="primary"
+            onClick={onOpen_dropdown}
+
+          />
+        </button>
+        <div>
+          {toggle && (
+            <div>
+              {getName_main_menu === "but_fillter" ? (
+                <ShowDropDown dataSub="but_fillter" />
+              ) : (
+                ""
+              )}
+            </div>
+          )}
+        </div>
+      </div>
       <button
         id="save_search"
         className="but_primary"
