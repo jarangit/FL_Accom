@@ -10,6 +10,7 @@ import {
 import { fontWeight, letterSpacing } from "@mui/system";
 
 const theme = createTheme({
+ 
   typography: {
     fontSize: 12,
     fontFamily: ["Montserrat", " sans-serif"].join(','),

@@ -98,14 +98,14 @@ p {
   position: absolute;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 2;
   min-width: 160px;
   text-align: left;
 }
 .dropdown-content h4 {
   display: block;
-  padding: 12px 16px;
+  /* padding: 12px 16px; */
   text-align: left;
   color: gray;
 }
@@ -114,9 +114,8 @@ p {
   display: block;
 } */
 
-#triggle:checked + .dropdown_jr:hover .dropdown-content{
+#triggle:checked + .dropdown_jr:hover .dropdown-content {
   display: block;
-
 }
 
 .jr_sky {
@@ -150,14 +149,33 @@ p {
   font-size: 12px;
 }
 
-
 @media only screen and (max-width: 600px) {
-  .jr_mb_close{
-   display: none;
+  .jr_mb_close {
+    display: none;
   }
 }
 
-.jr_underline_text{
+.jr_underline_text {
   border: 1px solid gray;
   border-style: none none solid none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
