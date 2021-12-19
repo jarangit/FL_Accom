@@ -10,7 +10,7 @@ import Contact_me_form from "../form/contact_me_form";
 const Footer = () => {
   return (
     <div style={{ background: "#002161", padding: "30px", color: "white" }}>
-      <Grid container spacing={2} >
+      <Grid container spacing={2}  className="jr_container">
         <Grid item xs={12} sm={8}>
           <Typography variant="h2" className="jr_sky">
             Send your message to AccomAsia agent
