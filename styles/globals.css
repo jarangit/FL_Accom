@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@450&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
 html,
 body {
   padding: 0;
@@ -168,15 +168,36 @@ p {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
+}
+
+.jr_select {
+  height: 35px;
+  background: white;
+  color: gray;
+  border-radius: 0.25rem;
+  padding: 6px 12px;
+  border-color: #ced4da;
+  font-size: 14px;
+}
+.jr_option {
+  color: black;
+  font-weight: small;
+  display: flex;
+  white-space: pre;
+  min-height: 20px;
+  padding: 0px 2px 1px;
+}
+.jr_fullWidth{
+  width: 100%;
 }

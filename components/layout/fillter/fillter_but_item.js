@@ -37,6 +37,8 @@ const Div = styled.div`
     border-color: #d8d8d8;
     padding: 8px;
     border-radius: 3px;
+    margin-left: -3px;
+
   }
 `;
 const Fillter_but_item = () => {
@@ -70,61 +72,62 @@ const Fillter_but_item = () => {
         </Typography>
         <button className="but_primary">Any+</button>
         <button className="but_primary_w">1+</button>
+        <button className="but_primary_w">1+</button>
+        <button className="but_primary_w">1+</button>
+        <button className="but_primary_w">1+</button>
+        <button className="but_primary_w">1+</button>
       </div>
 
       <div>
         <Typography variant="body1">
           <strong>Usable Area (Sq.M)</strong>
         </Typography>
-        <FormControl fullWidth>
-          <Select
-            value={age}
-            onChange={handleChange}
-            displayEmpty
-            inputProps={{ "aria-label": "Without label" }}
-          >
-            <MenuItem value="">No min</MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
+        <div>
+          <select className = "jr_select jr_fullWidth">
+            <option  className="jr_option" selected="">Minimun</option>
+            <option value="">฿ 3M</option>
+            <option value="">฿ 5M</option>
+            <option value="">฿ 8M</option>
+            <option value="">฿ 50M</option>
+            <option value="">฿ 10M</option>
+            <option value="">฿ 15M</option>
+            <option value="">฿ 20M</option>
+          </select>
+        </div>
       </div>
       <div>
         <Typography variant="body1">
           <strong>Land Size (Sq.W)</strong>
         </Typography>
-        <FormControl fullWidth>
-          <Select
-            value={age}
-            onChange={handleChange}
-            displayEmpty
-            inputProps={{ "aria-label": "Without label" }}
-          >
-            <MenuItem value="">No min</MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
+        <div>
+          <select className = "jr_select jr_fullWidth">
+            <option  className="jr_option" selected="">Minimun</option>
+            <option value="">฿ 3M</option>
+            <option value="">฿ 5M</option>
+            <option value="">฿ 8M</option>
+            <option value="">฿ 50M</option>
+            <option value="">฿ 10M</option>
+            <option value="">฿ 15M</option>
+            <option value="">฿ 20M</option>
+          </select>
+        </div>
       </div>
       <div>
         <Typography variant="body1">
           <strong>Transportation Radius (BTS/MRT)</strong>
         </Typography>
-        <FormControl fullWidth>
-          <Select
-            value={age}
-            onChange={handleChange}
-            displayEmpty
-            inputProps={{ "aria-label": "Without label" }}
-          >
-            <MenuItem value="">No min</MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-        </FormControl>
+        <div>
+          <select className = "jr_select jr_fullWidth">
+            <option  className="jr_option" selected="">Minimun</option>
+            <option value="">฿ 3M</option>
+            <option value="">฿ 5M</option>
+            <option value="">฿ 8M</option>
+            <option value="">฿ 50M</option>
+            <option value="">฿ 10M</option>
+            <option value="">฿ 15M</option>
+            <option value="">฿ 20M</option>
+          </select>
+        </div>
       </div>
 
       <div>

@@ -47,37 +47,27 @@ export default function Price_range_sub_menu() {
       >
         <div className="custom-select">
           <SelectSty>
-            <option value="0">Minimun</option>
-            <option value="1">Audi</option>
-            <option value="2">BMW</option>
-            <option value="3">Citroen</option>
-            <option value="4">Ford</option>
-            <option value="5">Honda</option>
-            <option value="6">Jaguar</option>
-            <option value="7">Land Rover</option>
-            <option value="8">Mercedes</option>
-            <option value="9">Mini</option>
-            <option value="10">Nissan</option>
-            <option value="11">Toyota</option>
-            <option value="12">Volvo</option>
+            <option selected="">Minimun</option>
+            <option value="">฿ 3M</option>
+            <option value="">฿ 5M</option>
+            <option value="">฿ 8M</option>
+            <option value="">฿ 50M</option>
+            <option value="">฿ 10M</option>
+            <option value="">฿ 15M</option>
+            <option value="">฿ 20M</option>
           </SelectSty>
         </div>
         <div>-</div>
         <div className="custom-select">
           <SelectSty>
-            <option value="0">Minimun</option>
-            <option value="1">Audi</option>
-            <option value="2">BMW</option>
-            <option value="3">Citroen</option>
-            <option value="4">Ford</option>
-            <option value="5">Honda</option>
-            <option value="6">Jaguar</option>
-            <option value="7">Land Rover</option>
-            <option value="8">Mercedes</option>
-            <option value="9">Mini</option>
-            <option value="10">Nissan</option>
-            <option value="11">Toyota</option>
-            <option value="12">Volvo</option>
+            <option selected="">Minimun</option>
+            <option value="">฿ 3M</option>
+            <option value="">฿ 5M</option>
+            <option value="">฿ 8M</option>
+            <option value="">฿ 50M</option>
+            <option value="">฿ 10M</option>
+            <option value="">฿ 15M</option>
+            <option value="">฿ 20M</option>
           </SelectSty>
         </div>
       </div>

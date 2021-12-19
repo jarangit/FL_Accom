@@ -7,7 +7,10 @@ const Div = styled.div`
     button {
       margin-left: -3px;
       border-radius:  0px 5px 5px 0px;
-      border-color: #464646;
+      border-color: #d8d8d8;
+    }
+    .but_primary{
+      border-radius: 3px;
     }
   }
 `;

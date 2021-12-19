@@ -39,7 +39,7 @@ const Div = styled.div`
     border-radius: 8px;
     border: 1px solid #d8d8d8;
     padding: 11px;
-    min-width: 300px;
+    min-width: 250px;
     margin: 0px;
   }
   .but_search {
