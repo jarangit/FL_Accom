@@ -46,7 +46,7 @@ const Contact_me_form = () => {
         variant="outlined"
       />
 
-      <div style={{ textAlign: "right" }}>
+      <div style={{ textAlign: "right", marginTop: "10px" }}>
         <button className="but_blue">Send massage</button>
       </div>
     </Div>

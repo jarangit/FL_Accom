@@ -14,11 +14,15 @@ import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import Pagination_jr from "../components/layout/pagination";
 export default function Home() {
   const label = { inputProps: { "aria-label": "Switch demo" } };
+  function GoToReadMore() {
+    window.scrollTo({
+      top: 5000,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <div>
-
-      <Filter_bar />
       <CustomSeparator />
       <div>
         <Typography variant="h1" className="jr_sky">
@@ -35,7 +39,7 @@ export default function Home() {
       </div>
 
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <button className="but_primary_w">
+        <button className="but_primary_w" onClick={GoToReadMore}>
           Learn more
           <ArrowDownwardIcon className="jr_icon" />
         </button>
@@ -45,6 +49,9 @@ export default function Home() {
         </div>
       </Stack>
 
+      <Product_item />
+      <Product_item />
+      <Product_item />
       <Product_item />
       <Nav_contact />
 

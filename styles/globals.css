@@ -52,8 +52,8 @@ p {
   display: inline-block;
   background-color: #65acf0;
   color: white;
-  max-height: 48px;
-  font-size: 2vh;
+  min-height: 48px;
+  /* font-size: 2vh; */
 }
 
 .jr_icon {

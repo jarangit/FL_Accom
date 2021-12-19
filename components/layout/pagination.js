@@ -2,13 +2,18 @@ import React from "react";
 import { Stack, Button } from "@mui/material";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
-
+import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 
 const Pagination_jr = () => {
+  function GotoTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
   return (
     <Stack direction="row" justifyContent="space-between" alignItems="center">
-      <button className="but_primary_w">
+      <button className="but_primary_w" onClick={GotoTop}>
         Back to top
         <ArrowUpwardOutlinedIcon className="jr_icon" />
       </button>

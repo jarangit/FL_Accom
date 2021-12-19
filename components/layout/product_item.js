@@ -19,15 +19,17 @@ const Product_item = () => {
         }}
       >
         <Grid item xs={12} sm={4} justifyContent="center">
-          <Card_image_product/>
+          <Card_image_product />
         </Grid>
         <Grid item xs={12} sm={6}>
           <Typography variant="h3" color="primary">
-            Property for sale in Bangkok, Thailand
+            <strong>Property for sale in Bangkok, Thailand</strong>
           </Typography>
           <Typography variant="h4">
-            4,200 properties available on Accomasia for sale in Bangkok,
-            Thailand
+            <strong>
+              4,200 properties available on Accomasia for sale in Bangkok,
+              Thailand
+            </strong>
           </Typography>
           <div className="jr_f12">
             <Typography variant="body1">

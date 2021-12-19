@@ -7,29 +7,43 @@ import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Contact_me_form from "../form/contact_me_form";
+
 const Footer = () => {
   return (
     <div style={{ background: "#002161", padding: "30px", color: "white" }}>
       <div className="jr_container">
-        <Grid container spacing={2} >
+        <Grid container spacing={2}>
           <Grid item xs={12} sm={8}>
-            <Typography variant="h2" className="jr_sky">
-              Send your message to AccomAsia agent
+            <Typography variant="h1" className="jr_sky">
+              <strong> Send your message to AccomAsia agent</strong>
             </Typography>
-            <Typography variant="h3">
+            <Typography variant="h2">
               Talk with our agent team, we’re here for you.
             </Typography>
             <Stack mt={4} mb={4} direction="column" spacing={2}>
               <div>
-                <EmailOutlinedIcon className="jr_icon" />{" "}
-                inquiry@accomasia.co.th
+                <p>
+                  <span style={{ marginRight: "10px" }}>
+                    <EmailOutlinedIcon className="jr_icon" />
+                  </span>
+                  inquiry@accomasia.co.th
+                </p>
               </div>
               <div>
-                <LocalPhoneOutlinedIcon className="jr_icon" />
-                (662) 367 5321
+                <p>
+                  <span style={{ marginRight: "10px" }}>
+                    <PhoneAndroidOutlinedIcon className="jr_icon" />
+                  </span>
+                  (662) 367 5321{" "}
+                </p>
               </div>
               <div>
-                <PhoneAndroidOutlinedIcon className="jr_icon" /> (668) 1422-1412
+                <p>
+                  <span style={{ marginRight: "10px" }}>
+                    <LocalPhoneOutlinedIcon className="jr_icon" />
+                  </span>
+                  (668) 1422-1412{" "}
+                </p>
               </div>
             </Stack>
 
@@ -43,7 +57,7 @@ const Footer = () => {
             </div>
 
             <Stack direction="row" spacing={2} mt={4} mb={4}>
-              <FacebookIcon fontSize="large" />
+              <YouTubeIcon fontSize="large" />
               <FacebookIcon fontSize="large" />
               <FacebookIcon fontSize="large" />
             </Stack>

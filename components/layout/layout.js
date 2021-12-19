@@ -13,6 +13,11 @@ const Layout = ({ children }) => {
     <div>
       <Menu />
       <div className="jr_container">
+        <Grid container spacing={2}>
+          <Grid item lg={8} md = {12}>
+            <Filter_bar />
+          </Grid>
+        </Grid>
         <Grid container columnSpacing={2}>
           <Grid item xs={12} sm={8}>
             {children}
