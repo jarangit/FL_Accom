@@ -39,7 +39,7 @@ const Div = styled.div`
     position: absolute;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 2;
     min-width: 160px;
     text-align: left;
@@ -99,7 +99,9 @@ const Menu = () => {
                 Rent
               </a>
               <div className="dropdown-content">
-                <Typography variant="h4">Bangkok, Thailand</Typography>
+                <Typography variant="h4">
+                  <strong>Bangkok, Thailand</strong>
+                </Typography>
                 <a href="#">House for rent in Bangkok</a>
                 <a href="#">House for rent in Bangkok</a>
                 <a href="#">House for rent in Bangkok</a>
@@ -111,7 +113,9 @@ const Menu = () => {
                 Buy
               </a>
               <div className="dropdown-content ">
-                <Typography variant="h4">Bangkok, Thailand</Typography>
+                <Typography variant="h4">
+                  <strong>Bangkok, Thailand</strong>
+                </Typography>{" "}
                 <a href="#">House for rent in Bangkok</a>
                 <a href="#">House for rent in Bangkok</a>
                 <a href="#">House for rent in Bangkok</a>
@@ -123,7 +127,9 @@ const Menu = () => {
                 Projects
               </a>
               <div className="dropdown-content">
-                <Typography variant="h4">Bangkok, Thailand</Typography>
+                <Typography variant="h4">
+                  <strong>Bangkok, Thailand</strong>
+                </Typography>{" "}
                 <a href="#">House for rent in Bangkok</a>
                 <a href="#">House for rent in Bangkok</a>
                 <a href="#">House for rent in Bangkok</a>
@@ -141,13 +147,28 @@ const Menu = () => {
             <a className="link_items" href="#">
               Guide
             </a>
-            <a className="link_items" href="#">
-              Agent partner
-            </a>
-            <a className="link_items" href="#">
-              Eng
-              <LanguageIcon sx={{ verticalAlign: "middle" }} />
-            </a>
+            <div className="dropdown link_items">
+              <a className="but_blue_menuP " href="#">
+                Agent parter
+              </a>
+              <div className="dropdown-content">
+                <Typography variant="h4">
+                  <strong>Rental management</strong>
+                </Typography>{" "}
+                <a href="#">List your property</a>
+              </div>
+            </div>
+
+            <div className="dropdown link_items">
+              <a className="link_items" href="#">
+                Eng
+                <LanguageIcon sx={{ verticalAlign: "middle" }} />
+              </a>
+              <div className="dropdown-content">
+                <a href="#">Eng</a>
+                <a href="#">TH</a>
+              </div>
+            </div>
             <button className="but_blue link_items">Sign in</button>
           </Stack>
         </div>

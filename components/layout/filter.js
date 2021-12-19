@@ -28,6 +28,8 @@ const Div = styled.div`
   align-items: center;
   flex-flow: wrap;
 
+
+
   .jr_icon {
     opacity: 0;
     transition: 0.5s;
@@ -35,11 +37,15 @@ const Div = styled.div`
   }
   .input_search {
     border-radius: 8px;
-    border: 2px solid #d8d8d8;
+    border: 1px solid #d8d8d8;
     padding: 11px;
+    min-width: 300px;
+    margin: 0px;
   }
   .but_search {
     /* font-size: 1.25rem; */
+    border: 1px solid #002161;
+
     border-radius: 8px;
     position: relative;
     left: -10px;
@@ -48,6 +54,7 @@ const Div = styled.div`
     background-color: #002161;
     color: white;
     width: auto;
+    padding-top: -5px;
   }
   .but_menu {
     padding: 11px;

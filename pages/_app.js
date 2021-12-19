@@ -14,16 +14,14 @@ const theme = createTheme({
   typography: {
     fontSize: 12,
     fontFamily: ["Montserrat", " sans-serif"].join(','),
-
+    fontWeight: 600,
     h1: {
       fontSize: 32,
-      fontWeight: "100px",
       marginTop: 5,
       marginBottom: 5,
     },
     h2: {
       fontSize: 24,
-      fontWeight: "100px",
       marginTop: 5,
       marginBottom: 5,
     },
