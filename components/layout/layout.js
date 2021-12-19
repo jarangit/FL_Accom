@@ -12,16 +12,18 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Menu />
-      <Grid container  columnSpacing={2}  className="jr_container">
-        <Grid item xs={12} sm={8} >
-          {children}
+      <div className="jr_container">
+        <Grid container columnSpacing={2}>
+          <Grid item xs={12} sm={8}>
+            {children}
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <History />
+            <Ultimate_guide />
+            <Properties_for_sale />
+          </Grid>
         </Grid>
-        <Grid item xs={12} sm={4}>
-          <History />
-          <Ultimate_guide/>
-          <Properties_for_sale/>
-        </Grid>
-      </Grid>
+      </div>
       <Footer />
     </div>
   );
