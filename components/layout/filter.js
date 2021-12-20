@@ -20,7 +20,8 @@ import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import Price_range_sub_menu from "./fillter/price_range_sub_menu";
 import Bads_sub_menu from "./fillter/bads_sub_menu";
 import Fillter_but_item from "./fillter/fillter_but_item";
-
+import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
+import Search_input from "./fillter/search_input";
 const Div = styled.div`
   margin: 15px 0;
   display: flex;
@@ -28,7 +29,17 @@ const Div = styled.div`
   align-items: center;
   flex-flow: wrap;
 
-
+  .jr_icon_inside_input {
+    position: absolute;
+    right: 65px;
+    top: 0;
+    font-size: 25px;
+    color: #d8d8d8;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   .jr_icon {
     opacity: 0;
@@ -140,7 +151,7 @@ const Filter_bar = () => {
     } else if (props.dataSub === "but_fillter") {
       return (
         <div className="dropdown-content">
-          <Fillter_but_item/>
+          <Fillter_but_item />
         </div>
       );
     } else {
@@ -172,16 +183,8 @@ const Filter_bar = () => {
 
   return (
     <Div className="jr_mb_close">
-      <div style={{ alignItems: "center" }}>
-        <input
-          className="input_search"
-          type="text"
-          autoComplete="off"
-          placeholder="Keyword"
-        />
-        <button className="but_search">
-          <SearchIcon sx={{ verticalAlign: "middle" }} />
-        </button>
+      <div>
+        <Search_input/>
       </div>
       {menu_api.map((items, key) => (
         <div className="dropdown_jr" key={key}>
@@ -219,13 +222,12 @@ const Filter_bar = () => {
           onClick={onOpen_dropdown}
         >
           {/* <span className="hid_mb" name="but_fillter" onClick={onOpen_dropdown}> */}
-            Filters
+          Filters
           {/* </span> */}
           <SyncAltIcon
             sx={{ verticalAlign: "middle", marginLeft: "5px", zIndex: "0" }}
             color="primary"
             onClick={onOpen_dropdown}
-
           />
         </button>
         <div>

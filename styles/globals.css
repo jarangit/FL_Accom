@@ -17,6 +17,9 @@ button,
 submit {
   border: none;
 }
+textarea:focus, input:focus{
+  outline: none;
+}
 li {
   list-style: none;
 }

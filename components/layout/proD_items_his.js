@@ -1,5 +1,11 @@
 import React, { Fragment } from "react";
 import { Grid } from "@mui/material";
+import styled from 'styled-components'
+
+const Div_image  = styled.div`
+  width: 100%;
+  
+`
 const ProD_items_his = () => {
   const fake_data = [
     {
@@ -34,12 +40,14 @@ const ProD_items_his = () => {
   return (
     <>
       {fake_data.map((items, key) => (
-        <Grid container spacing={2} key = {key}>
+        <Grid container spacing={2} key={key}>
           <Grid item xs={5} sm={5}>
-            <img
-              src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png"
-              width="100%"
-            />
+            <div>
+              <img
+                src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png"
+                width="100%"
+              />
+            </div>
           </Grid>
           <Grid item xs={7} sm={7}>
             <p>Langsuan ville</p>
