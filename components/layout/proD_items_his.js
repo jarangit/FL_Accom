@@ -5,15 +5,16 @@ import styled from "styled-components";
 const Div_image = styled.div`
   width: 100%;
   overflow: hidden;
-  border-radius: 10px;
-  margin: 2px 0;
+  border-radius: 5px;
+  margin: 5px 0;
   transition: transform .2s; /* Animation */
+  text-align: center;
   :hover {
     overflow: hidden;
 
     .image_thumb {
-      transform: scale(1.1);
-      transition: transform .2s; /* Animation */
+      transform: scale(1.09);
+      transition: transform .5s; /* Animation */
 
     }
   }

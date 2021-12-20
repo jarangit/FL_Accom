@@ -21,7 +21,7 @@ const Product_item = () => {
           <Card_image_product />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Grid container>
+          <Grid container rowGap={2}>
             <Grid item md={12} lg={8}>
               <Typography variant="h3" color="primary">
                 <strong>Property for sale in Bangkok, Thailand</strong>

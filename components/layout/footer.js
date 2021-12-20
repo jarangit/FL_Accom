@@ -7,10 +7,18 @@ import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Contact_me_form from "../form/contact_me_form";
+import styled from "styled-components";
 
+const Div = styled.div`
+  background: #002161;
+  padding: 30px;
+  color: white;
+  background-image: url("https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/1F095857-D1A6-4777-8096-822C23A94A11.png");
+  background-size: cover;
+`;
 const Footer = () => {
   return (
-    <div style={{ background: "#002161", padding: "30px", color: "white" }}>
+    <Div >
       <div className="jr_container">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={8}>
@@ -68,7 +76,7 @@ const Footer = () => {
         </Grid>
         <Copy_right />
       </div>
-    </div>
+    </Div>
   );
 };
 
