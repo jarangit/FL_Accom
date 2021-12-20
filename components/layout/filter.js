@@ -41,7 +41,7 @@ const Div = styled.div`
     justify-content: center;
   }
 
-  .jr_icon {
+  .jr_icon_dot {
     opacity: 0;
     transition: 0.5s;
     margin-right: 2px;
@@ -72,7 +72,7 @@ const Div = styled.div`
     background-color: white;
   }
   .but_menu:hover {
-    .jr_icon {
+    .jr_icon_dot {
       opacity: 1;
     }
 
@@ -193,7 +193,7 @@ const Filter_bar = () => {
             onClick={onOpen_dropdown}
           >
             <CircleIcon
-              className="jr_icon"
+              className="jr_icon_dot"
               sx={{
                 fontSize: "10px",
                 color: "#65acf0",
@@ -201,6 +201,7 @@ const Filter_bar = () => {
               }}
             />
             {items.name}
+            <img className="jr_icon" src = "https://i.ibb.co/NxhY2hK/arrow-close.png" width = "20px" />
           </button>
           {toggle && (
             <div>
@@ -220,14 +221,13 @@ const Filter_bar = () => {
           className="but_primary_w"
           onClick={onOpen_dropdown}
         >
-          {/* <span className="hid_mb" name="but_fillter" onClick={onOpen_dropdown}> */}
           Filters
-          {/* </span> */}
-          <SyncAltIcon
+          <img src = "https://i.ibb.co/bgk0qT9/icon-filter.png"  width="20" className="jr_icon" />
+          {/* <SyncAltIcon
             sx={{ verticalAlign: "middle", marginLeft: "5px", zIndex: "0" }}
             color="primary"
             onClick={onOpen_dropdown}
-          />
+          /> */}
         </button>
         <div>
           {toggle && (
@@ -249,6 +249,7 @@ const Filter_bar = () => {
         <FavoriteBorderIcon
           sx={{ verticalAlign: "middle", marginLeft: "5px" }}
         />
+        
       </button>
     </Div>
   );
