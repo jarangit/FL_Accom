@@ -18,7 +18,7 @@ const Div = styled.div`
 `;
 const Footer = () => {
   return (
-    <Div >
+    <Div>
       <div className="jr_container">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={8}>
@@ -67,7 +67,10 @@ const Footer = () => {
             <Stack direction="row" spacing={2} mt={4} mb={4}>
               <YouTubeIcon fontSize="large" />
               <FacebookIcon fontSize="large" />
-              <FacebookIcon fontSize="large" />
+              <img
+                src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/EA3365E2-4164-4014-BA64-A75404BED7EA.png"
+                width="30px"
+              />
             </Stack>
           </Grid>
           <Grid item xs={12} sm={4}>

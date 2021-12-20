@@ -16,7 +16,7 @@ const Div = styled.div`
 const Product_item = () => {
   return (
     <Div className="box_item">
-      <Grid container spacing={1} >
+      <Grid container spacing={1}>
         <Grid item xs={12} sm={4} justifyContent="center">
           <Card_image_product />
         </Grid>
@@ -43,16 +43,16 @@ const Product_item = () => {
                       items
                     </div>
                     <div>
-                      <AddLocationOutlinedIcon
+                      <img
                         className="jr_icon"
-                        color="primary"
+                        src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/9C68BA6B-F37A-45E9-9370-98E8B995ADCB.svg"
                       />
                       items
                     </div>
                     <div>
-                      <AddLocationOutlinedIcon
+                      <img
+                        src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/2DB963AF-B1E0-4E66-B52D-71E8CE7242C7.svg"
                         className="jr_icon"
-                        color="primary"
                       />
                       items
                     </div>
@@ -69,9 +69,10 @@ const Product_item = () => {
                   Lumphini, Pathumwan, Bangkok (Ploenchit)
                 </p>
                 <p className="jr_sky jr_f12">
-                  <AddLocationOutlinedIcon
+                  <img
+                    src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/7A82D8F6-BE22-4CB9-B911-8EA48BB04ABE.png"
                     className="jr_icon"
-                    color="primary"
+                    width="20px"
                   />
                   BTS Chitlom ( 500 M )
                 </p>

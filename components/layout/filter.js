@@ -68,7 +68,7 @@ const Div = styled.div`
     padding-top: -5px;
   }
   .but_menu {
-    padding: 11px;
+    padding: 10px 5px;
     background-color: white;
   }
   .but_menu:hover {
@@ -77,7 +77,6 @@ const Div = styled.div`
     }
 
     background-color: red;
-    padding: 11px;
     border-radius: 8px;
     background-color: rgba(101, 172, 240, 0.2);
     transition: 0.5s;
@@ -245,7 +244,6 @@ const Filter_bar = () => {
       <button
         id="save_search"
         className="but_primary"
-        style={{ minWidth: "140px" }}
       >
         Save Search
         <FavoriteBorderIcon
