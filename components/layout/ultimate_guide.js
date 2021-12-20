@@ -43,7 +43,7 @@ const Ultimate_guide = () => {
           </li>
         </ul>
       </div>
-      <img src ="https://i.ibb.co/vDZgq5K/banner-covid.jpg" width = "100%"/>
+      <img src="https://i.ibb.co/vDZgq5K/banner-covid.jpg" width="100%" />
     </Div>
   );
 };
