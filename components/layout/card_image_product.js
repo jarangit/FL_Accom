@@ -31,7 +31,7 @@ const Div = styled.div`
     background-color: rgb(0, 0, 0, 0.5);
     padding: 4px 6px;
   }
-  .but_blue {
+  .but_blue_jr {
     max-height: 20px;
     font-size: 1.5vh;
     padding: 2px 6px;
@@ -71,7 +71,7 @@ const Card_image_product = () => {
         </button>
       </div>
       <div className="bottom_left">
-        <button className="but_blue">
+        <button className="but_blue_jr">
           <span>Leangsua villa</span>
         </button>
       </div>
