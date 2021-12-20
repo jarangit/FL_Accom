@@ -36,25 +36,26 @@ const Product_item = () => {
                 <Typography variant="body1">
                   <Stack direction="row" spacing={1}>
                     <div>
-                      <AddLocationOutlinedIcon
+                      <img
+                        src="https://i.ibb.co/94FVT2C/size.png"
+                        width="20px"
                         className="jr_icon"
-                        color="primary"
                       />
-                      items
+                      491.96 SQ.M.
                     </div>
                     <div>
                       <img
                         className="jr_icon"
                         src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/9C68BA6B-F37A-45E9-9370-98E8B995ADCB.svg"
                       />
-                      items
+                      2 beds
                     </div>
                     <div>
                       <img
                         src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/2DB963AF-B1E0-4E66-B52D-71E8CE7242C7.svg"
                         className="jr_icon"
                       />
-                      items
+                      2 baths
                     </div>
                   </Stack>
                 </Typography>

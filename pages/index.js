@@ -55,6 +55,7 @@ export default function Home() {
       <Product_item />
       <Product_item />
       <Product_item />
+      <img src="https://i.ibb.co/d7RbVn4/discount-banner.jpg" width="100%" />
       <Product_item />
       <Nav_contact />
 
