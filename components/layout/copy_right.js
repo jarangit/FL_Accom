@@ -25,6 +25,9 @@ const Div = styled.div`
       background: #65acf0;
     }
   }
+  .img_logo_coppy{
+    display:none;
+  }
   @media (max-width: 375px) {
     .grid_1 {
       justify-content: center;
@@ -33,6 +36,7 @@ const Div = styled.div`
       display: none;
     }
     .img_logo_coppy {
+      display: block;
     }
   }
 `;
