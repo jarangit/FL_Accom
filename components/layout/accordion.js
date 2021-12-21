@@ -23,7 +23,9 @@ export default function Accordion_items() {
   console.log(open_readMore);
   return (
     <Div style={{ margin: "20px 0" }}>
-      <Typography variant="h2">Welcome To Bangkok, Thailand!</Typography>
+      <Typography variant="h2" color = "primary">
+        <strong>Welcome To Bangkok, Thailand!</strong>
+      </Typography>
       <div>
         <Typography variant="body1">
           {`
@@ -67,7 +69,7 @@ export default function Accordion_items() {
 
       {FakeData_Q_A.map((items, key) => (
         <Accordion
-        key = {key}
+          key={key}
           square={true}
           className="jr_accordion"
           sx={{

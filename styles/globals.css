@@ -45,7 +45,7 @@ p {
 }
 
 .jr_container {
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -152,11 +152,7 @@ p {
   font-size: 12px;
 }
 
-@media only screen and (max-width: 600px) {
-  .jr_mb_close {
-    display: none;
-  }
-}
+
 
 .jr_underline_text {
   border: 1px solid gray;

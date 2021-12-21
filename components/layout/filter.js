@@ -22,7 +22,8 @@ import Bads_sub_menu from "./fillter/bads_sub_menu";
 import Fillter_but_item from "./fillter/fillter_but_item";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import Search_input from "./fillter/search_input";
-const Div = styled.div`
+import Fillter_mb from "./fillter/fillter_mb";
+const Desk_fillter = styled.div`
   margin: 15px 0;
   display: flex;
   justify-content: space-between;
@@ -99,6 +100,15 @@ const Div = styled.div`
     }
   }
 `;
+
+const Div = styled.div`
+  .jr_mb_close{
+    display: none;
+  }
+  .jr_mb_open{
+    display: block;
+  }
+`
 
 const Filter_bar = () => {
   const [toggle, settoggle] = useState(false);
@@ -181,99 +191,97 @@ const Filter_bar = () => {
   };
 
   return (
-    <Div className="jr_mb_close">
-      <div>
-        <Search_input />
-      </div>
-      {menu_api.map((items, key) => (
-        <div className="dropdown_jr" key={key}>
+    <Div>
+      <Fillter_mb/>
+      <Desk_fillter className="jr_mb_close">
+        <div>
+          <Search_input />
+        </div>
+        {menu_api.map((items, key) => (
+          <div className="dropdown_jr" key={key}>
+            <button
+              name={items.name}
+              className="but_menu"
+              onClick={onOpen_dropdown}
+            >
+              <CircleIcon
+                className="jr_icon_dot"
+                sx={{
+                  fontSize: "10px",
+                  color: "#65acf0",
+                  verticalAlign: "middle",
+                }}
+              />
+              {items.name}
+
+              {toggle ? (
+                <span>
+                  {items.name === getName_main_menu ? (
+                    <img
+                      className="jr_icon"
+                      src="https://i.ibb.co/CK4mbLR/arrow-open.png"
+                      width="20px"
+                    />
+                  ) : (
+                    <img
+                      className="jr_icon"
+                      src="https://i.ibb.co/NxhY2hK/arrow-close.png"
+                      width="20px"
+                    />
+                  )}
+                </span>
+              ) : (
+                <img
+                  className="jr_icon"
+                  src="https://i.ibb.co/NxhY2hK/arrow-close.png"
+                  width="20px"
+                />
+              )}
+            </button>
+            {toggle && (
+              <div>
+                {items.name === getName_main_menu ? (
+                  <ShowDropDown dataSub={items} />
+                ) : (
+                  ""
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+
+        <div className="dropdown_jr" id="fillter_items">
           <button
-            name={items.name}
-            className="but_menu"
+            name="but_fillter"
+            className="but_primary_w"
             onClick={onOpen_dropdown}
           >
-            <CircleIcon
-              className="jr_icon_dot"
-              sx={{
-                fontSize: "10px",
-                color: "#65acf0",
-                verticalAlign: "middle",
-              }}
-            />
-            {items.name}
-
-            {toggle ? (
-              <span>
-                {items.name === getName_main_menu ? (
-                  <img
-                    className="jr_icon"
-                    src="https://i.ibb.co/CK4mbLR/arrow-open.png"
-                    width="20px"
-                  />
-                ) : (
-                  <img
-                    className="jr_icon"
-                    src="https://i.ibb.co/NxhY2hK/arrow-close.png"
-                    width="20px"
-                  />
-                )}
-              </span>
-            ):(
-              <img
+            Filters
+            <img
+              src="https://i.ibb.co/bgk0qT9/icon-filter.png"
+              width="20"
               className="jr_icon"
-              src="https://i.ibb.co/NxhY2hK/arrow-close.png"
-              width="20px"
             />
-            )}
           </button>
-          {toggle && (
-            <div>
-              {items.name === getName_main_menu ? (
-                <ShowDropDown dataSub={items} />
-              ) : (
-                ""
-              )}
-            </div>
-          )}
+          <div>
+            {toggle && (
+              <div>
+                {getName_main_menu === "but_fillter" ? (
+                  <ShowDropDown dataSub="but_fillter" />
+                ) : (
+                  ""
+                )}
+              </div>
+            )}
+          </div>
         </div>
-      ))}
-
-      <div className="dropdown_jr">
-        <button
-          name="but_fillter"
-          className="but_primary_w"
-          onClick={onOpen_dropdown}
-        >
-          Filters
-          <img
-            src="https://i.ibb.co/bgk0qT9/icon-filter.png"
-            width="20"
-            className="jr_icon"
+        <button id="save_search" className="but_primary">
+          Save Search
+          <FavoriteBorderIcon
+            sx={{ verticalAlign: "middle", marginLeft: "5px" }}
           />
-          {/* <SyncAltIcon
-            sx={{ verticalAlign: "middle", marginLeft: "5px", zIndex: "0" }}
-            color="primary"
-            onClick={onOpen_dropdown}
-          /> */}
         </button>
-        <div>
-          {toggle && (
-            <div>
-              {getName_main_menu === "but_fillter" ? (
-                <ShowDropDown dataSub="but_fillter" />
-              ) : (
-                ""
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-      <button id="save_search" className="but_primary">
-        Save Search
-        <FavoriteBorderIcon
-          sx={{ verticalAlign: "middle", marginLeft: "5px" }}
-        />
-      </button>
+      </Desk_fillter>
     </Div>
   );
 };

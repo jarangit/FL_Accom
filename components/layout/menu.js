@@ -47,6 +47,7 @@ const Div = styled.div`
 
     h4 {
       padding: 12px 16px;
+      color: black;
     }
     a {
       display: block;

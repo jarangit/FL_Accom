@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
+import { Typography } from "@mui/material";
 
 const Div = styled.div`
   .jr_icon_inside_input {
@@ -57,15 +58,18 @@ const Search_input = () => {
     setdataSearch(e.target.value);
   }
 
-  function ClearDataSearch(){
-      setdataSearch('')
+  function ClearDataSearch() {
+    setdataSearch("");
   }
   console.log(dataSearch);
   return (
     <Div>
       <div style={{ alignItems: "center", position: "relative" }}>
         {dataSearch != "" ? (
-          <CancelOutlinedIcon className="jr_icon_inside_input" onClick = {ClearDataSearch} />
+          <CancelOutlinedIcon
+            className="jr_icon_inside_input"
+            onClick={ClearDataSearch}
+          />
         ) : (
           ""
         )}
@@ -84,22 +88,37 @@ const Search_input = () => {
       {dataSearch != "" ? (
         <div className="dropdown_search">
           <div>
-            <h3 className="jr_underline_text" style={{ paddingBottom: "10px" }}>
+            <Typography
+              variant="h3"
+              color="primary"
+              className="jr_underline_text"
+              style={{ paddingBottom: "10px" }}
+            >
               <strong>Location</strong>
-            </h3>
-            <p style={{ textAlign: "center" }}>No Resulf</p>
+            </Typography>
+            <p style={{ textAlign: "center", margin: "15px" }}>No Resulf</p>
           </div>
           <div>
-            <h3 className="jr_underline_text" style={{ paddingBottom: "10px" }}>
+            <Typography
+              variant="h3"
+              color="primary"
+              className="jr_underline_text"
+              style={{ paddingBottom: "10px" }}
+            >
               <strong>Transportation</strong>
-            </h3>
-            <p style={{ textAlign: "center" }}>No Resulf</p>
+            </Typography>
+            <p style={{ textAlign: "center", margin: "15px" }}>No Resulf</p>
           </div>
           <div>
-            <h3 className="jr_underline_text" style={{ paddingBottom: "10px" }}>
+            <Typography
+              variant="h3"
+              color="primary"
+              className="jr_underline_text"
+              style={{ paddingBottom: "10px" }}
+            >
               <strong>Location</strong>
-            </h3>
-            <p style={{ textAlign: "center" }}>No Resulf</p>
+            </Typography>
+            <p style={{ textAlign: "center", margin: "15px" }}>No Resulf</p>
           </div>
         </div>
       ) : (
@@ -110,3 +129,4 @@ const Search_input = () => {
 };
 
 export default Search_input;
+Typography;
