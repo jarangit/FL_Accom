@@ -11,7 +11,7 @@ import styled from "styled-components";
 
 const Div = styled.div`
   background: #002161;
-  padding: 30px;
+  /* padding: 30px; */
   color: white;
   background-image: url("https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/1F095857-D1A6-4777-8096-822C23A94A11.png");
   background-size: cover;

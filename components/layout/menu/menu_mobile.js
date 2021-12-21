@@ -8,7 +8,7 @@ import { FakeData_menu_mb } from "../../fakeData/menu_mb";
 import LanguageIcon from "@mui/icons-material/Language";
 
 const Div = styled.div`
-  /* display: none; */
+  display: none;
   @media (max-width: 1024px) {
     display: block;
     .nav_grid {
