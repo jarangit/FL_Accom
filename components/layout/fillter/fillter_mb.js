@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import Search_input from "./search_input";
-import Fillter_but_item from "./fillter_but_item";
 import Fillter_items_md from "./fillter_items_md";
+import { AuthContext } from "../../../appState/authProviceder";
+
 const Div = styled.div`
   display: none;
   .but_primary_w {
@@ -15,17 +16,16 @@ const Div = styled.div`
   @media (max-width: 1024px) {
     display: flex;
     justify-content: space-between;
-
   }
 `;
 const Fillter_mb = () => {
   const [toggle_fillter, settoggle_fillter] = useState(false);
+  const { open_form_filter_mb, setopen_form_filter_mb } =
+    useContext(AuthContext);
 
-
-  
   return (
     <div>
-      {toggle_fillter === true ? <Fillter_items_md /> : ""}
+      {open_form_filter_mb === true ? <Fillter_items_md /> : ""}
 
       <Div>
         <div>
@@ -36,7 +36,7 @@ const Fillter_mb = () => {
           <button
             name="but_fillter"
             className="but_primary_w"
-            onClick={() => settoggle_fillter(!toggle_fillter)}
+            onClick={() => setopen_form_filter_mb(!open_form_filter_mb)}
           >
             <img
               src="https://i.ibb.co/bgk0qT9/icon-filter.png"

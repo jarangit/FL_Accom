@@ -5,7 +5,11 @@ import { FormControl, FormGroup, FormControlLabel } from "@mui/material";
 import { Checkbox } from "@mui/material";
 import From_checkBox_md from "./from_checkBox_md";
 import { AuthContext } from "../../../appState/authProviceder";
-
+import CloseIcon from "@mui/icons-material/Close";
+import Price_range_sub_menu from "./price_range_sub_menu";
+import Bads_sub_menu from "./bads_sub_menu";
+import Price_range_mb from "./MB/price_range_mb";
+import Beds_option_mb from "./MB/beds_option_mb";
 const Div = styled.div`
   position: fixed;
   background-color: white;
@@ -16,21 +20,27 @@ const Div = styled.div`
   height: 100vh;
   overflow: hidden;
   text-align: center;
+  justify-content: center;
   ul {
     padding: 0;
   }
   .main_ul {
     li {
-      margin: 20px 0;
+      margin: 25px 0;
     }
   }
-  .jr_icon {
+  .jr_icon_fillter {
     position: absolute;
     right: 0;
   }
 `;
 const Fillter_items_md = () => {
-  const { openFilter_mb, setopenFilter_mb } = useContext(AuthContext);
+  const {
+    openFilter_mb,
+    setopenFilter_mb,
+    open_form_filter_mb,
+    setopen_form_filter_mb,
+  } = useContext(AuthContext);
   const [get_name_sub, setget_name_sub] = useState("");
   console.log(openFilter_mb);
 
@@ -45,10 +55,27 @@ const Fillter_items_md = () => {
   };
 
   const ShowSubMenu = (props) => {
-    return <div> {props} </div>;
+    if (props.data.name === "Price") {
+      return <Price_range_mb/>
+    } else if (props.data.name === "Beds") {
+      return <Beds_option_mb/>
+    } else {
+      return <From_checkBox_md dataSub={props.data.options_menu} />;
+    }
   };
   return (
     <Div>
+      <div
+        style={{
+          position: "absolute",
+          left: "0",
+        }}
+      >
+        <CloseIcon
+          className="jr_icon"
+          onClick={() => setopen_form_filter_mb(!open_form_filter_mb)}
+        />
+      </div>
       <div className="header">
         <strong>Filters</strong>
       </div>
@@ -61,14 +88,14 @@ const Fillter_items_md = () => {
                 {items.name}
               </strong>
               <img
-                className="jr_icon"
+                className="jr_icon_fillter"
                 src="https://i.ibb.co/NxhY2hK/arrow-close.png"
                 width="20px"
               />
               {openFilter_mb && (
                 <>
                   {items.name === get_name_sub ? (
-                    <From_checkBox_md dataSub={items.options_menu} />
+                    <ShowSubMenu data={items} />
                   ) : (
                     ""
                   )}
