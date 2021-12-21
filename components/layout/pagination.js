@@ -3,7 +3,19 @@ import { Stack, Button } from "@mui/material";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
+import styled from "styled-components";
 
+const Div = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (max-width: 375px) {
+    .but_primary_w {
+      width: 100%;
+    }
+    justify-content: center;
+  }
+`;
 const Pagination_jr = () => {
   function GotoTop() {
     window.scrollTo({
@@ -12,7 +24,7 @@ const Pagination_jr = () => {
     });
   }
   return (
-    <Stack direction="row" justifyContent="space-between" alignItems="center">
+    <Div>
       <button className="but_primary_w" onClick={GotoTop}>
         Back to top
         <ArrowUpwardOutlinedIcon className="jr_icon" />
@@ -29,7 +41,7 @@ const Pagination_jr = () => {
           </Button>
         </Stack>
       </div>
-    </Stack>
+    </Div>
   );
 };
 
