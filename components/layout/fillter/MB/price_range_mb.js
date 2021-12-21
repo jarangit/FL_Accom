@@ -16,6 +16,7 @@ const SelectSty = styled.select`
   padding: 6px 12px;
   border-color: #ced4da;
   font-size: 14px;
+  min-width: 145px;
 
   option {
     color: black;

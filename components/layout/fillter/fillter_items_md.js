@@ -1,7 +1,12 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { FakeData_filter_menu_md } from "../../fakeData/filter_menu_md";
-import { FormControl, FormGroup, FormControlLabel } from "@mui/material";
+import {
+  FormControl,
+  FormGroup,
+  FormControlLabel,
+  Typography,
+} from "@mui/material";
 import { Checkbox } from "@mui/material";
 import From_checkBox_md from "./from_checkBox_md";
 import { AuthContext } from "../../../appState/authProviceder";
@@ -10,14 +15,16 @@ import Price_range_sub_menu from "./price_range_sub_menu";
 import Bads_sub_menu from "./bads_sub_menu";
 import Price_range_mb from "./MB/price_range_mb";
 import Beds_option_mb from "./MB/beds_option_mb";
-const Div = styled.div`
-  position: fixed;
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
+import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import Bathroom_section from "./MB/bathroom_section";
+const Section_menu = styled.div`
   background-color: white;
   position: relative;
   z-index: 1;
   transition: 0.5s;
   overflow: hidden;
-  height: 100vh;
+  /* height: 100vh; */
   overflow: hidden;
   text-align: center;
   justify-content: center;
@@ -33,6 +40,15 @@ const Div = styled.div`
     position: absolute;
     right: 0;
   }
+`;
+
+const Div = styled.div`
+  background-color: white;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+  overflow: hidden;
+  min-height: 100vh;
 `;
 const Fillter_items_md = () => {
   const {
@@ -56,60 +72,58 @@ const Fillter_items_md = () => {
 
   const ShowSubMenu = (props) => {
     if (props.data.name === "Price") {
-      return <Price_range_mb/>
+      return <Price_range_mb />;
     } else if (props.data.name === "Beds") {
-      return <Beds_option_mb/>
+      return <Beds_option_mb />;
     } else {
       return <From_checkBox_md dataSub={props.data.options_menu} />;
     }
   };
   return (
     <Div>
-      <div
-        style={{
-          position: "absolute",
-          left: "0",
-        }}
-      >
-        <CloseIcon
-          className="jr_icon"
-          onClick={() => setopen_form_filter_mb(!open_form_filter_mb)}
-        />
-      </div>
-      <div className="header">
-        <strong>Filters</strong>
-      </div>
+      <Section_menu>
+        <div
+          style={{
+            position: "absolute",
+            left: "0",
+          }}
+        >
+          <CloseIcon
+            className="jr_icon"
+            onClick={() => setopen_form_filter_mb(!open_form_filter_mb)}
+          />
+        </div>
+        <div className="header">
+          <strong>Filters</strong>
+        </div>
 
-      <div>
-        <ul className="main_ul">
-          {FakeData_filter_menu_md.map((items, key) => (
-            <li key={key}>
-              <strong id={items.name} onClick={onOpen_dropdown}>
-                {items.name}
-              </strong>
-              <img
-                className="jr_icon_fillter"
-                src="https://i.ibb.co/NxhY2hK/arrow-close.png"
-                width="20px"
-              />
-              {openFilter_mb && (
-                <>
-                  {items.name === get_name_sub ? (
-                    <ShowSubMenu data={items} />
-                  ) : (
-                    ""
-                  )}
-                </>
-              )}
-              {/* {openFilter_mb === true ? (
-                <From_checkBox_md dataSub={items.options_menu} />
-              ) : (
-                ""
-              )} */}
-            </li>
-          ))}
-        </ul>
-      </div>
+        <div>
+          <ul className="main_ul">
+            {FakeData_filter_menu_md.map((items, key) => (
+              <li key={key}>
+                <strong id={items.name} onClick={onOpen_dropdown}>
+                  {items.name}
+                </strong>
+                <img
+                  className="jr_icon_fillter"
+                  src="https://i.ibb.co/NxhY2hK/arrow-close.png"
+                  width="20px"
+                />
+                {openFilter_mb && (
+                  <>
+                    {items.name === get_name_sub ? (
+                      <ShowSubMenu data={items} />
+                    ) : (
+                      ""
+                    )}
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section_menu>
+      <Bathroom_section />
     </Div>
   );
 };
