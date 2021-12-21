@@ -18,6 +18,7 @@ const Div = styled.div`
     justify-content: right;
   }
   .but_back_to_top {
+    display: none;
     text-align: center;
     padding: 20px 0;
     color: #65acf0;
@@ -38,6 +39,9 @@ const Div = styled.div`
     .img_logo_coppy {
       display: block;
     }
+    .but_back_to_top {
+      display: block;
+    }
   }
 `;
 const Copy_right = () => {
@@ -54,7 +58,7 @@ const Copy_right = () => {
       style={{ border: "1px solid white", borderStyle: "solid none none none" }}
     >
       <Grid container>
-        <Grid items xs={12} sm={6} className="grid_1" alignItems="center">
+        <Grid item xs={12} sm={6} className="grid_1" alignItems="center">
           <img
             src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
             width="80"
@@ -66,7 +70,7 @@ const Copy_right = () => {
           <a href="#">Policy</a>
           <a href="#">Sitemap</a>
         </Grid>
-        <Grid items xs={12} sm={6} className="grid_2">
+        <Grid item xs={12} sm={6} className="grid_2">
           <img
             src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
             width="80"
