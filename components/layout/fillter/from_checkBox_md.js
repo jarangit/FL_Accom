@@ -6,6 +6,9 @@ const Div = styled.div`
     position: absolute;
     left: 0;
   }
+  .items{
+    margin: 10px 0;
+  }
 `;
 const From_checkBox_md = (props) => {
   const { openFilter_mb, setopenFilter_mb } = useContext(AuthContext);
@@ -14,7 +17,7 @@ const From_checkBox_md = (props) => {
       {props.dataSub && (
         <>
           {props.dataSub.map((items, key) => (
-            <div key={key}>
+            <div  className="items" key={key}>
               <input type="checkbox" className="checkBox_icon" />
               <span>{items}</span>
             </div>

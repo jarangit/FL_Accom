@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { FakeData_filter_menu_md } from "../../fakeData/filter_menu_md";
 import { FormControl, FormGroup, FormControlLabel } from "@mui/material";
@@ -21,7 +21,7 @@ const Div = styled.div`
   }
   .main_ul {
     li {
-      margin: 10px 0;
+      margin: 20px 0;
     }
   }
   .jr_icon {
@@ -31,15 +31,21 @@ const Div = styled.div`
 `;
 const Fillter_items_md = () => {
   const { openFilter_mb, setopenFilter_mb } = useContext(AuthContext);
+  const [get_name_sub, setget_name_sub] = useState("");
   console.log(openFilter_mb);
+
   const onOpen_dropdown = (e) => {
-    console.log(e.target.name);
-    if (e.target.name !== getName_main_menu) {
+    console.log(e.target.id);
+    if (e.target.id !== get_name_sub) {
       setopenFilter_mb(true);
     } else {
-      setopenFilter_mb(!toggle);
+      setopenFilter_mb(!openFilter_mb);
     }
-    setopenFilter_mb(e.target.name);
+    setget_name_sub(e.target.id);
+  };
+
+  const ShowSubMenu = (props) => {
+    return <div> {props} </div>;
   };
   return (
     <Div>
@@ -50,18 +56,29 @@ const Fillter_items_md = () => {
       <div>
         <ul className="main_ul">
           {FakeData_filter_menu_md.map((items, key) => (
-            <li key={key} onClick={() => setopenFilter_mb(!openFilter_mb)}>
-              <strong>{items.name}</strong>
+            <li key={key}>
+              <strong id={items.name} onClick={onOpen_dropdown}>
+                {items.name}
+              </strong>
               <img
                 className="jr_icon"
                 src="https://i.ibb.co/NxhY2hK/arrow-close.png"
                 width="20px"
               />
-              {openFilter_mb === true ? (
+              {openFilter_mb && (
+                <>
+                  {items.name === get_name_sub ? (
+                    <From_checkBox_md dataSub={items.options_menu} />
+                  ) : (
+                    ""
+                  )}
+                </>
+              )}
+              {/* {openFilter_mb === true ? (
                 <From_checkBox_md dataSub={items.options_menu} />
               ) : (
                 ""
-              )}
+              )} */}
             </li>
           ))}
         </ul>
