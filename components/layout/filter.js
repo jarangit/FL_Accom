@@ -183,7 +183,7 @@ const Filter_bar = () => {
   return (
     <Div className="jr_mb_close">
       <div>
-        <Search_input/>
+        <Search_input />
       </div>
       {menu_api.map((items, key) => (
         <div className="dropdown_jr" key={key}>
@@ -201,7 +201,30 @@ const Filter_bar = () => {
               }}
             />
             {items.name}
-            <img className="jr_icon" src = "https://i.ibb.co/NxhY2hK/arrow-close.png" width = "20px" />
+
+            {toggle ? (
+              <span>
+                {items.name === getName_main_menu ? (
+                  <img
+                    className="jr_icon"
+                    src="https://i.ibb.co/CK4mbLR/arrow-open.png"
+                    width="20px"
+                  />
+                ) : (
+                  <img
+                    className="jr_icon"
+                    src="https://i.ibb.co/NxhY2hK/arrow-close.png"
+                    width="20px"
+                  />
+                )}
+              </span>
+            ):(
+              <img
+              className="jr_icon"
+              src="https://i.ibb.co/NxhY2hK/arrow-close.png"
+              width="20px"
+            />
+            )}
           </button>
           {toggle && (
             <div>
@@ -222,7 +245,11 @@ const Filter_bar = () => {
           onClick={onOpen_dropdown}
         >
           Filters
-          <img src = "https://i.ibb.co/bgk0qT9/icon-filter.png"  width="20" className="jr_icon" />
+          <img
+            src="https://i.ibb.co/bgk0qT9/icon-filter.png"
+            width="20"
+            className="jr_icon"
+          />
           {/* <SyncAltIcon
             sx={{ verticalAlign: "middle", marginLeft: "5px", zIndex: "0" }}
             color="primary"
@@ -241,15 +268,11 @@ const Filter_bar = () => {
           )}
         </div>
       </div>
-      <button
-        id="save_search"
-        className="but_primary"
-      >
+      <button id="save_search" className="but_primary">
         Save Search
         <FavoriteBorderIcon
           sx={{ verticalAlign: "middle", marginLeft: "5px" }}
         />
-        
       </button>
     </Div>
   );

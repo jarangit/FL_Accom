@@ -7,13 +7,22 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
 import { Button } from "@mui/material";
 import { FakeData_Q_A } from "../fakeData/questions";
-import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
+import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
+import styled from "styled-components";
+
+const Div = styled.div`
+  .jr_accordion {
+    :hover {
+      box-shadow: rgba(155, 222, 255, 0.2) 0px 7px 29px 0px;
+    }
+  }
+`;
 export default function Accordion_items() {
   const [open_readMore, setopen_readMore] = useState(false);
 
   console.log(open_readMore);
   return (
-    <div style={{ margin: "20px 0" }}>
+    <Div style={{ margin: "20px 0" }}>
       <Typography variant="h2">Welcome To Bangkok, Thailand!</Typography>
       <div>
         <Typography variant="body1">
@@ -58,7 +67,9 @@ export default function Accordion_items() {
 
       {FakeData_Q_A.map((items, key) => (
         <Accordion
+        key = {key}
           square={true}
+          className="jr_accordion"
           sx={{
             border: "3px solid #65acf0",
             borderRadius: "8px",
@@ -73,12 +84,10 @@ export default function Accordion_items() {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <p>
-              {items.answer}
-            </p>
+            <p>{items.answer}</p>
           </AccordionDetails>
         </Accordion>
       ))}
-    </div>
+    </Div>
   );
 }
