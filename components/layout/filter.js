@@ -102,13 +102,16 @@ const Desk_fillter = styled.div`
 `;
 
 const Div = styled.div`
-  .jr_mb_close{
-    display: none;
+ 
+  @media (max-width: 1024px) {
+    .jr_mb_close {
+      display: none;
+    }
+    .jr_mb_open {
+      display: block;
+    }
   }
-  .jr_mb_open{
-    display: block;
-  }
-`
+`;
 
 const Filter_bar = () => {
   const [toggle, settoggle] = useState(false);
@@ -192,7 +195,7 @@ const Filter_bar = () => {
 
   return (
     <Div>
-      <Fillter_mb/>
+      <Fillter_mb className="jr_mb_open" />
       <Desk_fillter className="jr_mb_close">
         <div>
           <Search_input />
