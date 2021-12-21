@@ -67,7 +67,7 @@ const Div = styled.div`
     display: block;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     .dt_menu {
       display: none;
     }
