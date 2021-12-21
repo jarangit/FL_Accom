@@ -4,8 +4,7 @@ import Search_input from "./search_input";
 import Fillter_but_item from "./fillter_but_item";
 import Fillter_items_md from "./fillter_items_md";
 const Div = styled.div`
-      display: none;
-
+  display: none;
   .but_primary_w {
     padding: 10px 5px;
     margin: 0;
@@ -15,13 +14,18 @@ const Div = styled.div`
   }
   @media (max-width: 1024px) {
     display: flex;
+    justify-content: space-between;
+
   }
 `;
 const Fillter_mb = () => {
   const [toggle_fillter, settoggle_fillter] = useState(false);
+
+
+  
   return (
     <div>
-              {toggle_fillter === true ? <Fillter_items_md /> : ""}
+      {toggle_fillter === true ? <Fillter_items_md /> : ""}
 
       <Div>
         <div>

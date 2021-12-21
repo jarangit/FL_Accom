@@ -58,7 +58,7 @@ const Menu_mobile = () => {
   return (
     <Div style={{ paddingLeft: "16px" }}>
       <Grid container className="nav_grid">
-        <Grid item xs={2}>
+        <Grid item xs={2} sx = {{ textAlign: "left" }} >
           {open_md_menu === true ? (
             <CloseIcon
               fontSize="large"
@@ -67,7 +67,6 @@ const Menu_mobile = () => {
             />
           ) : (
             <MenuIcon
-              style={{ transition: "1s" }}
               fontSize="large"
               color="primary"
               onClick={() => setopen_md_menu(!open_md_menu)}

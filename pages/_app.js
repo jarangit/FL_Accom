@@ -8,12 +8,11 @@ import {
   Typography,
 } from "@mui/material";
 import { fontWeight, letterSpacing } from "@mui/system";
-
+import AuthProvider from "../appState/authProviceder";
 const theme = createTheme({
- 
   typography: {
     fontSize: 12,
-    fontFamily: ["Montserrat", " sans-serif"].join(','),
+    fontFamily: ["Montserrat", " sans-serif"].join(","),
     fontWeight: 600,
     h1: {
       fontSize: 32,
@@ -25,12 +24,12 @@ const theme = createTheme({
       marginTop: 5,
       marginBottom: 5,
     },
-    h3:{
+    h3: {
       fontSize: 18,
       marginTop: 5,
       marginBottom: 5,
     },
-    h4:{
+    h4: {
       fontSize: 16,
       marginTop: 5,
       marginBottom: 5,
@@ -50,13 +49,17 @@ const theme = createTheme({
 });
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <div>
-          <Component {...pageProps} />
-        </div>
-      </Layout>
-    </ThemeProvider>
+    // <ApolloProvider client={apollo}>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <div>
+              <Component {...pageProps} />
+            </div>
+          </Layout>
+        </ThemeProvider>
+      </AuthProvider>
+    // </ApolloProvider>
   );
 }
 
