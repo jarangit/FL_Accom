@@ -15,6 +15,7 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor:pointer;
   }
 
   .input_search {
@@ -23,11 +24,9 @@ const Div = styled.div`
     padding: 11px;
     /* min-width: 250px; */
     margin: 0px;
+    width: 70%;
   }
   .but_search {
-    /* font-size: 1.25rem; */
-    border: 1px solid #002161;
-
     border-radius: 8px;
     position: relative;
     left: -10px;
@@ -37,6 +36,9 @@ const Div = styled.div`
     color: white;
     width: auto;
     padding-top: -5px;
+    :hover {
+      background-color: #4b72c0;
+    }
   }
   .dropdown_search {
     display: block;
@@ -50,8 +52,24 @@ const Div = styled.div`
     /* min-width: 160px; */
     text-align: left;
   }
-  
 
+  .jr_but_underLine_text {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #002161;
+    font-size: 18px;
+    color: #002161;
+  }
+  .items_keyword {
+    font-size: 14px;
+    display: block;
+    margin: 15px 0;
+    :hover {
+      color: #65acf0;
+      span {
+        color: #65acf0;
+      }
+    }
+  }
 `;
 const Search_input = () => {
   const [dataSearch, setdataSearch] = useState("");
@@ -84,43 +102,153 @@ const Search_input = () => {
           onChange={OnInputSearchChange}
         />
         <button className="but_search">
-          <SearchIcon sx={{ verticalAlign: "middle" }} />
+          <SearchIcon sx={{ verticalAlign: "middle", }} />
         </button>
       </form>
       {dataSearch != "" ? (
         <div className="dropdown_search">
           <div>
-            <Typography
-              variant="h3"
-              color="primary"
-              className="jr_underline_text"
-              style={{ paddingBottom: "10px" }}
-            >
-              <strong>Location</strong>
-            </Typography>
-            <p style={{ textAlign: "center", margin: "15px" }}>No Resulf</p>
+            <strong className="jr_but_underLine_text">Location</strong>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/HHFDHrR/location.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/HHFDHrR/location.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/HHFDHrR/location.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/HHFDHrR/location.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
           </div>
+
           <div>
-            <Typography
-              variant="h3"
-              color="primary"
-              className="jr_underline_text"
-              style={{ paddingBottom: "10px" }}
-            >
-              <strong>Transportation</strong>
-            </Typography>
-            <p style={{ textAlign: "center", margin: "15px" }}>No Resulf</p>
+            <strong className="jr_but_underLine_text">Transportation</strong>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/xMzRyCL/transportation.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/xMzRyCL/transportation.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/xMzRyCL/transportation.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/xMzRyCL/transportation.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
           </div>
+
           <div>
-            <Typography
-              variant="h3"
-              color="primary"
-              className="jr_underline_text"
-              style={{ paddingBottom: "10px" }}
-            >
-              <strong>Location</strong>
-            </Typography>
-            <p style={{ textAlign: "center", margin: "15px" }}>No Resulf</p>
+            <strong className="jr_but_underLine_text">Project building</strong>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/2MSKkxQ/building.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/2MSKkxQ/building.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/2MSKkxQ/building.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/2MSKkxQ/building.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+          </div>
+
+          <div>
+            <strong className="jr_but_underLine_text">School</strong>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/HD4nZTK/school.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/HD4nZTK/school.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/HD4nZTK/school.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
+            <a href="#" className="items_keyword jr_color_gray">
+              <img
+                src="https://i.ibb.co/HD4nZTK/school.png"
+                className="jr_icon"
+              />
+              <span className="jr_color_primary">Keyword </span>
+              no-keyword
+            </a>
           </div>
         </div>
       ) : (
