@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Sarabun:wght@300&display=swap');
+
+
+
+
+
 html,
 body {
   padding: 0;
@@ -22,6 +27,10 @@ textarea:focus, input:focus{
 }
 li {
   list-style: none;
+}
+hr{
+  border-top: 1px solid #F9F9F9;
+
 }
 a {
   font-family: "Montserrat", sans-serif;

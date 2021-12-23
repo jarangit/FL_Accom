@@ -21,7 +21,7 @@ const Div = styled.div`
     border-radius: 8px;
     border: 1px solid #d8d8d8;
     padding: 11px;
-    min-width: 250px;
+    /* min-width: 250px; */
     margin: 0px;
   }
   .but_search {
@@ -50,6 +50,8 @@ const Div = styled.div`
     /* min-width: 160px; */
     text-align: left;
   }
+  
+
 `;
 const Search_input = () => {
   const [dataSearch, setdataSearch] = useState("");
@@ -64,7 +66,7 @@ const Search_input = () => {
   console.log(dataSearch);
   return (
     <Div>
-      <div style={{ alignItems: "center", position: "relative" }}>
+      <form style={{ alignItems: "center", position: "relative" }}>
         {dataSearch != "" ? (
           <CancelOutlinedIcon
             className="jr_icon_inside_input"
@@ -84,7 +86,7 @@ const Search_input = () => {
         <button className="but_search">
           <SearchIcon sx={{ verticalAlign: "middle" }} />
         </button>
-      </div>
+      </form>
       {dataSearch != "" ? (
         <div className="dropdown_search">
           <div>

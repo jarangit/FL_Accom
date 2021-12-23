@@ -13,6 +13,7 @@ import styled from "styled-components";
 import LanguageIcon from "@mui/icons-material/Language";
 import Menu_mobile from "./menu/menu_mobile";
 import Fillter_mb from "./fillter/fillter_mb";
+import { FakeData_menu_pc } from "../fakeData/menu_pc";
 
 const Div = styled.div`
   background-color: #f9f9f9;
@@ -23,12 +24,12 @@ const Div = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  a {
+  .sub_menu{
     padding: 8px 15px;
     border-radius: 5px;
     display: inline-block;
   }
-  a:hover,
+  .sub_menu:hover,
   .dropdown:hover .but_blue_menuP {
     background-color: #65acf0;
     transition: 0.51s;
@@ -91,52 +92,30 @@ const Menu = () => {
             justifyContent="space-between"
             alignItems="center"
           >
-            <img
-              src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
-              width="80"
-            />
-            <div id="link_items" className="dropdown link_items">
-              <a className="but_blue_menuP " href="#">
-                Rent
-              </a>
-              <div className="dropdown-content">
-                <Typography variant="h4">
-                  <strong>Bangkok, Thailand</strong>
-                </Typography>
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
+            <a href="https://www.accomasia.co.th/">
+              <img
+                src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
+                width="80"
+              />
+            </a>
+            {FakeData_menu_pc.map((items, key) => (
+              <div id="link_items" className="dropdown link_items" key = {key}>
+                <a className="but_blue_menuP sub_menu " href="#">
+                  {items.name}
+                </a>
+                <div className="dropdown-content">
+                  <Typography variant="h4">
+                    <strong>{items.head}</strong>
+                  </Typography>
+
+                  {items.sub_item.map((sub_items, key) => (
+                    <a href={sub_items.url} key = {key}>
+                      {sub_items.sub_name}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="dropdown link_items">
-              <a className="but_blue_menuP " href="#">
-                Buy
-              </a>
-              <div className="dropdown-content ">
-                <Typography variant="h4">
-                  <strong>Bangkok, Thailand</strong>
-                </Typography>{" "}
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
-              </div>
-            </div>
-            <div className="dropdown link_items">
-              <a className="but_blue_menuP " href="#">
-                Projects
-              </a>
-              <div className="dropdown-content">
-                <Typography variant="h4">
-                  <strong>Bangkok, Thailand</strong>
-                </Typography>{" "}
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
-                <a href="#">House for rent in Bangkok</a>
-              </div>
-            </div>
+            ))}
           </Stack>
           <Stack
             direction={{ xs: "column", sm: "row" }}
@@ -145,11 +124,11 @@ const Menu = () => {
             alignItems="center"
             textAlign="right"
           >
-            <a className="link_items" href="#">
+            <a className="link_items sub_menu" href="#">
               Guide
             </a>
             <div className="dropdown link_items">
-              <a className="but_blue_menuP " href="#">
+              <a className="but_blue_menuP sub_menu" href="#">
                 Agent parter
               </a>
               <div className="dropdown-content">
@@ -157,11 +136,15 @@ const Menu = () => {
                   <strong>Rental management</strong>
                 </Typography>{" "}
                 <a href="#">List your property</a>
+                <a href="#">My listings</a>
+                <a href="#">Add new project</a>
+                <hr/>
+                <a href="">Log in</a>
               </div>
             </div>
 
             <div className="dropdown link_items">
-              <a className="link_items" href="#">
+              <a className="link_items sub_menu" href="#">
                 Eng
                 <LanguageIcon sx={{ verticalAlign: "middle" }} />
               </a>
@@ -170,7 +153,9 @@ const Menu = () => {
                 <a href="#">TH</a>
               </div>
             </div>
-            <button className="but_blue link_items">Sign in</button>
+            <Button variant="contained" sx = {{ background: "#65ACF0" ,}} >
+            Sign in
+            </Button>
           </Stack>
         </div>
       </Div>

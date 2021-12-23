@@ -38,12 +38,17 @@ const theme = createTheme({
       lineHeight: 2,
       // fontSize: "16px",
     },
+    button: {
+      textTransform: 'none',
+      fontSize: "16px"
+
+    }
   },
   palette: {
     primary: {
       main: "#002161",
-      light: "#757ce8",
-      dark: "#002884",
+      // light: "#757ce8",
+      // dark: "#002884",
     },
   },
 });

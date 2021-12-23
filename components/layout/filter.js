@@ -108,7 +108,7 @@ const Div = styled.div`
       display: none;
     }
     .jr_mb_open {
-      display: block;
+      display: none;
     }
   }
 `;
