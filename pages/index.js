@@ -26,13 +26,12 @@ export default function Home() {
       <CustomSeparator />
       <div>
         <Typography variant="h1" className="jr_sky jr_blod">
-           Property for sale in Bangkok, Thailand
+          Property for sale in Bangkok, Thailand
         </Typography>
         <Typography variant="h2">
-            4,200 properties available on Accomasia
-            Thailand
+          4,200 properties available on Accomasia Thailand
         </Typography>
-        <p >
+        <p>
           Explore 3,134 properties for sale in Bangkok. View 360 , full details.
           Update new properties. Talk and tour properties with our expert agents
           / AccomAsia team
@@ -53,7 +52,9 @@ export default function Home() {
       <Product_item />
       <Product_item />
       <Product_item />
-      <img src="https://i.ibb.co/d7RbVn4/discount-banner.jpg" width="100%" />
+      <a href="#">
+        <img src="https://i.ibb.co/d7RbVn4/discount-banner.jpg" width="100%" />
+      </a>
       <Product_item />
       <Nav_contact />
 

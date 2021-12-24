@@ -11,6 +11,7 @@ body {
   --color_primary: #002161;
   --color_blue: #65acf0;
   --color_gray: #979797;
+  --color_light_blue: #9bdeff;
 }
 
 input,
@@ -225,7 +226,7 @@ p {
 .jr_hover_blue {
 }
 .jr_hover_blue:hover {
-  color: var(--color_blue);
+  color: var(--color_light_blue);
 }
 .jr_but_underLine_text {
   padding-bottom: 10px;

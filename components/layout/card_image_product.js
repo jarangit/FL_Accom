@@ -3,19 +3,33 @@ import styled from "styled-components";
 import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
 const Div = styled.div`
   position: relative;
-
-  .img_thumb {
-    transition: 0.5s;
-    :hover {
-      opacity: 0.9;
-      background: linear-gradient(transparent, black);
-    }
-  }
   :hover {
     .centered {
       display: block;
+      transition: 0.5s;
     }
   }
+
+  .img_thumb {
+    :hover:before {
+      opacity: 1;
+      transition: 0.5s;
+    }
+  }
+
+  .img_thumb:before {
+    content: "";
+    border-radius: 8px;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    opacity: 0;
+    transition: height 0.5s ease-out;
+    background: linear-gradient(to bottom, transparent 0%, black 100%);
+  }
+
   .bottom_left {
     position: absolute;
     bottom: 12px;
@@ -60,11 +74,12 @@ const Div = styled.div`
 const Card_image_product = () => {
   return (
     <Div>
-      <img
-        src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png"
-        width="100%"
-        className="img_thumb"
-      />
+      <div className="img_thumb">
+        <img
+          src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png"
+          width="100%"
+        />
+      </div>
       <div className="centered">
         <button className="button_center">
           <p>View popperty</p>

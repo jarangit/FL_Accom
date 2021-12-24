@@ -19,9 +19,9 @@ const Div = styled.div`
     border-left: 1px solid #d8d8d8;
     padding-left: 7px;
     min-height: 150px;
-    .bg_blue{
-      background:#9bdeff;
-      padding: 8px; 
+    .bg_blue {
+      background: #9bdeff;
+      padding: 8px;
     }
   }
 
@@ -84,22 +84,26 @@ const Product_item = () => {
               </div>
 
               <div>
-                <p className="jr_sky jr_f14">
-                  <img
-                    src="https://i.ibb.co/HHFDHrR/location.png"
-                    className="jr_icon"
-                    width="20px"
-                  />
-                  Lumphini, Pathumwan, Bangkok (Ploenchit)
-                </p>
-                <p className="jr_sky jr_f14">
-                  <img
-                    src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/7A82D8F6-BE22-4CB9-B911-8EA48BB04ABE.png"
-                    className="jr_icon"
-                    width="20px"
-                  />
-                  BTS Chitlom ( 500 M )
-                </p>
+                <a href="#">
+                  <p className="jr_sky jr_f14 jr_hover_blue">
+                    <img
+                      src="https://i.ibb.co/HHFDHrR/location.png"
+                      className="jr_icon"
+                      width="20px"
+                    />
+                    Lumphini, Pathumwan, Bangkok (Ploenchit)
+                  </p>
+                </a>
+                <a href="#">
+                  <p className="jr_sky jr_f14 jr_hover_blue">
+                    <img
+                      src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/7A82D8F6-BE22-4CB9-B911-8EA48BB04ABE.png"
+                      className="jr_icon"
+                      width="20px"
+                    />
+                    BTS Chitlom ( 500 M )
+                  </p>
+                </a>
               </div>
 
               <Typography variant="body2">
@@ -123,13 +127,13 @@ const Product_item = () => {
               <div className="grid_price">
                 <div>
                   <button className="bg_blue jr_blod jr_f14">For sale</button>
-                  <p className="jr_blod jr_f16">70,000</p>
+                  <p className="jr_blod jr_f16">฿ 77,000,000</p>
                 </div>
                 <div>
-                <button className="bg_blue jr_blod jr_f14">For sale</button>
-                  <p className="jr_blod jr_f16">70,000</p>
+                  <button className="bg_blue jr_blod jr_f14">For sale</button>
+                  <p className="jr_blod jr_f16">฿ 77,000,000</p>
                 </div>
-                <p>Code: AA20487</p>
+                <p className="jr_f14">Code: AA20487</p>
               </div>
             </Grid>
           </Grid>
