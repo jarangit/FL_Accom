@@ -7,6 +7,7 @@ import React, { useState } from "react";
 import { Typography } from "@mui/material";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import styled from "styled-components";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const SelectSty = styled.select`
   height: 35px;
@@ -16,14 +17,17 @@ const SelectSty = styled.select`
   padding: 6px 12px;
   border-color: #ced4da;
   font-size: 14px;
-
   option {
-    color: black;
+    color: #002161;
+    :hover {
+      color: #65acf0;
+    }
     font-weight: small;
     display: flex;
     white-space: pre;
     min-height: 20px;
-    padding: 0px 2px 1px;
+    padding: 10px;
+    margin: 10px;
   }
 `;
 export default function Price_range_sub_menu() {
@@ -48,6 +52,7 @@ export default function Price_range_sub_menu() {
         <div className="custom-select">
           <SelectSty>
             <option selected="">Minimun</option>
+            <option value="">No min</option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>
             <option value="">฿ 8M</option>
@@ -57,7 +62,7 @@ export default function Price_range_sub_menu() {
             <option value="">฿ 20M</option>
           </SelectSty>
         </div>
-        <div>-</div>
+        <RemoveIcon sx={{ color: "#ced4da" }} className="jr_icon" />
         <div className="custom-select">
           <SelectSty>
             <option selected="">Minimun</option>

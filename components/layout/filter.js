@@ -9,6 +9,9 @@ import {
   FormGroup,
   Checkbox,
   FormControlLabel,
+  FormControl,
+  FormLabel,
+  RadioGroup,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { height } from "@mui/system";
@@ -23,6 +26,9 @@ import Fillter_but_item from "./fillter/fillter_but_item";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import Search_input from "./fillter/search_input";
 import Fillter_mb from "./fillter/fillter_mb";
+import Radio from "@mui/material/Radio";
+import Property_sub_menu from "./fillter/property_sub_menu";
+
 const Desk_fillter = styled.div`
   margin: 15px 0;
   display: flex;
@@ -102,7 +108,6 @@ const Desk_fillter = styled.div`
 `;
 
 const Div = styled.div`
- 
   @media (max-width: 1024px) {
     .jr_mb_close {
       display: none;
@@ -119,18 +124,22 @@ const Filter_bar = () => {
   const menu_api = [
     {
       name: "Rent",
+      head: "Select Your Purpose",
       sub_menu: ["Rent", "Sale"],
     },
     {
       name: "Property type",
+      head: "Property Type",
       sub_menu: ["Condominium", "Apartment", "House"],
     },
     {
       name: "Price range",
+      head: "",
       sub_menu: "",
     },
     {
       name: "Bads",
+      head: "",
       sub_menu: "",
     },
   ];
@@ -166,28 +175,33 @@ const Filter_bar = () => {
           <Fillter_but_item />
         </div>
       );
+    } else if (props.dataSub.name === "Property type") {
+      return (
+        <div>
+          <Property_sub_menu dataCheckBox = {props.dataSub} headText = {props.headText}/>
+        </div>
+      );
     } else {
       return (
         <div className="dropdown-content">
-          <Typography variant="h4">Bangkok, Thailand</Typography>
-          <FormGroup>
-            {props.dataSub && (
-              <>
-                {props.dataSub.sub_menu.map((sub_items, key) => (
-                  <FormControlLabel
-                    key={key}
-                    control={
-                      <Checkbox
-                        icon={<CircleOutlinedIcon />}
-                        checkedIcon={<CircleIcon />}
-                      />
-                    }
-                    label={sub_items}
-                  />
-                ))}
-              </>
-            )}
-          </FormGroup>
+          <p className="jr_but_underLine_text jr_f16">{props.headText}</p>
+          <FormControl component="fieldset">
+            <RadioGroup aria-label="gender" name="radio-buttons-group">
+              {props.dataSub && (
+                <>
+                  {props.dataSub.sub_menu.map((sub_items, key) => (
+                    <FormControlLabel
+                      className="jr_hover_blue"
+                      key ={key}
+                      value={sub_items}
+                      control={<Radio name={sub_items} />}
+                      label={sub_items}
+                    />
+                  ))}
+                </>
+              )}
+            </RadioGroup>
+          </FormControl>
         </div>
       );
     }
@@ -244,7 +258,7 @@ const Filter_bar = () => {
             {toggle && (
               <div>
                 {items.name === getName_main_menu ? (
-                  <ShowDropDown dataSub={items} />
+                  <ShowDropDown dataSub={items} headText={items.head} />
                 ) : (
                   ""
                 )}

@@ -53,12 +53,7 @@ const Div = styled.div`
     text-align: left;
   }
 
-  .jr_but_underLine_text {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #002161;
-    font-size: 18px;
-    color: #002161;
-  }
+  
   .items_keyword {
     font-size: 14px;
     display: block;
@@ -108,7 +103,7 @@ const Search_input = () => {
       {dataSearch != "" ? (
         <div className="dropdown_search">
           <div>
-            <strong className="jr_but_underLine_text">Location</strong>
+            <strong className="jr_but_underLine_text jr_f18">Location</strong>
             <a href="#" className="items_keyword jr_color_gray">
               <img
                 src="https://i.ibb.co/HHFDHrR/location.png"
@@ -144,7 +139,7 @@ const Search_input = () => {
           </div>
 
           <div>
-            <strong className="jr_but_underLine_text">Transportation</strong>
+            <strong className="jr_but_underLine_text jr_f18">Transportation</strong>
             <a href="#" className="items_keyword jr_color_gray">
               <img
                 src="https://i.ibb.co/xMzRyCL/transportation.png"
@@ -180,7 +175,7 @@ const Search_input = () => {
           </div>
 
           <div>
-            <strong className="jr_but_underLine_text">Project building</strong>
+            <strong className="jr_but_underLine_text jr_f18">Project building</strong>
             <a href="#" className="items_keyword jr_color_gray">
               <img
                 src="https://i.ibb.co/2MSKkxQ/building.png"
@@ -216,7 +211,7 @@ const Search_input = () => {
           </div>
 
           <div>
-            <strong className="jr_but_underLine_text">School</strong>
+            <strong className="jr_but_underLine_text jr_f18">School</strong>
             <a href="#" className="items_keyword jr_color_gray">
               <img
                 src="https://i.ibb.co/HD4nZTK/school.png"

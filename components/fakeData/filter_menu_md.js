@@ -1,12 +1,12 @@
 export const FakeData_filter_menu_md = [
   {
     name: "Rent",
-    header: "Select Your Purpose",
+    head: "Select Your Purpose",
     options_menu: ["Rent", "Sale"],
   },
   {
     name: "Property type",
-    header: "",
+    head: "Property Type",
     options_menu: [
       "All property",
       "Condominium",
@@ -18,12 +18,12 @@ export const FakeData_filter_menu_md = [
   },
   {
     name: "Price",
-    header: "Price Range",
+    head: "Price Range",
     options_menu: [],
   },
   {
     name: "Beds",
-    header: "Beds",
+    head: "Beds",
     options_menu: [],
   },
   {
@@ -39,7 +39,7 @@ export const FakeData_filter_menu_md = [
   },
   {
     name: "Amenties",
-    header: "",
+    head: "",
     options_menu: [
       "Air condition",
       "Bathtub",
@@ -50,7 +50,7 @@ export const FakeData_filter_menu_md = [
   },
   {
     name: "Facilities",
-    header: "",
+    head: "",
     options_menu: [
       "Aerobics room",
       "Badminton",

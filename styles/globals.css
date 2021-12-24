@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Sarabun:wght@300&display=swap');
-
-
-
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Sarabun:wght@300&display=swap");
 
 html,
 body {
@@ -16,22 +12,22 @@ input,
 button {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
-  cursor:pointer;
+  cursor: pointer;
 }
 input,
 button,
 submit {
   border: none;
 }
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 li {
   list-style: none;
 }
-hr{
-  border-top: 1px solid #F9F9F9;
-
+hr {
+  border-top: 1px solid #f9f9f9;
 }
 a {
   font-family: "Montserrat", sans-serif;
@@ -155,14 +151,18 @@ p {
   border: 1px solid red;
 }
 
+.jr_f18 {
+  font-size: 18px;
+}
+.jr_f16 {
+  font-size: 16px;
+}
 .jr_f14 {
   font-size: 14px;
 }
 .jr_f12 {
   font-size: 12px;
 }
-
-
 
 .jr_underline_text {
   border: 1px solid gray;
@@ -207,16 +207,26 @@ p {
   min-height: 20px;
   padding: 0px 2px 1px;
 }
-.jr_fullWidth{
+.jr_fullWidth {
   width: 100%;
 }
 
-.jr_color_primary{
+.jr_color_primary {
   color: #002161;
 }
-.jr_color_gray{
+.jr_color_gray {
   color: #979797;
 }
-.jr_color_blue{
+.jr_color_blue {
   color: #65acf0;
+}
+
+.jr_hover_blue {
+}
+.jr_hover_blue:hover {
+  color: #65acf0;
+}
+.jr_but_underLine_text {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #002161;
 }
