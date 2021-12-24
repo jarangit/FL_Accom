@@ -17,18 +17,18 @@ const Div = styled.div`
 const Bads_sub_menu = () => {
   return (
     <Div>
-      <Typography variant="h4" className="jr_underline_text">
+      <p className="jr_but_underLine_text">
         Beds
-      </Typography>
+      </p>
 
       <Stack direction="row">
         <button className="but_primary">Studio</button>
         <div className="stack_but" >
-          <button className="but_primary_w">+1</button>
-          <button className="but_primary_w">+1</button>
-          <button className="but_primary_w">+1</button>
-          <button className="but_primary_w">+1</button>
-          <button className="but_primary_w">+1</button>
+          <button className="but_primary_w">1+</button>
+          <button className="but_primary_w">2+</button>
+          <button className="but_primary_w">3+</button>
+          <button className="but_primary_w">4+</button>
+          <button className="but_primary_w">5+</button>
         </div>
       </Stack>
     </Div>

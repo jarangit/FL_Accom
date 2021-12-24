@@ -138,7 +138,7 @@ const Filter_bar = () => {
       sub_menu: "",
     },
     {
-      name: "Bads",
+      name: "Beds",
       head: "",
       sub_menu: "",
     },
@@ -163,7 +163,7 @@ const Filter_bar = () => {
           <Price_range_sub_menu />
         </div>
       );
-    } else if (props.dataSub.name === "Bads") {
+    } else if (props.dataSub.name === "Beds") {
       return (
         <div className="dropdown-content">
           <Bads_sub_menu />

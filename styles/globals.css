@@ -7,6 +7,11 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
+:root{
+  --color_primary: #002161;
+  --color_blue: #65acf0;
+  --color_gray: #979797;
+}
 
 input,
 button {
@@ -119,10 +124,6 @@ p {
   color: gray;
 }
 
-/* .dropdown_jr:hover .dropdown-content {
-  display: block;
-} */
-
 #triggle:checked + .dropdown_jr:hover .dropdown-content {
   display: block;
 }
@@ -212,21 +213,21 @@ p {
 }
 
 .jr_color_primary {
-  color: #002161;
+  color: var(--color_primary);
 }
 .jr_color_gray {
-  color: #979797;
+  color: var(--color_gray);
 }
 .jr_color_blue {
-  color: #65acf0;
+  color: var(--color_blue);
 }
 
 .jr_hover_blue {
 }
 .jr_hover_blue:hover {
-  color: #65acf0;
+  color: var(--color_blue);
 }
 .jr_but_underLine_text {
   padding-bottom: 10px;
-  border-bottom: 1px solid #002161;
+  border-bottom: 1px solid var(--color_primary);
 }
