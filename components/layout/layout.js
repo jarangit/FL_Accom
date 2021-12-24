@@ -20,10 +20,10 @@ const Layout = ({ children }) => {
           </Grid>
         </Grid>
         <Grid container columnSpacing={2}>
-          <Grid item xs={12} sm={9} pr = {8}>
+          <Grid item xs={12} lg={9} md = {12}>
             {children}
           </Grid>
-          <Grid item xs={12} sm={3}>
+          <Grid item xs={12} lg={3} md = {12}>
             <History />
             <Ultimate_guide />
             <Properties_for_sale />

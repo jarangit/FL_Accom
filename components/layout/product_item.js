@@ -12,26 +12,41 @@ const Div = styled.div`
   :hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
-  .grid_price{
+  .grid_price {
     right: 0;
     top: 50px;
     width: 170px;
     border-left: 1px solid #d8d8d8;
     padding-left: 7px;
-    min-height: 150px;  }
+    min-height: 150px;
+    .bg_blue{
+      background:#9bdeff;
+      padding: 8px; 
+    }
+  }
+
+  .grid_des_center {
+    align-items: center;
+  }
+
+  @media (max-width: 1024px) {
+    .grid_des_center {
+      align-items: stretch;
+    }
+  }
 `;
 const Product_item = () => {
   return (
     <Div className="box_item">
-      <Grid container spacing={1} >
-        <Grid item xs={12} sm={4} justifyContent="center" >
+      <Grid container spacing={1} className="grid_des_center">
+        <Grid item xs={12} sm={4} justifyContent="center">
           <Card_image_product />
         </Grid>
         <Grid item xs={12} sm={8}>
           <Grid container rowGap={2} alignItems="center">
             <Grid item md={12} lg={9}>
-              <Typography variant="h3" color="primary">
-                <strong>Property for sale in Bangkok, Thailand</strong>
+              <Typography variant="h3" color="primary" className="jr_blod">
+                Property for sale in Bangkok, Thailand
               </Typography>
               <Typography variant="h4">
                 <strong>
@@ -41,11 +56,11 @@ const Product_item = () => {
               </Typography>
               <div className="jr_f12">
                 <Typography variant="body1">
-                  <Stack direction="row" spacing={1}>
+                  <Stack direction="row" spacing={1} className="jr_f14">
                     <div>
                       <img
                         src="https://i.ibb.co/94FVT2C/size.png"
-                        width="20px"
+                        width="14px"
                         className="jr_icon"
                       />
                       491.96 SQ.M.
@@ -69,14 +84,15 @@ const Product_item = () => {
               </div>
 
               <div>
-                <p className="jr_sky jr_f12">
-                  <AddLocationOutlinedIcon
-                    className="jr_icon "
-                    color="primary"
+                <p className="jr_sky jr_f14">
+                  <img
+                    src="https://i.ibb.co/HHFDHrR/location.png"
+                    className="jr_icon"
+                    width="20px"
                   />
                   Lumphini, Pathumwan, Bangkok (Ploenchit)
                 </p>
-                <p className="jr_sky jr_f12">
+                <p className="jr_sky jr_f14">
                   <img
                     src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/7A82D8F6-BE22-4CB9-B911-8EA48BB04ABE.png"
                     className="jr_icon"
@@ -105,33 +121,15 @@ const Product_item = () => {
             </Grid>
             <Grid item md={12} lg={3}>
               <div className="grid_price">
-                <Typography variant="body1">
-                  <strong
-                    style={{
-                      background: "#9bdeff",
-                      color: "#002161",
-                      padding: "5px 10px",
-                    }}
-                  >
-                    FOR SALE
-                  </strong>
-                </Typography>
-                <p>7200</p>
-                <Typography variant="body1">
-                  <strong
-                    style={{
-                      background: "#9bdeff",
-                      color: "#002161",
-                      padding: "5px 10px",
-                    }}
-                  >
-                    FOR SALE
-                  </strong>
-                </Typography>
-                <li>7200</li>
-                <Typography variant="body1">
-                  <strong>Code: AA64564</strong>
-                </Typography>
+                <div>
+                  <button className="bg_blue jr_blod jr_f14">For sale</button>
+                  <p className="jr_blod jr_f16">70,000</p>
+                </div>
+                <div>
+                <button className="bg_blue jr_blod jr_f14">For sale</button>
+                  <p className="jr_blod jr_f16">70,000</p>
+                </div>
+                <p>Code: AA20487</p>
               </div>
             </Grid>
           </Grid>
