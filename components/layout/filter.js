@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext  } from "react";
 import {
   TextField,
   SearchIconWrapper,
@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { height } from "@mui/system";
-import styled from "styled-components";
+import styled, { ThemeContext } from 'styled-components'
 import CircleIcon from "@mui/icons-material/Circle";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -77,6 +77,16 @@ const Desk_fillter = styled.div`
   .but_menu {
     padding: 10px 5px;
     background-color: white;
+  }
+  .but_menu_blue {
+    padding: 10px 5px;
+    background-color: rgba(101, 172, 240, 0.2);
+    border-radius: 8px;
+    background-color: rgba(101, 172, 240, 0.2);
+    transition: 0.5s;
+    .jr_icon_dot {
+      opacity: 1;
+    }
   }
   .but_menu:hover {
     .jr_icon_dot {
@@ -210,7 +220,7 @@ const Filter_bar = () => {
   return (
     <Div>
       <Fillter_mb className="jr_mb_open" />
-      <Desk_fillter className="jr_mb_close">
+      <Desk_fillter className="jr_mb_close" toggle = {toggle}>
         <div>
           <Search_input />
         </div>
@@ -218,7 +228,7 @@ const Filter_bar = () => {
           <div className="dropdown_jr" key={key}>
             <button
               name={items.name}
-              className="but_menu"
+              className={items.name === getName_main_menu ? "but_menu_blue": "but_menu"}
               onClick={onOpen_dropdown}
             >
               <CircleIcon
