@@ -12,17 +12,24 @@ const Div = styled.div`
   :hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
+  .grid_price{
+    right: 0;
+    top: 50px;
+    width: 170px;
+    border-left: 1px solid #d8d8d8;
+    padding-left: 7px;
+    min-height: 150px;  }
 `;
 const Product_item = () => {
   return (
     <Div className="box_item">
-      <Grid container spacing={1}>
-        <Grid item xs={12} sm={4} justifyContent="center">
+      <Grid container spacing={1} >
+        <Grid item xs={12} sm={4} justifyContent="center" >
           <Card_image_product />
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Grid container rowGap={2}>
-            <Grid item md={12} lg={8}>
+        <Grid item xs={12} sm={8}>
+          <Grid container rowGap={2} alignItems="center">
+            <Grid item md={12} lg={9}>
               <Typography variant="h3" color="primary">
                 <strong>Property for sale in Bangkok, Thailand</strong>
               </Typography>
@@ -96,34 +103,36 @@ const Product_item = () => {
                 </Stack>
               </Typography>
             </Grid>
-            <Grid item md={12} lg={4}>
-              <Typography variant="body1">
-                <strong
-                  style={{
-                    background: "#9bdeff",
-                    color: "#002161",
-                    padding: "5px 10px",
-                  }}
-                >
-                  FOR SALE
-                </strong>
-              </Typography>
-              <p>7200</p>
-              <Typography variant="body1">
-                <strong
-                  style={{
-                    background: "#9bdeff",
-                    color: "#002161",
-                    padding: "5px 10px",
-                  }}
-                >
-                  FOR SALE
-                </strong>
-              </Typography>
-              <li>7200</li>
-              <Typography variant="body1">
-                <strong>Code: AA64564</strong>
-              </Typography>
+            <Grid item md={12} lg={3}>
+              <div className="grid_price">
+                <Typography variant="body1">
+                  <strong
+                    style={{
+                      background: "#9bdeff",
+                      color: "#002161",
+                      padding: "5px 10px",
+                    }}
+                  >
+                    FOR SALE
+                  </strong>
+                </Typography>
+                <p>7200</p>
+                <Typography variant="body1">
+                  <strong
+                    style={{
+                      background: "#9bdeff",
+                      color: "#002161",
+                      padding: "5px 10px",
+                    }}
+                  >
+                    FOR SALE
+                  </strong>
+                </Typography>
+                <li>7200</li>
+                <Typography variant="body1">
+                  <strong>Code: AA64564</strong>
+                </Typography>
+              </div>
             </Grid>
           </Grid>
         </Grid>

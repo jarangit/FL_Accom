@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           </Grid>
         </Grid>
         <Grid container columnSpacing={2}>
-          <Grid item xs={12} sm={9}>
+          <Grid item xs={12} sm={9} pr = {8}>
             {children}
           </Grid>
           <Grid item xs={12} sm={3}>
