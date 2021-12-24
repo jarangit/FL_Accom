@@ -6,12 +6,17 @@ import Filter_bar from "../components/layout/filter";
 import styles from "../styles/Home.module.css";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Product_item from "../components/layout/product_item";
-import Nav_contact from "../components/layout/nav_contact";
+import Nav_contact from "../components/layout/nav/nav_contact";
 import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import Accordion_items from "../components/layout/accordion";
 import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import Pagination_jr from "../components/layout/pagination";
+import Nav_request from "../components/layout/nav/nav_request";
+import Nav_call from "../components/layout/nav/nav_call";
+
+
+
 export default function Home() {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   function GoToReadMore() {
@@ -56,7 +61,17 @@ export default function Home() {
         <img src="https://i.ibb.co/d7RbVn4/discount-banner.jpg" width="100%" />
       </a>
       <Product_item />
+      <Product_item />
       <Nav_contact />
+      <Product_item />
+      <Product_item />
+      <Product_item />
+      <Nav_request/>
+      <Product_item />
+      <Product_item />
+      <Product_item />
+      <Nav_call/>
+      <Product_item />
 
       <Pagination_jr />
 

@@ -21,6 +21,7 @@ const Contact_me_form = () => {
         label="Your name"
         variant="outlined"
         margin="dense"
+        // inputRef={input => input && input.focus()}
         fullWidth
       />
       <TextField
