@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
   TextField,
   SearchIconWrapper,
@@ -13,9 +13,46 @@ import {
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 
-const Property_sub_menu = (props) => {
+const Property_sub_menu = () => {
   const [selected, setselected] = useState(false);
   const [getValueSelected, setgetValueSelected] = useState("");
+
+  const [age, setAge] = React.useState("");
+
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [dataFetch, setdataFetch] = useState([]);
+
+  // Note: the empty deps array [] means
+  // this useEffect will run once
+  // similar to componentDidMount()
+  useEffect(() => {
+    fetch("https://www.accomasia.co.th/api/v1/masterdata")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setdataFetch(result);
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      );
+  }, []);
+  console.log(isLoaded);
+  console.log(dataFetch);
+
+if(dataFetch.length !== 0){
+  console.log("ready")
+}
+
+
+
+
   function onSelect(e, isInputChecked) {
     setgetValueSelected(e.target.value);
     console.log(isInputChecked);
@@ -32,24 +69,28 @@ const Property_sub_menu = (props) => {
   return (
     <div>
       <div className="dropdown-content ">
-        <p className="underline_text jr_f16">{props.headText}</p>
+        {/* <p className="underline_text jr_f16">{props.headText}</p> */}
         <FormGroup>
-          {props.dataCheckBox.sub_menu.map((items, key) => (
-            <FormControlLabel
-              key={key}
-              className="jr_f14 jr_hover_blue"
-              control={
-                <Checkbox
-                  icon={<CheckBoxOutlineBlankIcon />}
-                  checkedIcon={<CheckBoxIcon />}
-                  onChange={onSelect}
+          {dataFetch.length !== 0 ?(
+            <>
+              {dataFetch.data.property_types.map((items, key) => (
+                <FormControlLabel
+                  key={key}
+                  className="jr_f14 jr_hover_blue"
+                  control={
+                    <Checkbox
+                      icon={<CheckBoxOutlineBlankIcon />}
+                      checkedIcon={<CheckBoxIcon />}
+                      onChange={onSelect}
+                    />
+                  }
+                  color="primary"
+                  label={items.name.en}
+                  value={items.name.en}
                 />
-              }
-              color="primary"
-              label={items}
-              value={items}
-            />
-          ))}
+              ))}
+            </>
+          ):''}
         </FormGroup>
       </div>
     </div>

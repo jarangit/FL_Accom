@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   TextField,
   SearchIconWrapper,
@@ -23,7 +23,7 @@ const Div = styled.div`
   max-height: 320px;
   overflow: scroll;
   overflow-x: hidden; /* Hide vertical scrollbar */
-
+  color: #464646;
   .text_label {
     :hover {
       color: #65acf0;
@@ -38,12 +38,10 @@ const Div = styled.div`
     padding: 8px;
     border-radius: 3px;
     margin-left: -3px;
-
   }
 `;
 const Fillter_but_item = () => {
-  const [age, setAge] = React.useState("");
-
+  
   const handleChange = (event) => {
     setAge(event.target.value);
   };
@@ -83,8 +81,10 @@ const Fillter_but_item = () => {
           <strong>Usable Area (Sq.M)</strong>
         </Typography>
         <div>
-          <select className = "jr_select jr_fullWidth">
-            <option  className="jr_option" selected="">Minimun</option>
+          <select className="jr_select jr_fullWidth">
+            <option className="jr_option" selected="">
+              Minimun
+            </option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>
             <option value="">฿ 8M</option>
@@ -100,8 +100,10 @@ const Fillter_but_item = () => {
           <strong>Land Size (Sq.W)</strong>
         </Typography>
         <div>
-          <select className = "jr_select jr_fullWidth">
-            <option  className="jr_option" selected="">Minimun</option>
+          <select className="jr_select jr_fullWidth">
+            <option className="jr_option" selected="">
+              Minimun
+            </option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>
             <option value="">฿ 8M</option>
@@ -117,8 +119,10 @@ const Fillter_but_item = () => {
           <strong>Transportation Radius (BTS/MRT)</strong>
         </Typography>
         <div>
-          <select className = "jr_select jr_fullWidth">
-            <option  className="jr_option" selected="">Minimun</option>
+          <select className="jr_select jr_fullWidth">
+            <option className="jr_option" selected="">
+              Minimun
+            </option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>
             <option value="">฿ 8M</option>

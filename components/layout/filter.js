@@ -157,14 +157,13 @@ const Filter_bar = () => {
 
   const onOpen_dropdown = (e) => {
     console.log(e.target.name);
-    if (e.target.name !== getName_main_menu) {
+      if (e.target.name !== getName_main_menu) {
       settoggle(true);
     } else {
       settoggle(!toggle);
     }
     setgetName_main_menu(e.target.name);
   };
-  // console.log(getName_main_menu);
 
   const ShowDropDown = (props) => {
     console.log(props.dataSub);
@@ -190,8 +189,6 @@ const Filter_bar = () => {
       return (
         <div>
           <Property_sub_menu
-            dataCheckBox={props.dataSub}
-            headText={props.headText}
           />
         </div>
       );
