@@ -45,19 +45,4 @@ export const FakeData_menu_mb = [
            "Popular projects in Prachuap khiri Khan",
         ]
     },
-    {
-        name: "Guide",
-        sub_item: [
-        
-        ]
-    },
-    {
-        name: "Agent partner",
-        sub_item: [
-           "List your property",
-           "My listings",
-           "Add new project",
-           "Log in",
-        ]
-    },
 ]

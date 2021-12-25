@@ -6,7 +6,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { FakeData_menu_mb } from "../../fakeData/menu_mb";
 import LanguageIcon from "@mui/icons-material/Language";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBars,
+  faTimes,
+  faChevronDown,
+  faChevronUp,
+} from "@fortawesome/free-solid-svg-icons";
 const Div = styled.div`
   display: none;
   .modal {
@@ -19,7 +25,7 @@ const Div = styled.div`
     height: ${(props) =>
       props.display === true ? "100%" : "0"}; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    transition: 0.3s;
+    transition: 0.5s;
   }
 
   /* Modal Content */
@@ -28,12 +34,11 @@ const Div = styled.div`
     margin: auto;
     width: 100%;
     min-height: 100vh;
-    padding-left: 16px;
-
   }
   @media (max-width: 1024px) {
     display: block;
     .nav_grid {
+      padding: 0 10px;
       text-align: center;
       align-items: center;
     }
@@ -50,8 +55,8 @@ const Div_mb_menu = styled.div`
     padding: 10px 0;
   }
   .header_menu {
-    padding: 25px 0;
-    border: 1px solid gray;
+    padding: 10px 50px;
+    border: 2px solid #d8d8d8;
     border-style: none none solid none;
     max-width: 200px;
     margin: 0 auto;
@@ -60,7 +65,7 @@ const Div_mb_menu = styled.div`
     .main_menu {
       padding: 10px 20px;
       :hover {
-        /* background: rgba(101, 172, 240, 0.2); */
+        background: rgba(101, 172, 240, 0.2);
       }
     }
   }
@@ -90,24 +95,16 @@ const Menu_mobile = () => {
     setget_name_sub(e.target.id);
   }
   return (
-    <Div style={{ paddingLeft: "16px" }} display={open_md_menu}>
+    <Div display={open_md_menu}>
       <div className="modal">
         <div className="modal_content">
           <Grid container className="nav_grid">
             <Grid item xs={2} sx={{ textAlign: "left" }}>
-              {open_md_menu === true ? (
-                <CloseIcon
-                  fontSize="large"
-                  color="primary"
-                  onClick={() => setopen_md_menu(!open_md_menu)}
-                />
-              ) : (
-                <MenuIcon
-                  fontSize="large"
-                  color="primary"
-                  onClick={() => setopen_md_menu(!open_md_menu)}
-                />
-              )}
+              <FontAwesomeIcon
+                style={{ fontSize: "31" }}
+                icon={faTimes}
+                onClick={() => setopen_md_menu(!open_md_menu)}
+              />
             </Grid>
             <Grid item xs={8}>
               <img
@@ -118,23 +115,23 @@ const Menu_mobile = () => {
             <Grid item xs={2}></Grid>
           </Grid>
 
-          <Div_mb_menu
-          // open={open_md_menu === true ? "100vh" : ""}
-          // display={open_md_menu === true ? "block" : "none"}
-          >
+          <Div_mb_menu>
             <Stack direction="column" textAlign="center">
-              <p className="header_menu">Menus</p>
+              <p className="header_menu jr_f14">Menus</p>
               {FakeData_menu_mb.map((items, key) => (
                 <div className="menu_item" key={key}>
                   <p
                     id={items.name}
-                    className="main_menu"
+                    className="main_menu jr_f18"
                     href="#"
                     onClick={onOpenSub}
                   >
                     {items.name}
                     <span style={{ position: "absolute", right: "15px" }}>
-                      <ArrowDropDownIcon />
+                      <FontAwesomeIcon
+                        style={{ fontSize: "19" }}
+                        icon={faChevronDown}
+                      />
                     </span>
                   </p>
                   {toggle_subMenu && (
@@ -142,7 +139,7 @@ const Menu_mobile = () => {
                       {items.name === get_name_sub ? (
                         <>
                           {items.sub_item.map((itemSub, key) => (
-                            <div className="sub_menu" key={key}>
+                            <div className="sub_menu jr_f16" key={key}>
                               <a href="#">{itemSub}</a>
                             </div>
                           ))}
@@ -156,11 +153,34 @@ const Menu_mobile = () => {
               ))}
               <div>
                 <p className="main_menu" href="#">
-                  Eng <LanguageIcon sx={{ verticalAlign: "middle" }} />
-                  <span style={{ position: "absolute", right: "15px" }}>
-                    <ArrowDropDownIcon />
-                  </span>
+                  Guide
                 </p>
+              </div>
+              <div
+                className="main_menu header_menu"
+                href="#"
+                onClick={onOpenSub}
+                id="eng"
+              >
+                Eng <LanguageIcon sx={{ verticalAlign: "middle" }} />
+                <span style={{ position: "absolute", right: "15px" }}>
+                  <FontAwesomeIcon
+                    style={{ fontSize: "19" }}
+                    icon={faChevronDown}
+                  />
+                </span>
+                {toggle_subMenu && (
+                  <>
+                    {get_name_sub === "eng" ? (
+                      <div className="sub_menu jr_f16">
+                        <a href="#">Eng</a>
+                        <a href="#">ภาษาไทย</a>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </>
+                )}
               </div>
               <div>
                 <p className="main_menu" href="#">
@@ -173,19 +193,11 @@ const Menu_mobile = () => {
       </div>
       <Grid container className="nav_grid">
         <Grid item xs={2} sx={{ textAlign: "left" }}>
-          {open_md_menu === true ? (
-            <CloseIcon
-              fontSize="large"
-              color="primary"
-              onClick={() => setopen_md_menu(!open_md_menu)}
-            />
-          ) : (
-            <MenuIcon
-              fontSize="large"
-              color="primary"
-              onClick={() => setopen_md_menu(!open_md_menu)}
-            />
-          )}
+          <FontAwesomeIcon
+            style={{ fontSize: "31" }}
+            icon={faBars}
+            onClick={() => setopen_md_menu(!open_md_menu)}
+          />
         </Grid>
         <Grid item xs={8}>
           <img
