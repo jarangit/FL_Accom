@@ -52,8 +52,8 @@ const ProD_items_his = () => {
   return (
     <>
       {fake_data.map((items, key) => (
-        <a href="#">
-          <Grid container spacing={2} key={key}>
+        <a href="#" key={key}>
+          <Grid container spacing={2} >
             <Grid item xs={5} sm={5}>
               <Div_image>
                 <img

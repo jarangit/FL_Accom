@@ -38,15 +38,15 @@ const Ultimate_guide = () => {
 
       <div className="jr_f14">
         <p>Buying guide</p>
+        <ul>
         {FakeDataTag.map((items, key) => (
-          <ul>
-            <li>
+            <li key = {key}>
               <a href="#" className="text_color_primary card_sky">
                {items}
               </a>
             </li>
-          </ul>
         ))}
+        </ul>
       </div>
       <img src="https://i.ibb.co/vDZgq5K/banner-covid.jpg" width="100%" />
     </Div>

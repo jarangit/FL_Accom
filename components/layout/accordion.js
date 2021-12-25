@@ -27,7 +27,7 @@ export default function Accordion_items() {
         <strong>Welcome To Bangkok, Thailand!</strong>
       </Typography>
       <div>
-        <p className="jr_f16" className="jr_f16" style={{ paddingTop: "20px" }}>
+        <p className="jr_f16" style={{ paddingTop: "20px" }}>
           {`
           Bangkok is the capital and largest city of Thailand. It was a small
           fishing village 800 years ago, but now it's a bustling metropolis with
