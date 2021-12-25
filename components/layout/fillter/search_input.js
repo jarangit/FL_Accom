@@ -30,7 +30,6 @@ const Div = styled.div`
     border-radius: 8px;
     position: relative;
     left: -10px;
-    z-index: 1;
     padding: 11px;
     background-color: #002161;
     color: white;
