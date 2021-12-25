@@ -46,9 +46,6 @@ const Property_sub_menu = () => {
   console.log(isLoaded);
   console.log(dataFetch);
 
-if(dataFetch.length !== 0){
-  console.log("ready")
-}
 
 
 

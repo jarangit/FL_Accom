@@ -181,7 +181,7 @@ const Filter_bar = () => {
       );
     } else if (props.dataSub === "but_fillter") {
       return (
-        <div className="dropdown-content">
+        <div className="dropdown-content" style={{  padding: "0"}}>
           <Fillter_but_item />
         </div>
       );

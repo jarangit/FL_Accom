@@ -169,7 +169,8 @@ p {
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-  position: relative;
+  position: absolute;
+  right: 0;
 }
 
 /* Track */
