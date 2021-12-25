@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import {
   TextField,
   SearchIconWrapper,
@@ -14,6 +14,21 @@ import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 
 const Property_sub_menu = (props) => {
+  const [selected, setselected] = useState(false);
+  const [getValueSelected, setgetValueSelected] = useState("");
+  function onSelect(e, isInputChecked) {
+    setgetValueSelected(e.target.value);
+    console.log(isInputChecked);
+    console.log(e.target.value);
+
+    if (isInputChecked === true) {
+      setselected(true);
+    } else {
+      setselected(false);
+    }
+    // console.log(selected);
+  }
+
   return (
     <div>
       <div className="dropdown-content ">
@@ -27,10 +42,12 @@ const Property_sub_menu = (props) => {
                 <Checkbox
                   icon={<CheckBoxOutlineBlankIcon />}
                   checkedIcon={<CheckBoxIcon />}
+                  onChange={onSelect}
                 />
               }
               color="primary"
               label={items}
+              value={items}
             />
           ))}
         </FormGroup>

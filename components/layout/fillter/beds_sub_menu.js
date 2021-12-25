@@ -12,6 +12,9 @@ const Div = styled.div`
     .but_primary {
       border-radius: 3px;
     }
+    .but_primary_w:focus{
+      background-color: #E0EEFC;
+    }
   }
 `;
 const Beds_sub_menu = () => {

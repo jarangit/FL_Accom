@@ -1,4 +1,4 @@
-import React, { useState, useContext  } from "react";
+import React, { useState, useContext } from "react";
 import {
   TextField,
   SearchIconWrapper,
@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { height } from "@mui/system";
-import styled, { ThemeContext } from 'styled-components'
+import styled, { ThemeContext } from "styled-components";
 import CircleIcon from "@mui/icons-material/Circle";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -27,7 +27,8 @@ import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import Search_input from "./fillter/search_input";
 import Fillter_mb from "./fillter/fillter_mb";
 import Radio from "@mui/material/Radio";
-import Property_sub_menu from "./fillter/property_sub_menu";
+import Property_sub_menu from "./dropdown/property_sub_menu";
+import Rent_dropdowm_pc from "./dropdown/rent_dropdowm_pc";
 
 const Desk_fillter = styled.div`
   margin: 15px 0;
@@ -188,39 +189,21 @@ const Filter_bar = () => {
     } else if (props.dataSub.name === "Property type") {
       return (
         <div>
-          <Property_sub_menu dataCheckBox = {props.dataSub} headText = {props.headText}/>
+          <Property_sub_menu
+            dataCheckBox={props.dataSub}
+            headText={props.headText}
+          />
         </div>
       );
     } else {
-      return (
-        <div className="dropdown-content">
-          <p className="underline_text jr_f16">{props.headText}</p>
-          <FormControl component="fieldset">
-            <RadioGroup aria-label="gender" name="radio-buttons-group">
-              {props.dataSub && (
-                <>
-                  {props.dataSub.sub_menu.map((sub_items, key) => (
-                    <FormControlLabel
-                      className="jr_hover_blue"
-                      key ={key}
-                      value={sub_items}
-                      control={<Radio name={sub_items} />}
-                      label={sub_items}
-                    />
-                  ))}
-                </>
-              )}
-            </RadioGroup>
-          </FormControl>
-        </div>
-      );
+      return <Rent_dropdowm_pc dataRadio={props} />;
     }
   };
 
   return (
     <Div>
       <Fillter_mb className="jr_mb_open" />
-      <Desk_fillter className="jr_mb_close" toggle = {toggle}>
+      <Desk_fillter className="jr_mb_close" toggle={toggle}>
         <div>
           <Search_input />
         </div>
@@ -228,7 +211,9 @@ const Filter_bar = () => {
           <div className="dropdown_jr" key={key}>
             <button
               name={items.name}
-              className={items.name === getName_main_menu ? "but_menu_blue": "but_menu"}
+              className={
+                items.name === getName_main_menu ? "but_menu_blue" : "but_menu"
+              }
               onClick={onOpen_dropdown}
             >
               <CircleIcon
