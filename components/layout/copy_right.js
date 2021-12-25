@@ -77,7 +77,7 @@ const Copy_right = () => {
             className="img_logo_coppy"
           />
           <div>
-            <p>Copyright © 2021 Accom Group. All rights reserved.</p>
+            <p>Copyright © 2021 Accom Group. All rights reserved. Building By jaranstudio.com</p>
           </div>
         </Grid>
       </Grid>
