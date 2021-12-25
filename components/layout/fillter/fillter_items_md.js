@@ -12,7 +12,6 @@ import From_checkBox_md from "./from_checkBox_md";
 import { AuthContext } from "../../../appState/authProviceder";
 import CloseIcon from "@mui/icons-material/Close";
 import Price_range_sub_menu from "./price_range_sub_menu";
-import Bads_sub_menu from "./bads_sub_menu";
 import Price_range_mb from "./MB/price_range_mb";
 import Beds_option_mb from "./MB/beds_option_mb";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";

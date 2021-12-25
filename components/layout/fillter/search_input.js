@@ -103,7 +103,7 @@ const Search_input = () => {
       {dataSearch != "" ? (
         <div className="dropdown_search">
           <div>
-            <strong className="jr_but_underLine_text jr_f18">Location</strong>
+            <strong className="underline_text jr_f18">Location</strong>
             <a href="#" className="items_keyword jr_color_gray">
               <img
                 src="https://i.ibb.co/HHFDHrR/location.png"
@@ -139,7 +139,7 @@ const Search_input = () => {
           </div>
 
           <div>
-            <strong className="jr_but_underLine_text jr_f18">Transportation</strong>
+            <strong className="underline_text jr_f18">Transportation</strong>
             <a href="#" className="items_keyword jr_color_gray">
               <img
                 src="https://i.ibb.co/xMzRyCL/transportation.png"
@@ -175,7 +175,7 @@ const Search_input = () => {
           </div>
 
           <div>
-            <strong className="jr_but_underLine_text jr_f18">Project building</strong>
+            <strong className="underline_text jr_f18">Project building</strong>
             <a href="#" className="items_keyword jr_color_gray">
               <img
                 src="https://i.ibb.co/2MSKkxQ/building.png"
@@ -211,7 +211,7 @@ const Search_input = () => {
           </div>
 
           <div>
-            <strong className="jr_but_underLine_text jr_f18">School</strong>
+            <strong className="underline_text jr_f18">School</strong>
             <a href="#" className="items_keyword jr_color_gray">
               <img
                 src="https://i.ibb.co/HD4nZTK/school.png"

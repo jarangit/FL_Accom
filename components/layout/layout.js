@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
       <Menu />
       <div className="jr_container">
         <Grid container spacing={2}>
-          <Grid item lg={8} md = {12}>
+          <Grid item lg={9} md = {12}>
             <Filter_bar />
           </Grid>
         </Grid>

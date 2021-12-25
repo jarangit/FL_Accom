@@ -164,12 +164,7 @@ p {
 }
 .jr_f12 {
   font-size: 12px;
-}
-
-.jr_underline_text {
-  border: 1px solid gray;
-  border-style: none none solid none;
-}
+}          
 
 /* width */
 ::-webkit-scrollbar {
@@ -228,10 +223,19 @@ p {
 .jr_hover_blue:hover {
   color: var(--color_light_blue);
 }
-.jr_but_underLine_text {
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--color_primary);
+.underline_text {
+  position: relative;
+  padding-bottom: 5px;
 }
+.underline_text:before {
+  content: "";
+  position: absolute;
+  width: 71px;
+  height: 1px;
+  background: #002161;
+  bottom: 0;
+}
+
 
 .jr_blod{
   font-weight: bold;

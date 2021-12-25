@@ -39,7 +39,7 @@ export default function Price_range_sub_menu() {
 
   return (
     <div style={{ alignItems: "center" }}>
-      <Typography variant="h4" className="jr_underline_text">
+      <Typography variant="h4" className="underline_text">
         Price range
       </Typography>
       <div

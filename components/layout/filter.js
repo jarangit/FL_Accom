@@ -21,7 +21,7 @@ import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import Price_range_sub_menu from "./fillter/price_range_sub_menu";
-import Bads_sub_menu from "./fillter/bads_sub_menu";
+import Beds_sub_menu from "./fillter/beds_sub_menu";
 import Fillter_but_item from "./fillter/fillter_but_item";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import Search_input from "./fillter/search_input";
@@ -176,7 +176,7 @@ const Filter_bar = () => {
     } else if (props.dataSub.name === "Beds") {
       return (
         <div className="dropdown-content">
-          <Bads_sub_menu />
+          <Beds_sub_menu />
         </div>
       );
     } else if (props.dataSub === "but_fillter") {
@@ -194,7 +194,7 @@ const Filter_bar = () => {
     } else {
       return (
         <div className="dropdown-content">
-          <p className="jr_but_underLine_text jr_f16">{props.headText}</p>
+          <p className="underline_text jr_f16">{props.headText}</p>
           <FormControl component="fieldset">
             <RadioGroup aria-label="gender" name="radio-buttons-group">
               {props.dataSub && (

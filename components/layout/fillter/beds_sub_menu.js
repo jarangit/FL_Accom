@@ -14,10 +14,10 @@ const Div = styled.div`
     }
   }
 `;
-const Bads_sub_menu = () => {
+const Beds_sub_menu = () => {
   return (
     <Div>
-      <p className="jr_but_underLine_text">Beds</p>
+      <p className="underline_text">Beds</p>
       <Stack direction="row">
         <button className="but_primary">Studio</button>
         <div className="stack_but">
@@ -32,4 +32,4 @@ const Bads_sub_menu = () => {
   );
 };
 
-export default Bads_sub_menu;
+export default Beds_sub_menu;

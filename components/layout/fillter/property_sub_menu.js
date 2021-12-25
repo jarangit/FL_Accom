@@ -17,7 +17,7 @@ const Property_sub_menu = (props) => {
   return (
     <div>
       <div className="dropdown-content ">
-        <p className="jr_but_underLine_text jr_f16">{props.headText}</p>
+        <p className="underline_text jr_f16">{props.headText}</p>
         <FormGroup>
           {props.dataCheckBox.sub_menu.map((items, key) => (
             <FormControlLabel

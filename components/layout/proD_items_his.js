@@ -58,7 +58,7 @@ const ProD_items_his = () => {
               <Div_image>
                 <img
                   src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png"
-                  width="100%"
+                  width="135"
                   className="image_thumb"
                 />
               </Div_image>
