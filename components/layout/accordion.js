@@ -22,12 +22,12 @@ export default function Accordion_items() {
 
   console.log(open_readMore);
   return (
-    <Div style={{ margin: "20px 0" }}>
-      <Typography variant="h2" color = "primary">
+    <Div style={{ margin: "50px 0" }}>
+      <Typography variant="h2" color="primary">
         <strong>Welcome To Bangkok, Thailand!</strong>
       </Typography>
       <div>
-        <Typography variant="body1">
+        <p className="jr_f16" className="jr_f16" style={{ paddingTop: "20px" }}>
           {`
           Bangkok is the capital and largest city of Thailand. It was a small
           fishing village 800 years ago, but now it's a bustling metropolis with
@@ -37,20 +37,13 @@ export default function Accordion_items() {
           plenty to do and see! Bangkok is just one of those cities that you
           can't really put into words - it's too big, too vibrant and it's
           constantly`}
-        </Typography>
+        </p>
 
         {open_readMore ? (
-          <Typography variant="body1" mt={2}>
+          <p className="jr_f16" style={{ paddingTop: "20px" }}>
             {`
-            Bangkok is the capital and largest city of Thailand. It was a small
-            fishing village 800 years ago, but now it's a bustling metropolis
-            with a population of more than 8 million people, known to be
-            magnificent for both tourism and business. With so many people
-            living, working, visiting, and ultimately, retiring in Bangkok every
-            year, there's plenty to do and see! Bangkok is just one of those
-            cities that you can't really put into words - it's too big, too
-            vibrant and it's constantly`}
-          </Typography>
+            changing. And we’re not being biased! It makes sense why it has gained so much attention throughout the years. With so much to offer, more and more properties have popped up around the city of Bangkok as the number of people who come to live here from all over the world have increased. Properties for sale in Bangkok are available in a range of different areas. The best way to find out about properties for sale in Bangkok is to go through reliable sources such as real estate websites, like the one you’re in now. ;)`}
+          </p>
         ) : (
           ""
         )}
@@ -64,7 +57,7 @@ export default function Accordion_items() {
         }}
         onClick={() => setopen_readMore(!open_readMore)}
       >
-        Read more
+        {open_readMore ? "Show less" : "Read more"}
       </button>
 
       {FakeData_Q_A.map((items, key) => (

@@ -15,15 +15,15 @@ const Layout = ({ children }) => {
       <Menu />
       <div className="jr_container">
         <Grid container spacing={2}>
-          <Grid item lg={9} md = {12}>
+          <Grid item lg={8} md = {12}>
             <Filter_bar />
           </Grid>
         </Grid>
         <Grid container columnSpacing={2}>
-          <Grid item xs={12} lg={9} md = {12}>
+          <Grid item xs={12} lg={8} md = {12}>
             {children}
           </Grid>
-          <Grid item xs={12} lg={3} md = {12}>
+          <Grid item xs={12} lg={4} md = {12}>
             <History />
             <Ultimate_guide />
             <Properties_for_sale />

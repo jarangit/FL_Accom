@@ -16,40 +16,47 @@ const Div = styled.div`
 const Contact_me_form = () => {
   return (
     <Div>
-      <TextField
-        id="outlined-basic"
-        label="Your name"
-        variant="outlined"
-        margin="dense"
-        // inputRef={input => input && input.focus()}
-        fullWidth
-      />
-      <TextField
-        id="outlined-basic"
-        label="Email"
-        variant="outlined"
-        margin="dense"
-        fullWidth
-      />
-      <TextField
-        id="outlined-basic"
-        label="Phone no."
-        variant="outlined"
-        margin="dense"
-        fullWidth
-      />
-      <TextField
-        placeholder="Type your massage"
-        margin="dense"
-        fullWidth
-        multiline
-        rows={4}
-        variant="outlined"
-      />
+      <form>
+        <TextField
+          id="outlined-basic"
+          label="Your name"
+          variant="outlined"
+          margin="dense"
+          // inputRef={input => input && input.focus()}
+          fullWidth
+          required
+          error
+          helperText="Please fill your name"
+        />
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          margin="dense"
+          fullWidth
+        />
+        <TextField
+          id="outlined-basic"
+          label="Phone no."
+          variant="outlined"
+          margin="dense"
+          fullWidth
+        />
+        <TextField
+          placeholder="Type your massage"
+          margin="dense"
+          fullWidth
+          multiline
+          rows={4}
+          variant="outlined"
+        />
 
-      <div style={{ textAlign: "right", marginTop: "10px" }}>
-        <button className="but_blue">Send massage</button>
-      </div>
+        <div style={{ textAlign: "right", marginTop: "10px" }}>
+          <button type="submit" className="but_blue">
+            Send massage
+          </button>
+        </div>
+      </form>
     </Div>
   );
 };

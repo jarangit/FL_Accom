@@ -49,10 +49,7 @@ const Product_item = () => {
                 Property for sale in Bangkok, Thailand
               </Typography>
               <Typography variant="h4">
-                <strong>
-                  4,200 properties available on Accomasia for sale in Bangkok,
-                  Thailand
-                </strong>
+                <strong>3 br Condominium For Sale in ploenchit, Bangkok</strong>
               </Typography>
               <div className="jr_f12">
                 <Typography variant="body1">

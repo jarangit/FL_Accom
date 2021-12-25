@@ -22,36 +22,37 @@ const Footer = () => {
       <div className="jr_container">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={8}>
-            <Typography variant="h1" className="jr_sky">
-              <strong> Send your message to AccomAsia agent</strong>
-            </Typography>
-            <Typography variant="h2">
+            <p className="jr_sky jr_blod" style={{ fontSize: "24px" }}>
+              Send your message to AccomAsia agent
+            </p>
+            <p className="jr_f18">
               Talk with our agent team, we’re here for you.
-            </Typography>
+            </p>
             <Stack mt={4} mb={4} direction="column" spacing={2}>
               <div>
-                <p>
+                <a href="mailto:inquiry@accomasia.co.th">
                   <span style={{ marginRight: "10px" }}>
                     <EmailOutlinedIcon className="jr_icon" />
                   </span>
                   inquiry@accomasia.co.th
-                </p>
+                </a>
               </div>
               <div>
-                <p>
+                <a href="tel:+6623675321">
+                  {" "}
                   <span style={{ marginRight: "10px" }}>
                     <PhoneAndroidOutlinedIcon className="jr_icon" />
                   </span>
-                  (662) 367 5321{" "}
-                </p>
+                  (662) 367 5321
+                </a>
               </div>
               <div>
-                <p>
+                <a href="tel:+66814221412">
                   <span style={{ marginRight: "10px" }}>
                     <LocalPhoneOutlinedIcon className="jr_icon" />
                   </span>
                   (668) 1422-1412{" "}
-                </p>
+                </a>
               </div>
             </Stack>
 
