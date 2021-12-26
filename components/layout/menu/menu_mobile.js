@@ -7,6 +7,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { FakeData_menu_mb } from "../../fakeData/menu_mb";
 import LanguageIcon from "@mui/icons-material/Language";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
   faBars,
   faTimes,
@@ -25,7 +26,7 @@ const Div = styled.div`
     height: ${(props) =>
       props.display_show === true ? "100%" : "0"}; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    transition: 0.5s;
+    transition: 0.3s;
   }
 
   /* Modal Content */
@@ -61,20 +62,23 @@ const Div_mb_menu = styled.div`
     max-width: 200px;
     margin: 0 auto;
   }
-  .menu_item {
-    .main_menu {
-      padding: 10px 20px;
-      :hover {
-        background: rgba(101, 172, 240, 0.2);
-        .arrow_icon {
-          transition: 0.3s;
-          cursor: pointer;
-          -ms-transform: ${(props) => props.toggle === true ? "rotate(180deg)":"rotate(0)"};
-          transform: rotate(180deg);
-        }
-      }
+  .main_menu {
+    padding: 10px 20px;
+    position: relative;
+    :hover {
+      background: rgba(101, 172, 240, 0.2);
     }
   }
+  .main_menu.active .arrow_icon {
+    transform: rotate(180deg);
+  }
+  .arrow_icon::before {
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+  }
+
   .sub_menu {
     padding: 0px;
     transition: 0.5s;
@@ -82,6 +86,16 @@ const Div_mb_menu = styled.div`
       display: block;
       margin: 20px 0;
     }
+  }
+  .arrow_icon {
+    position: absolute;
+    transition: 0.3s;
+    right: 12px;
+    /* transform: rotate(180deg); */
+    /* cursor: pointer; */
+    /* -ms-transform: ${(props) =>
+      props.toggle === true ? "rotate(180deg)" : "rotate(0)"}; */
+    /* transform: rotate(180deg); */
   }
 `;
 
@@ -98,6 +112,8 @@ const Menu_mobile = () => {
       settoggle_subMenu(!toggle_subMenu);
     }
     setget_name_sub(e.target.id);
+    console.log(get_name_sub);
+    console.log(toggle_subMenu);
   }
   return (
     <Div display_show={open_md_menu}>
@@ -120,27 +136,23 @@ const Menu_mobile = () => {
             <Grid item xs={2}></Grid>
           </Grid>
 
-          <Div_mb_menu toggle = {toggle_subMenu}>
+          <Div_mb_menu toggle={toggle_subMenu}>
             <Stack direction="column" textAlign="center">
               <p className="header_menu jr_f14">Menus</p>
               {FakeData_menu_mb.map((items, key) => (
                 <div className="menu_item" key={key}>
                   <p
                     id={items.name}
-                    className="main_menu jr_f18"
+                    className={
+                      items.name === get_name_sub && toggle_subMenu
+                        ? "main_menu jr_f18 active"
+                        : "main_menu jr_f18 "
+                    }
                     href="#"
                     onClick={onOpenSub}
                   >
                     {items.name}
-                    <span
-                      className="arrow_icon"
-                      style={{ position: "absolute", right: "15px" }}
-                    >
-                      <FontAwesomeIcon
-                        style={{ fontSize: "19" }}
-                        icon={faChevronDown}
-                      />
-                    </span>
+                    <span className="arrow_icon"></span>
                   </p>
                   {toggle_subMenu && (
                     <>
@@ -164,19 +176,22 @@ const Menu_mobile = () => {
                   Guide
                 </p>
               </div>
-              <div
-                className="main_menu header_menu"
-                href="#"
-                onClick={onOpenSub}
-                id="eng"
-              >
-                Eng <LanguageIcon sx={{ verticalAlign: "middle" }} />
-                <span style={{ position: "absolute", right: "15px" }}>
-                  <FontAwesomeIcon
-                    style={{ fontSize: "19" }}
-                    icon={faChevronDown}
-                  />
-                </span>
+
+              <div>
+                <p
+                  className={
+                    "eng" === get_name_sub && toggle_subMenu
+                      ? "main_menu jr_f18 active"
+                      : "main_menu jr_f18 "
+                  }
+                  href="#"
+                  onClick={onOpenSub}
+                  id="eng"
+                >
+                  Eng <LanguageIcon sx={{ verticalAlign: "middle" }} />
+                  <span className="arrow_icon"></span>
+                </p>
+
                 {toggle_subMenu && (
                   <>
                     {get_name_sub === "eng" ? (
