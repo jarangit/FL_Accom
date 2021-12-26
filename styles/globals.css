@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@450&family=Sarabun:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Sarabun:wght@300&display=swap');
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Sarabun", sans-serif;
   font-size: 16px;
 }
-:root{
+:root {
   --color_primary: #002161;
   --color_blue: #65acf0;
   --color_gray: #979797;
@@ -18,7 +18,7 @@ body {
 input,
 button {
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Sarabun", sans-serif;
   cursor: pointer;
 }
 input,
@@ -165,7 +165,7 @@ p {
 }
 .jr_f12 {
   font-size: 12px;
-}          
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -220,7 +220,6 @@ p {
   color: var(--color_blue);
 }
 
-
 .jr_hover_blue:hover {
   color: var(--color_light_blue);
 }
@@ -237,7 +236,6 @@ p {
   bottom: 0;
 }
 
-
-.jr_blod{
+.jr_blod {
   font-weight: bold;
 }
