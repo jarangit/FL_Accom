@@ -1,7 +1,7 @@
 import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
-import MoodOutlinedIcon from '@mui/icons-material/MoodOutlined';
+import MoodOutlinedIcon from "@mui/icons-material/MoodOutlined";
 const Div = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +21,7 @@ const Div = styled.div`
     top: 18px;
     color: #65acf0;
   }
+
   @media (max-width: 375px) {
     .but_blue {
       margin: 15px 0;
@@ -36,7 +37,7 @@ const Nav_request = () => {
   }
   return (
     <Div>
-      <div>
+      <div style = {{ width: "80%" }} > 
         <MoodOutlinedIcon className="left_icon " />
 
         <p className="jr_f14 jr_blod">

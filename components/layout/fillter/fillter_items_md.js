@@ -27,13 +27,32 @@ const Section_menu = styled.div`
   overflow: hidden;
   text-align: center;
   justify-content: center;
-  ul {
-    padding: 0;
-  }
-  .main_ul {
-    li {
-      margin: 25px 0;
+
+  .menu_item {
+    padding: 11px 0;
+    position: relative;
+    :hover {
+      background: rgba(101, 172, 240, 0.2);
     }
+  }
+  .arrow_icon {
+    position: absolute;
+    transition: 0.3s;
+    right: 15px;
+  }
+  .arrow_icon::before {
+    background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    transition: 0.3s;
+
+  }
+  .menu_item.active .arrow_icon::before {
+    /* transform: rotate(180deg); */
+    background-image: url("https://i.ibb.co/CK4mbLR/arrow-open.png");
   }
   .jr_icon_fillter {
     position: absolute;
@@ -81,33 +100,33 @@ const Fillter_items_md = () => {
   return (
     <Div>
       <Section_menu>
-        <div
-          style={{
-            position: "absolute",
-            left: "0",
-          }}
-        >
-          <CloseIcon
-            className="jr_icon"
-            onClick={() => setopen_form_filter_mb(!open_form_filter_mb)}
-          />
-        </div>
-        <div className="header">
+        <div className="header jr_color_primary">
           <strong>Filters</strong>
         </div>
 
         <div>
-          <ul className="main_ul">
+          <div className="main_ul">
             {FakeData_filter_menu_md.map((items, key) => (
-              <li key={key}>
-                <strong id={items.name} onClick={onOpen_dropdown}>
+              <div key={key}>
+                <p
+                  href="#"
+                  id={items.name}
+                  onClick={onOpen_dropdown}
+                  // className="jr_f16 menu_item active"
+                  className={
+                    items.name === get_name_sub && openFilter_mb
+                      ? "r_f16 menu_item active"
+                      : "jr_f16 menu_item "
+                  }
+                >
                   {items.name}
-                </strong>
-                <img
+                  <span className="arrow_icon"></span>
+                </p>
+                {/* <img
                   className="jr_icon_fillter"
                   src="https://i.ibb.co/NxhY2hK/arrow-close.png"
                   width="20px"
-                />
+                /> */}
                 {openFilter_mb && (
                   <>
                     {items.name === get_name_sub ? (
@@ -117,9 +136,9 @@ const Fillter_items_md = () => {
                     )}
                   </>
                 )}
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </Section_menu>
       <Bathroom_section />

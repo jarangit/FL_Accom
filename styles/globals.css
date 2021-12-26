@@ -90,14 +90,14 @@ p {
   transition: all ease 0.2s;
 }
 .but_primary_w:hover {
-  background-color: #002161;
+  /* background-color: #002161; */
   color: white;
   transition: 0.5s;
   fill: #fce57e;
+
 }
 .but_primary {
   margin: 10px 0;
-
   padding: 10px;
   border: 1px solid #002161;
   background-color: #002161;

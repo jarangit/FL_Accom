@@ -8,12 +8,7 @@ import { FakeData_menu_mb } from "../../fakeData/menu_mb";
 import LanguageIcon from "@mui/icons-material/Language";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import {
-  faBars,
-  faTimes,
-  faChevronDown,
-  faChevronUp,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 const Div = styled.div`
   display: none;
   .modal {

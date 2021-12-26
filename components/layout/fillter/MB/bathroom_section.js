@@ -15,7 +15,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 const Section_1 = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-style: solid none solid none;
-  padding: 15px 0;
+  padding: 15px;
   p {
     /* margin: 15px 0; */
   }

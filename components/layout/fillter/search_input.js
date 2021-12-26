@@ -22,7 +22,7 @@ const Div = styled.div`
     border-radius: 8px;
     border: 1px solid #d8d8d8;
     padding: 11px;
-    /* min-width: 250px; */
+    min-width: 250px;
     margin: 0px;
     width: 70%;
   }
