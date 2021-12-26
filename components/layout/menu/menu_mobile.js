@@ -23,7 +23,7 @@ const Div = styled.div`
     top: 0;
     width: 100%; /* Full width */
     height: ${(props) =>
-      props.display === true ? "100%" : "0"}; /* Full height */
+      props.display_show === true ? "100%" : "0"}; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     transition: 0.5s;
   }
@@ -66,11 +66,16 @@ const Div_mb_menu = styled.div`
       padding: 10px 20px;
       :hover {
         background: rgba(101, 172, 240, 0.2);
+        .arrow_icon {
+          transition: 0.3s;
+          cursor: pointer;
+          -ms-transform: ${(props) => props.toggle === true ? "rotate(180deg)":"rotate(0)"};
+          transform: rotate(180deg);
+        }
       }
     }
   }
   .sub_menu {
-    /* display: none; */
     padding: 0px;
     transition: 0.5s;
     a {
@@ -95,7 +100,7 @@ const Menu_mobile = () => {
     setget_name_sub(e.target.id);
   }
   return (
-    <Div display={open_md_menu}>
+    <Div display_show={open_md_menu}>
       <div className="modal">
         <div className="modal_content">
           <Grid container className="nav_grid">
@@ -115,7 +120,7 @@ const Menu_mobile = () => {
             <Grid item xs={2}></Grid>
           </Grid>
 
-          <Div_mb_menu>
+          <Div_mb_menu toggle = {toggle_subMenu}>
             <Stack direction="column" textAlign="center">
               <p className="header_menu jr_f14">Menus</p>
               {FakeData_menu_mb.map((items, key) => (
@@ -127,7 +132,10 @@ const Menu_mobile = () => {
                     onClick={onOpenSub}
                   >
                     {items.name}
-                    <span style={{ position: "absolute", right: "15px" }}>
+                    <span
+                      className="arrow_icon"
+                      style={{ position: "absolute", right: "15px" }}
+                    >
                       <FontAwesomeIcon
                         style={{ fontSize: "19" }}
                         icon={faChevronDown}
