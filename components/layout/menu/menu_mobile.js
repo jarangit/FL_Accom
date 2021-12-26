@@ -56,11 +56,20 @@ const Div_mb_menu = styled.div`
     padding: 10px 0;
   }
   .header_menu {
-    padding: 10px 50px;
-    border: 2px solid #d8d8d8;
-    border-style: none none solid none;
-    max-width: 200px;
-    margin: 0 auto;
+    text-align: center;
+    padding: 25px 0;
+    position: relative;
+  }
+  .header_menu::before {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 2px;
+    background: #d8d8d8;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
   }
   .main_menu {
     padding: 10px 20px;
@@ -91,11 +100,6 @@ const Div_mb_menu = styled.div`
     position: absolute;
     transition: 0.3s;
     right: 12px;
-    /* transform: rotate(180deg); */
-    /* cursor: pointer; */
-    /* -ms-transform: ${(props) =>
-      props.toggle === true ? "rotate(180deg)" : "rotate(0)"}; */
-    /* transform: rotate(180deg); */
   }
 `;
 
@@ -172,17 +176,15 @@ const Menu_mobile = () => {
                 </div>
               ))}
               <div>
-                <p className="main_menu" href="#">
-                  Guide
-                </p>
+                <p className="main_menu jr_f18">Guide</p>
               </div>
 
-              <div>
+              <div className="header_menu">
                 <p
                   className={
                     "eng" === get_name_sub && toggle_subMenu
-                      ? "main_menu jr_f18 active"
-                      : "main_menu jr_f18 "
+                      ? "main_menu jr_f18  active"
+                      : "main_menu jr_f18  "
                   }
                   href="#"
                   onClick={onOpenSub}
@@ -206,9 +208,7 @@ const Menu_mobile = () => {
                 )}
               </div>
               <div>
-                <p className="main_menu" href="#">
-                  Sign in
-                </p>
+                <p className="main_menu jr_f18">Sign in</p>
               </div>
             </Stack>
           </Div_mb_menu>
