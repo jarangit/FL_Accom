@@ -84,7 +84,7 @@ const Bathroom_section = () => {
           <div>
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">
-                Minimun
+              No min
               </option>
               <option value="">฿ 3M</option>
               <option value="">฿ 5M</option>
@@ -103,7 +103,7 @@ const Bathroom_section = () => {
           <div>
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">
-                Minimun
+                No min
               </option>
               <option value="">฿ 3M</option>
               <option value="">฿ 5M</option>
@@ -122,7 +122,7 @@ const Bathroom_section = () => {
           <div>
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">
-                Minimun
+                No min
               </option>
               <option value="">฿ 3M</option>
               <option value="">฿ 5M</option>

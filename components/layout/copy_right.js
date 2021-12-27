@@ -16,18 +16,19 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: right;
+    text-align: right;
   }
   .but_back_to_top {
     display: none;
     text-align: center;
     padding: 20px 0;
     color: #65acf0;
-    button{
+    button {
       background: #65acf0;
     }
   }
-  .img_logo_coppy{
-    display:none;
+  .img_logo_coppy {
+    display: none;
   }
   @media (max-width: 375px) {
     .grid_1 {
@@ -45,7 +46,6 @@ const Div = styled.div`
   }
 `;
 const Copy_right = () => {
-
   function GotoTop() {
     window.scrollTo({
       top: 0,
@@ -54,7 +54,6 @@ const Copy_right = () => {
   }
   return (
     <Div
-      className="jr_container"
       style={{ border: "1px solid white", borderStyle: "solid none none none" }}
     >
       <Grid container>
@@ -77,7 +76,10 @@ const Copy_right = () => {
             className="img_logo_coppy"
           />
           <div>
-            <p>Copyright © 2021 Accom Group. All rights reserved. Building By jaranstudio.com</p>
+            <p className="jr_f14" >
+              Copyright © 2021 Accom Group. All rights reserved. Building By
+              jaranstudio.com
+            </p>
           </div>
         </Grid>
       </Grid>

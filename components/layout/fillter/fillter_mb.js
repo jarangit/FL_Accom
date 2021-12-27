@@ -87,10 +87,10 @@ const Fillter_mb = () => {
           <Search_input />
         </div>
 
-        <div className="dropdown_jr" id="fillter_items">
+        <div  id="fillter_items">
           <button
             name="but_fillter"
-            className="but_primary_w"
+            // className="but_primary_w"
             onClick={() => setopen_form_filter_mb(!open_form_filter_mb)}
           >
             <img
