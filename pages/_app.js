@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import { fontWeight, letterSpacing } from "@mui/system";
 import AuthProvider from "../appState/authProviceder";
+import LinearProgress from '@mui/material/LinearProgress';
+
 const theme = createTheme({
   typography: {
     fontSize: 12,
@@ -50,7 +52,7 @@ const theme = createTheme({
 function MyApp({ Component, pageProps }) {
   if (typeof window === "undefined") {
     return(
-      <div>Loadding</div>
+      <LinearProgress />
     )
   }
   return (
