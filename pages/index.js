@@ -23,11 +23,7 @@ export default function Home() {
       behavior: "smooth",
     });
   }
-  if (typeof window !== "undefined") {
-    window.onload = () => {
-      console.log("Load")
-    };
-  }
+  
   return (
     <div>
       <CustomSeparator />

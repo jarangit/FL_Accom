@@ -46,7 +46,13 @@ const theme = createTheme({
   },
  
 });
+
 function MyApp({ Component, pageProps }) {
+  if (typeof window === "undefined") {
+    return(
+      <div>Loadding</div>
+    )
+  }
   return (
     // <ApolloProvider client={apollo}>
       <AuthProvider>
