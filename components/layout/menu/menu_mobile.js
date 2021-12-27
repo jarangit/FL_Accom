@@ -93,7 +93,7 @@ const Div_mb_menu = styled.div`
   }
   .arrow_icon {
     position: absolute;
-    transition: 0.3s;
+    transition: 0.2s;
     right: 12px;
   }
 `;

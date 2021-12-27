@@ -47,11 +47,10 @@ const Section_menu = styled.div`
     width: 20px;
     height: 20px;
     background-size: cover;
-    transition: 0.3s;
+    transition: 0.2s;
 
   }
   .menu_item.active .arrow_icon::before {
-    /* transform: rotate(180deg); */
     background-image: url("https://i.ibb.co/CK4mbLR/arrow-open.png");
   }
   .jr_icon_fillter {

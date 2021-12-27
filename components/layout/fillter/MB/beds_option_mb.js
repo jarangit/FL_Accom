@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Div = styled.div`
   .stack_but {
     button {
-      margin-left: -3px;
+      margin-left: -4px;
       border-radius: 0px 3px 3px 0px;
       border-color: #d8d8d8;
     }
@@ -19,7 +19,7 @@ const Div = styled.div`
     }
     .but_primary_w:focus{
       background-color: #E0EEFC;
-      color: #002161;
+      color: #002161
     }
   }
 `;

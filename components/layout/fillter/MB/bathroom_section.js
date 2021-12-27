@@ -23,7 +23,6 @@ const Section_1 = styled.div`
 
 const Section_2 = styled.div`
   text-align: center;
-  padding: 15px 0;
   margin-bottom: 200px;
   .but_primary {
     border-radius: 3px;
@@ -41,6 +40,30 @@ const Section_2 = styled.div`
     :hover {
       background: rgba(101, 172, 240, 0.2);
     }
+  }
+  .menu_item {
+    padding: 11px 0;
+    position: relative;
+    :hover {
+      background: rgba(101, 172, 240, 0.2);
+    }
+  }
+  .arrow_icon {
+    position: absolute;
+    transition: 0.3s;
+    right: 15px;
+  }
+  .arrow_icon::before {
+    background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    transition: 0.2s;
+  }
+  .menu_item.active .arrow_icon::before {
+    background-image: url("https://i.ibb.co/CK4mbLR/arrow-open.png");
   }
 `;
 const Bathroom_section = () => {
@@ -115,13 +138,13 @@ const Bathroom_section = () => {
 
       <Section_2>
         <div>
-          <p className="header">
-            <strong onClick={() => settoggle(!toggle)}>Tour</strong>
-            <img
-              className="jr_icon"
-              src="https://i.ibb.co/NxhY2hK/arrow-close.png"
-              width="20px"
-            />
+          <p
+            // className="header menu_item"
+            className={toggle ? "header menu_item active" : "header menu_item"}
+            onClick={() => settoggle(!toggle)}
+          >
+            Tour
+            <span className="arrow_icon"></span>
           </p>
 
           {toggle && (

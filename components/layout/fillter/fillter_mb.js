@@ -48,6 +48,7 @@ const Div = styled.div`
       text-align: center;
       align-items: center;
     }
+    
   @media (max-width: 1024px) {
     display: flex;
     justify-content: space-between;
@@ -60,7 +61,6 @@ const Fillter_mb = () => {
 
   return (
     <div>
-      {/* {open_form_filter_mb === true ? <Fillter_items_md /> : ""} */}
       <Div display_show={open_form_filter_mb}>
         <div className="modal">
           <div className="modal_content">
