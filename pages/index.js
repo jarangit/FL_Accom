@@ -15,8 +15,6 @@ import Pagination_jr from "../components/layout/pagination";
 import Nav_request from "../components/layout/nav/nav_request";
 import Nav_call from "../components/layout/nav/nav_call";
 
-
-
 export default function Home() {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   function GoToReadMore() {
@@ -25,7 +23,11 @@ export default function Home() {
       behavior: "smooth",
     });
   }
-
+  if (typeof window !== "undefined") {
+    window.onload = () => {
+      console.log("Load")
+    };
+  }
   return (
     <div>
       <CustomSeparator />
@@ -66,11 +68,11 @@ export default function Home() {
       <Product_item />
       <Product_item />
       <Product_item />
-      <Nav_request/>
+      <Nav_request />
       <Product_item />
       <Product_item />
       <Product_item />
-      <Nav_call/>
+      <Nav_call />
       <Product_item />
 
       <Pagination_jr />
