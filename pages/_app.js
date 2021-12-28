@@ -14,7 +14,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 const theme = createTheme({
   typography: {
     fontSize: 12,
-    fontFamily: ["Montserrat", " sans-serif"].join(","),
+    fontFamily: ["Montserrat","Sarabun", " sans-serif"].join(","),
     fontWeight: 600,
     h1: {
       fontSize: 32,

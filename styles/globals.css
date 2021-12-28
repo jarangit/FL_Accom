@@ -26,7 +26,7 @@ button,
 submit {
   border: none;
 }
-select, option{
+select, option, label, span{
   font-family: "Montserrat", "Sarabun", sans-serif;
 
 }
@@ -55,7 +55,7 @@ h1 {
 p {
   margin: 5px 0;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Sarabun", sans-serif;
 }
 * {
   box-sizing: border-box;

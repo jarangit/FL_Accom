@@ -48,11 +48,16 @@ const Div = styled.div`
   }
   .form_group {
     /* display:block; */
-    height: ${(props) => (props.show === true ? "auto" : "200px")};
+    height: 200px;
+    /* height: ${(props) => (props.show === true ? "auto" : "200px")}; */
     overflow: hidden;
     label {
       width: 100%;
     }
+  }
+
+  .form_group.active {
+    height: auto;
   }
   .add_mlr {
     margin: 0 10px;
@@ -105,8 +110,14 @@ const Fillter_but_item = () => {
   return (
     <Div show={ShowMore}>
       <div className="add_mlr">
-        <p>Spacail need</p>
-        <FormGroup className="form_group">
+        <p>Specail need</p>
+        <FormGroup
+          className={
+            getButName === "Specail" && ShowMore
+              ? "form_group active "
+              : "form_group "
+          }
+        >
           {dataFetch.length !== 0 ? (
             <>
               {dataFetch.data.special_charecter.map((items, key) => (
@@ -128,7 +139,7 @@ const Fillter_but_item = () => {
           )}
         </FormGroup>
         <button
-          name="Spacail"
+          name="Specail"
           className="jr_f14 text_label jr_color_blue"
           onClick={check_show_all}
         >
@@ -142,7 +153,13 @@ const Fillter_but_item = () => {
       </div>
       <div className="add_mlr">
         <p>Amenties</p>
-        <FormGroup className="form_group">
+        <FormGroup
+          className={
+            getButName === "Amenties" && ShowMore
+              ? "form_group active "
+              : "form_group "
+          }
+        >
           {dataFetch.length !== 0 ? (
             <>
               {dataFetch.data.amenities.map((items, key) => (
@@ -178,7 +195,13 @@ const Fillter_but_item = () => {
       </div>
       <div className="add_mlr">
         <p>Facilities</p>
-        <FormGroup className="form_group">
+        <FormGroup
+          className={
+            getButName === "Facilities" && ShowMore
+              ? "form_group active "
+              : "form_group "
+          }
+        >
           {dataFetch.length !== 0 ? (
             <>
               {dataFetch.data.facilities.map((items, key) => (
@@ -215,7 +238,7 @@ const Fillter_but_item = () => {
       </div>
 
       <div className="add_mlr">
-        <p>Badroom</p>
+        <p>Bathrooms</p>
         <button className="but_primary">Any+</button>
         <button className="but_primary_w">1+</button>
         <button className="but_primary_w">2+</button>

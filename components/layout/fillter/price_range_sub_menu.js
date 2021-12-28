@@ -9,13 +9,28 @@ import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import styled from "styled-components";
 import RemoveIcon from "@mui/icons-material/Remove";
 
+const Div = styled.div`
+  .selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add some styling */
+    background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
+    -ms-word-break: normal;
+    word-break: normal;
+    background-position: calc(100% - 5px) center;
+    background-repeat: no-repeat;
+    background-size: auto 20px;
+    appearance: none;
+  }
+`;
 const SelectSty = styled.select`
   cursor: pointer;
   height: 35px;
   background: white;
   color: gray;
   border-radius: 0.25rem;
-  padding: 6px 12px;
+  padding: 6px 28px 6px 12px;
   border-color: #ced4da;
   font-size: 14px;
   option {
@@ -29,18 +44,6 @@ const SelectSty = styled.select`
     min-height: 20px;
     padding: 10px;
     margin: 10px;
-
-    option::before {
-      background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
-      content: "s";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-size: cover;
-      transition: 0.2s;
-    }
-
-    
   }
 `;
 export default function Price_range_sub_menu() {
@@ -51,7 +54,7 @@ export default function Price_range_sub_menu() {
   };
 
   return (
-    <div style={{ alignItems: "center" }}>
+    <Div style={{ alignItems: "center" }}>
       <p className="underline_text">Price range</p>
       <div
         style={{
@@ -60,7 +63,7 @@ export default function Price_range_sub_menu() {
           justifyContent: "space-between",
         }}
       >
-        <div className="custom-select">
+        <div className="selectdiv">
           <SelectSty>
             <option selected="">Minimun</option>
             <option value="">No min</option>
@@ -74,7 +77,7 @@ export default function Price_range_sub_menu() {
           </SelectSty>
         </div>
         <RemoveIcon sx={{ color: "#ced4da" }} className="jr_icon" />
-        <div className="custom-select">
+        <div className="selectdiv">
           <SelectSty>
             <option selected="">Maxnimun</option>
             <option value="">฿ 3M</option>
@@ -87,6 +90,6 @@ export default function Price_range_sub_menu() {
           </SelectSty>
         </div>
       </div>
-    </div>
+    </Div>
   );
 }
