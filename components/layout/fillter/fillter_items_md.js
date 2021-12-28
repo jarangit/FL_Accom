@@ -93,7 +93,7 @@ const Fillter_items_md = () => {
     } else if (props.data.name === "Beds") {
       return <Beds_option_mb />;
     } else {
-      return <From_checkBox_md dataSub={props.data.options_menu} />;
+      return <From_checkBox_md dataSub={props.data} />;
     }
   };
   return (

@@ -15,12 +15,12 @@ const Div = styled.div`
   width: 100%;
   position: relative;
 
-.left_icon {
-  position: absolute;
-  left: 14px;
-  top: 18px;
-  color: #65acf0;
-}
+  .left_icon {
+    position: absolute;
+    left: 14px;
+    top: 18px;
+    color: #65acf0;
+  }
   .jr_f14 {
     width: 80%;
   }
@@ -31,7 +31,6 @@ const Div = styled.div`
   }
 `;
 const Nav_contact = () => {
-
   function GoToReadMore() {
     window.scrollTo({
       top: 50000,
@@ -40,16 +39,18 @@ const Nav_contact = () => {
   }
   return (
     <Div>
-              <ErrorOutlineOutlinedIcon className="left_icon " />
+      <ErrorOutlineOutlinedIcon className="left_icon " />
 
       <p className="jr_f14 jr_blod">
         Looking for{" "}
-        <span style={{ color: "#65acf0" }}>Property for sale in Bangkok</span>{" "}
+        <span style={{ color: "#65acf0" }}>
+          Property for sale in Bangkok, Thailand?{" "}
+        </span>{" "}
         Send inquiry now. Let’s our agent help you find best match property.
-        Call us in official hours | MON - FRI 09.00 AM - 05.00 PM (GMT+7) IT’S
-        FREE!
       </p>
-      <button className="but_blue" onClick={GoToReadMore}>Send inquiry</button>
+      <button className="but_blue" onClick={GoToReadMore}>
+        Send inquiry
+      </button>
     </Div>
   );
 };

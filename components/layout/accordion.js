@@ -13,7 +13,8 @@ import styled from "styled-components";
 const Div = styled.div`
   .jr_accordion {
     :hover {
-      box-shadow: rgba(155, 222, 255, 0.2) 0px 7px 29px 0px;
+      transition: 0.3s;
+      box-shadow: rgba(155, 222, 255, 0.5) 0px 7px 19px 0px;
     }
   }
 `;
@@ -73,13 +74,13 @@ export default function Accordion_items() {
           }}
         >
           <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
-            <Typography variant="h3">
+            <p className="jr_f14 jr_icon">
               <AddIcon className="jr_icon" />
               <strong>{items.question}</strong>
-            </Typography>
+            </p>
           </AccordionSummary>
           <AccordionDetails>
-            <p>{items.answer}</p>
+            <p className="jr_f14 jr_icon">{items.answer}</p>
           </AccordionDetails>
         </Accordion>
       ))}

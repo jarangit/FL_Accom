@@ -26,7 +26,7 @@ const Properties_for_sale = () => {
   return (
     <Div>
       <div>
-        <p className="header">Properties for sale in Bangkok</p>
+        <p className="header jr_blod">Properties for sale in Bangkok</p>
         <div className="flex_jr">
           <a href="#" className="items">
             items
@@ -52,7 +52,7 @@ const Properties_for_sale = () => {
         </div>
       </div>
       <div>
-        <p className="header">Properties for sale in CBD Bangkok</p>
+        <p className="header jr_blod">Properties for sale in CBD Bangkok</p>
         <div className="flex_jr">
           <a href="#" className="items">
             items
@@ -78,7 +78,7 @@ const Properties_for_sale = () => {
         </div>
       </div>
       <div>
-        <p className="header">Hospital</p>
+        <p className="header jr_blod">Hot properties</p>
         <ProD_items_his/>
       </div>
     </Div>
