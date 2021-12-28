@@ -10,6 +10,7 @@ import styled from "styled-components";
 import RemoveIcon from "@mui/icons-material/Remove";
 
 const SelectSty = styled.select`
+  cursor: pointer;
   height: 35px;
   background: white;
   color: gray;
@@ -28,6 +29,18 @@ const SelectSty = styled.select`
     min-height: 20px;
     padding: 10px;
     margin: 10px;
+
+    option::before {
+      background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
+      content: "s";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-size: cover;
+      transition: 0.2s;
+    }
+
+    
   }
 `;
 export default function Price_range_sub_menu() {
@@ -39,9 +52,7 @@ export default function Price_range_sub_menu() {
 
   return (
     <div style={{ alignItems: "center" }}>
-      <Typography variant="h4" className="underline_text">
-        Price range
-      </Typography>
+      <p className="underline_text">Price range</p>
       <div
         style={{
           alignItems: "center",
@@ -65,7 +76,7 @@ export default function Price_range_sub_menu() {
         <RemoveIcon sx={{ color: "#ced4da" }} className="jr_icon" />
         <div className="custom-select">
           <SelectSty>
-            <option selected="">Minimun</option>
+            <option selected="">Maxnimun</option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>
             <option value="">฿ 8M</option>

@@ -46,7 +46,13 @@ const theme = createTheme({
 
     }
   },
- 
+  palette: {
+    primary: {
+      main: "#002161",
+      // light: "#757ce8",
+      // dark: "#002884",
+    },
+  },
 });
 
 function MyApp({ Component, pageProps }) {

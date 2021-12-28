@@ -40,7 +40,7 @@ export const FakeData_menu_pc = [
         url: "https://www.accomasia.co.th/retail-for-rent/bangkok",
       },
       {
-        sub_name: "Shophouse condo for rent in Bangkok",
+        sub_name: "Shophouse for rent in Bangkok",
         url: "https://www.accomasia.co.th/shophouse-for-rent/bangkok",
       },
       {
@@ -67,59 +67,59 @@ export const FakeData_menu_pc = [
 
     sub_item: [
       {
-        sub_name: "House for rent in Bangkok",
+        sub_name: "House for sale in Bangkok",
         url: "https://www.accomasia.co.th/house-for-sale/bangkok",
       },
       {
-        sub_name: "Townhouse for rent in Bangkok",
+        sub_name: "Townhouse for sale in Bangkok",
         url: "https://www.accomasia.co.th/homeoffice-for-sale/bangkok",
       },
       {
-        sub_name: "Homeoffice for rent in Bangkok",
+        sub_name: "Homeoffice for sale in Bangkok",
         url: "https://www.accomasia.co.th/homeoffice-for-sale/bangkok",
       },
       {
-        sub_name: "Condo for rent in Bangkok",
+        sub_name: "Condo for sale in Bangkok",
         url: "https://www.accomasia.co.th/condo-for-sale/bangkok",
       },
       {
-        sub_name: "Apartment for rent in Bangkok",
+        sub_name: "Apartment for sale in Bangkok",
         url: "https://www.accomasia.co.th/apartment-for-sale/bangkok",
       },
       {
-        sub_name: "Penthouse for rent in Bangkok",
+        sub_name: "Penthouse for sale in Bangkok",
         url: "https://www.accomasia.co.th/penthouse-for-sale/bangkok",
       },
       {
-        sub_name: "Duplex condo for rent in Bangkok",
+        sub_name: "Duplex condo for sale in Bangkok",
         url: "https://www.accomasia.co.th/duplexcondo-for-sale/bangkok",
       },
       {
-        sub_name: "Office space for rent in Bangkok",
+        sub_name: "Office space for sale in Bangkok",
         url: "https://www.accomasia.co.th/officespace-for-sale/bangkok",
       },
       {
-        sub_name: "Retail for rent in Bangkok",
+        sub_name: "Retail for sale in Bangkok",
         url: "https://www.accomasia.co.th/retail-for-sale/bangkok",
       },
       {
-        sub_name: "Shophouse condo for rent in Bangkok",
+        sub_name: "Shophouse for sale in Bangkok",
         url: "https://www.accomasia.co.th/shophouse-for-sale/bangkok",
       },
       {
-        sub_name: "Warehouse for rent in Bangkok",
+        sub_name: "Warehouse for sale in Bangkok",
         url: "https://www.accomasia.co.th/warehouse-for-sale/bangkok",
       },
       {
-        sub_name: "Building for rent in Bangkok",
+        sub_name: "Building for sale in Bangkok",
         url: "https://www.accomasia.co.th/building-for-sale/bangkok",
       },
       {
-        sub_name: "Land for rent in Bangkok",
+        sub_name: "Land for sale in Bangkok",
         url: "https://www.accomasia.co.th/land-for-sale/bangkok",
       },
       {
-        sub_name: "Property for rent in Bangkok",
+        sub_name: "Property for sale in Bangkok",
         url: "https://www.accomasia.co.th/property-for-sale/bangkok",
       },
     ],

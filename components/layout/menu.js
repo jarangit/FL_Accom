@@ -24,7 +24,7 @@ const Div = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .sub_menu{
+  .sub_menu {
     padding: 8px 15px;
     border-radius: 5px;
     display: inline-block;
@@ -46,7 +46,7 @@ const Div = styled.div`
     text-align: left;
     /* margin-top: 5px; */
 
-    h4 {
+    .head_text {
       padding: 12px 16px;
       color: black;
     }
@@ -99,17 +99,15 @@ const Menu = () => {
               />
             </a>
             {FakeData_menu_pc.map((items, key) => (
-              <div id="link_items" className="dropdown link_items" key = {key}>
+              <div id="link_items" className="dropdown link_items" key={key}>
                 <a className="but_blue_menuP sub_menu " href="#">
                   {items.name}
                 </a>
                 <div className="dropdown-content">
-                  <Typography variant="h4">
-                    <strong>{items.head}</strong>
-                  </Typography>
+                  <p className="jr_blod head_text">{items.head}</p>
 
                   {items.sub_item.map((sub_items, key) => (
-                    <a href={sub_items.url} key = {key}>
+                    <a href={sub_items.url} key={key}>
                       {sub_items.sub_name}
                     </a>
                   ))}
@@ -132,13 +130,13 @@ const Menu = () => {
                 Agent parter
               </a>
               <div className="dropdown-content">
-                <Typography variant="h4">
+                <p className="jr_blod head_text">
                   <strong>Rental management</strong>
-                </Typography>{" "}
+                </p>{" "}
                 <a href="#">List your property</a>
                 <a href="#">My listings</a>
                 <a href="#">Add new project</a>
-                <hr/>
+                <hr />
                 <a href="">Log in</a>
               </div>
             </div>
@@ -153,8 +151,8 @@ const Menu = () => {
                 <a href="#">TH</a>
               </div>
             </div>
-            <Button variant="contained" sx = {{ background: "#65ACF0" ,}} >
-            Sign in
+            <Button variant="contained" sx={{ background: "#65ACF0" }}>
+              Sign in
             </Button>
           </Stack>
         </div>

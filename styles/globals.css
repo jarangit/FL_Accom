@@ -26,6 +26,10 @@ button,
 submit {
   border: none;
 }
+select, option{
+  font-family: "Montserrat", "Sarabun", sans-serif;
+
+}
 textarea:focus,
 input:focus {
   outline: none;
