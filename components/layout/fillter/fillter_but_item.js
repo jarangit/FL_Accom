@@ -62,6 +62,20 @@ const Div = styled.div`
   .add_mlr {
     margin: 0 10px;
   }
+  .but_show {
+    position: relative;
+  }
+  .but_show::before {
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+    margin-right: 10px;
+    padding: 0;
+  }
+  .but_show.active_arrow ::before {
+    content: "\f077";
+  }
 `;
 const Fillter_but_item = () => {
   const [error, setError] = useState(null);
@@ -147,14 +161,13 @@ const Fillter_but_item = () => {
         <button
           type="button"
           name="Specail"
-          className="jr_f14 text_label jr_color_blue"
+          className={
+            getButName === "Specail" && ShowMore
+              ? "jr_f14 text_label jr_color_blue but_show active_arrow"
+              : "jr_f14 text_label jr_color_blue but_show "
+          }
           onClick={check_show_all}
         >
-          <FontAwesomeIcon
-            name="Specail"
-            icon={faChevronDown}
-            style={{ marginRight: "12px" }}
-          />
           {getButName === "Specail" && ShowMore ? "Hide" : "Show all"}
         </button>
         <hr />
@@ -190,7 +203,11 @@ const Fillter_but_item = () => {
         </FormGroup>
         <button
           name="Amenties"
-          className="jr_f14 text_label jr_color_blue"
+          className={
+            getButName === "Specail" && ShowMore
+              ? "jr_f14 text_label jr_color_blue but_show active_arrow"
+              : "jr_f14 text_label jr_color_blue but_show "
+          }
           onClick={check_show_all}
         >
           <FontAwesomeIcon
@@ -232,7 +249,11 @@ const Fillter_but_item = () => {
         </FormGroup>
         <button
           name="Facilities"
-          className="jr_f14 text_label jr_color_blue"
+          className={
+            getButName === "Specail" && ShowMore
+              ? "jr_f14 text_label jr_color_blue but_show active_arrow"
+              : "jr_f14 text_label jr_color_blue but_show "
+          }
           onClick={check_show_all}
         >
           <FontAwesomeIcon
