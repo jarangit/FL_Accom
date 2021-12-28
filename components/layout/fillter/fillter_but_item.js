@@ -89,7 +89,7 @@ const Fillter_but_item = () => {
           setError(error);
         }
       );
-  }, []);
+  }, [1]);
   console.log(isLoaded);
   console.log(dataFetch);
 
@@ -97,16 +97,22 @@ const Fillter_but_item = () => {
     setAge(event.target.value);
   };
 
-  function check_show_all(e) {
+  async function check_show_all(e) {
+    e.preventDefault();
+    console.log(e.target.name);
     setgetButName(e.target.name);
-    if (e.target.name === getButName) {
-      setShowMore(true);
-    } else if (getButName === getButName) {
-      setShowMore(false);
+    try {
+      console.log("Doing");
+      if (e.target.name === getButName) {
+        setShowMore(!ShowMore);
+        console.log(getButName);
+        console.log("ChecK-name");
+      } else "";
+    } catch (error) {
+      console.lov(error);
     }
+    console.log("Complete");
   }
-  const ShowAllDropDown = () => {};
-  ShowAllDropDown();
   return (
     <Div show={ShowMore}>
       <div className="add_mlr">
@@ -139,15 +145,17 @@ const Fillter_but_item = () => {
           )}
         </FormGroup>
         <button
+          type="button"
           name="Specail"
           className="jr_f14 text_label jr_color_blue"
           onClick={check_show_all}
         >
           <FontAwesomeIcon
+            name="Specail"
             icon={faChevronDown}
             style={{ marginRight: "12px" }}
           />
-          {ShowMore ? "Hide" : "Show all"}
+          {getButName === "Specail" && ShowMore ? "Hide" : "Show all"}
         </button>
         <hr />
       </div>
@@ -189,7 +197,7 @@ const Fillter_but_item = () => {
             icon={faChevronDown}
             style={{ marginRight: "12px" }}
           />
-          {ShowMore ? "Hide" : "Show all"}
+          {getButName === "Amenties" && ShowMore ? "Hide" : "Show all"}
         </button>
         <hr />
       </div>
@@ -232,7 +240,7 @@ const Fillter_but_item = () => {
             style={{ marginRight: "12px" }}
             onClick={check_show_all}
           />
-          {ShowMore ? "Hide" : "Show all"}
+          {getButName === "Facilities" && ShowMore ? "Hide" : "Show all"}
         </button>
         <hr />
       </div>
