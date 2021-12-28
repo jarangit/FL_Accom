@@ -1,34 +1,15 @@
 import React, { useState, useContext } from "react";
-import {
-  TextField,
-  SearchIconWrapper,
-  StyledInputBase,
-  Box,
-  Button,
-  Typography,
-  FormGroup,
-  Checkbox,
-  FormControlLabel,
-  FormControl,
-  FormLabel,
-  RadioGroup,
-} from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import { height } from "@mui/system";
 import styled, { ThemeContext } from "styled-components";
 import CircleIcon from "@mui/icons-material/Circle";
-import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import Price_range_sub_menu from "./fillter/price_range_sub_menu";
 import Beds_sub_menu from "./fillter/beds_sub_menu";
 import Fillter_but_item from "./fillter/fillter_but_item";
-import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import Search_input from "./fillter/search_input";
 import Fillter_mb from "./fillter/fillter_mb";
-import Radio from "@mui/material/Radio";
 import Property_sub_menu from "./dropdown/property_sub_menu";
 import Rent_dropdowm_pc from "./dropdown/rent_dropdowm_pc";
+import { AuthContext } from "../../appState/authProviceder";
 
 const Desk_fillter = styled.div`
   margin: 15px 0;
@@ -132,6 +113,8 @@ const Div = styled.div`
 const Filter_bar = () => {
   const [toggle, settoggle] = useState(false);
   const [getName_main_menu, setgetName_main_menu] = useState("");
+  const { data_selected, setdata_selected } = useContext(AuthContext);
+
   const menu_api = [
     {
       name: "Rent",
@@ -157,7 +140,7 @@ const Filter_bar = () => {
 
   const onOpen_dropdown = (e) => {
     console.log(e.target.name);
-      if (e.target.name !== getName_main_menu) {
+    if (e.target.name !== getName_main_menu) {
       settoggle(true);
     } else {
       settoggle(!toggle);
@@ -181,15 +164,14 @@ const Filter_bar = () => {
       );
     } else if (props.dataSub === "but_fillter") {
       return (
-        <div className="dropdown-content" style={{  padding: "0"}}>
+        <div className="dropdown-content" style={{ padding: "0" }}>
           <Fillter_but_item />
         </div>
       );
     } else if (props.dataSub.name === "Property type") {
       return (
         <div>
-          <Property_sub_menu
-          />
+          <Property_sub_menu />
         </div>
       );
     } else {
@@ -221,7 +203,9 @@ const Filter_bar = () => {
                   verticalAlign: "middle",
                 }}
               />
-              {items.name}
+              {items.name === "Price range" && data_selected.min !== ""
+                ? `฿${data_selected.min} - ฿${data_selected.max}`
+                : `${items.name}`}
 
               {toggle ? (
                 <span>

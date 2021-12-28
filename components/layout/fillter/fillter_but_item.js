@@ -76,6 +76,19 @@ const Div = styled.div`
   .but_show.active_arrow ::before {
     content: "\f077";
   }
+  .selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Add some styling */
+    background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
+    -ms-word-break: normal;
+    word-break: normal;
+    background-position: calc(100% - 5px) center;
+    background-repeat: no-repeat;
+    background-size: auto 20px;
+    appearance: none;
+  }
 `;
 const Fillter_but_item = () => {
   const [error, setError] = useState(null);
@@ -278,10 +291,10 @@ const Fillter_but_item = () => {
 
       <div className="add_mlr">
         <p>Usable Area (Sq.M)</p>
-        <div>
+        <div className="selectdiv">
           <select className="jr_select jr_fullWidth">
             <option className="jr_option" selected="">
-              Minimun
+              No min
             </option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>
@@ -295,10 +308,10 @@ const Fillter_but_item = () => {
       </div>
       <div className="add_mlr">
         <p>Land Size (Sq.W)</p>
-        <div>
+        <div className="selectdiv">
           <select className="jr_select jr_fullWidth">
             <option className="jr_option" selected="">
-              Minimun
+              No min
             </option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>
@@ -312,10 +325,10 @@ const Fillter_but_item = () => {
       </div>
       <div className="add_mlr">
         <p>Transportation Radius (BTS/MRT)</p>
-        <div>
+        <div className="selectdiv">
           <select className="jr_select jr_fullWidth">
             <option className="jr_option" selected="">
-              Minimun
+              No max
             </option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>

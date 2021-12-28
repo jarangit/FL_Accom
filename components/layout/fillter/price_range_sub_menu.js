@@ -3,12 +3,12 @@ import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Typography } from "@mui/material";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import styled from "styled-components";
 import RemoveIcon from "@mui/icons-material/Remove";
-
+import { AuthContext } from "../../../appState/authProviceder";
 const Div = styled.div`
   .selectdiv select {
     -webkit-appearance: none;
@@ -48,11 +48,20 @@ const SelectSty = styled.select`
 `;
 export default function Price_range_sub_menu() {
   const [age, setAge] = React.useState("");
+  const {data_selected, setdata_selected} = useContext(AuthContext)
 
   const handleChange = (event) => {
     setAge(event.target.value);
   };
-
+  const onChange = async (e) => {
+    console.log(e.target.value);
+    console.log(e.target.name);
+    await setdata_selected({
+      ...data_selected,
+      [e.target.name]: e.target.value,
+    });
+    console.log(data_selected);
+  };
   return (
     <Div style={{ alignItems: "center" }}>
       <p className="underline_text">Price range</p>
@@ -64,29 +73,28 @@ export default function Price_range_sub_menu() {
         }}
       >
         <div className="selectdiv">
-          <SelectSty>
+          <SelectSty onChange={onChange} name="min">
             <option selected="">Minimun</option>
             <option value="">No min</option>
-            <option value="">฿ 3M</option>
-            <option value="">฿ 5M</option>
-            <option value="">฿ 8M</option>
-            <option value="">฿ 50M</option>
-            <option value="">฿ 10M</option>
-            <option value="">฿ 15M</option>
-            <option value="">฿ 20M</option>
+            <option value="3">฿ 3M</option>
+            <option value="5">฿ 5M</option>
+            <option value="8">฿ 8M</option>
+            <option value="10">฿ 10M</option>
+            <option value="15">฿ 15M</option>
+            <option value="20">฿ 20M</option>
+            <option value="50">฿ 50M</option>
           </SelectSty>
         </div>
         <RemoveIcon sx={{ color: "#ced4da" }} className="jr_icon" />
         <div className="selectdiv">
-          <SelectSty>
-            <option selected="">Maxnimun</option>
-            <option value="">฿ 3M</option>
-            <option value="">฿ 5M</option>
-            <option value="">฿ 8M</option>
-            <option value="">฿ 50M</option>
-            <option value="">฿ 10M</option>
-            <option value="">฿ 15M</option>
-            <option value="">฿ 20M</option>
+          <SelectSty onChange={onChange} name="max">
+            <option selected="0">Maximum</option>
+            <option value="10">฿ 10M</option>
+            <option value="15">฿ 15M</option>
+            <option value="20">฿ 20M</option>
+            <option value="50">฿ 50M</option>
+            <option value="80">฿ 80M</option>
+            <option value="100">฿ 100M</option>
           </SelectSty>
         </div>
       </div>
