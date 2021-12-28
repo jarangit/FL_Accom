@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Stack, Typography } from "@mui/material/";
 import AddLocationOutlinedIcon from "@mui/icons-material/AddLocationOutlined";
 import Card_image_product from "./card_image_product";
@@ -35,12 +35,25 @@ const Div = styled.div`
     }
   }
 `;
+
+
 const Product_item = () => {
+  const [hoverDiv, sethoverDiv] = useState(false)
+ function hoverHandler() {
+    sethoverDiv(true)
+    console.log(hoverDiv)
+}
+ function LeaveHandler() {
+    sethoverDiv(false)
+    console.log(hoverDiv)
+}
+
+
   return (
-    <Div className="box_item">
+    <Div className="box_item" onMouseEnter={hoverHandler} onMouseLeave={LeaveHandler}>
       <Grid container spacing={1} className="grid_des_center">
         <Grid item xs={12} sm={4} justifyContent="center">
-          <Card_image_product />
+          <Card_image_product tackHover = {hoverDiv}  />
         </Grid>
         <Grid item xs={12} sm={8}>
           <Grid container rowGap={2} alignItems="center">
@@ -48,8 +61,8 @@ const Product_item = () => {
               <Typography variant="h3" color="primary" className="jr_blod">
                 Property for sale in Bangkok, Thailand
               </Typography>
-              <Typography variant="h4">
-                <strong>3 br Condominium For Sale in ploenchit, Bangkok</strong>
+              <Typography variant="h4"  className="jr_blod jr_f16">
+                3 br Condominium For Sale in ploenchit, Bangkok
               </Typography>
               <div className="jr_f12">
                 <Typography variant="body1">

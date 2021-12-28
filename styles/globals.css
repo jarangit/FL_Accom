@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Sarabun:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Sarabun:wght@300&display=swap");
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", "Sarabun", sans-serif;
+  font-family: "Montserrat@200", "Sarabun", sans-serif;
   font-size: 16px;
 }
 :root {
@@ -26,9 +26,11 @@ button,
 submit {
   border: none;
 }
-select, option, label, span{
+select,
+option,
+label,
+span {
   font-family: "Montserrat", "Sarabun", sans-serif;
-
 }
 textarea:focus,
 input:focus {
@@ -98,7 +100,6 @@ p {
   color: white;
   transition: 0.5s;
   fill: #fce57e;
-
 }
 .but_primary {
   margin: 10px 0;
@@ -241,5 +242,5 @@ p {
 }
 
 .jr_blod {
-  font-weight: bold;
+  font-weight: bolder;
 }

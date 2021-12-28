@@ -19,7 +19,7 @@ export default function Home() {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   function GoToReadMore() {
     window.scrollTo({
-      top: 5000,
+      top: 4300,
       behavior: "smooth",
     });
   }
@@ -31,8 +31,8 @@ export default function Home() {
         <Typography variant="h1" className="jr_sky jr_blod">
           Property for sale in Bangkok, Thailand
         </Typography>
-        <Typography variant="h2">
-          4,200 properties available on Accomasia Thailand
+        <Typography variant="h2" sx = {{ fontSize: "400" }} >
+          4,200 properties available on Accomasia
         </Typography>
         <p>
           Explore 3,134 properties for sale in Bangkok. View 360 , full details.

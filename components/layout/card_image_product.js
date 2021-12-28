@@ -5,8 +5,6 @@ const Div = styled.div`
   position: relative;
   :hover {
     .centered {
-      display: block;
-      transition: 0.5s;
     }
   }
 
@@ -25,7 +23,7 @@ const Div = styled.div`
     height: 100%;
     width: 100%;
     bottom: 0;
-    opacity: 0;
+    opacity: ${(props) =>props.tavkHoverFormMain === true ? "1": "0"};
     transition: height 0.5s ease-out;
     background: linear-gradient(to bottom, transparent 0%, black 100%);
   }
@@ -35,13 +33,15 @@ const Div = styled.div`
     bottom: 12px;
     left: 12px;
     background: #9bdeff;
+    font-size: 12px;
+
   }
   .bottom_right {
     position: absolute;
     bottom: 12px;
     right: 0;
     color: white;
-    font-size: 1.5vh;
+    font-size: 12px;
     background-color: rgb(0, 0, 0, 0.5);
     padding: 4px 6px;
   }
@@ -54,12 +54,14 @@ const Div = styled.div`
     background: #9bdeff;
   }
   .centered {
-    display: none;
+    display: ${(props) =>props.tavkHoverFormMain == true ? "block": "none"};
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 150px;
+    transition: 0.5s;
+
   }
   .button_center {
     background: none;
@@ -71,9 +73,10 @@ const Div = styled.div`
     transition: 0.3s;
   }
 `;
-const Card_image_product = () => {
+const Card_image_product = (props) => {
+  console.log(props.tackHover)
   return (
-    <Div>
+    <Div tavkHoverFormMain = {props.tackHover} >
       <div className="img_thumb">
         <img
           src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png"
@@ -82,7 +85,7 @@ const Card_image_product = () => {
       </div>
       <div className="centered">
         <button className="button_center">
-          <p>View popperty</p>
+          <p>View property</p>
         </button>
       </div>
       <div className="bottom_left">
@@ -92,7 +95,7 @@ const Card_image_product = () => {
       </div>
       <div className="bottom_right">
         <PhotoOutlinedIcon className="jr_icon" />
-        <span>12</span>
+        <span >12</span>
       </div>
     </Div>
   );
