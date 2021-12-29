@@ -21,30 +21,12 @@ export default function Home() {
     });
   }
 
-  const [show, setShow] = useState(false);
   const { onCheckedContactForm } = useContext(AuthContext);
-  useEffect(
-    () => {
-      let timer1 = setTimeout(() => setShow(true), 2 * 1000);
 
-      // this will clear Timeout
-      // when component unmount like in willComponentUnmount
-      // and show will not change to true
-      return () => {
-        clearTimeout(timer1);
-      };
-    },
-    // useEffect will run only one time with empty []
-    // if you pass a value to array,
-    // like this - [data]
-    // than clearTimeout will run every time
-    // this value changes (useEffect re-run)
-    []
-  );
   return (
     <div>
       <Alert_form />
-      <CustomSeparator />
+       <CustomSeparator />
       <div>
         <Typography variant="h1" className="jr_sky jr_blod">
           Property for sale in Bangkok, Thailand
@@ -58,7 +40,6 @@ export default function Home() {
           / AccomAsia team
         </p>
       </div>
-
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <button className="but_primary_w" onClick={GoToReadMore}>
           Learn more
@@ -69,7 +50,6 @@ export default function Home() {
           <Switch {...label} />
         </div>
       </Stack>
-
       <Product_item />
       <Product_item />
       <Product_item />

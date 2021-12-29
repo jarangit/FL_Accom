@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { TextField } from "@mui/material";
 import styled from "styled-components";
 import { AuthContext } from "../../appState/authProviceder";
+import { faLaughSquint } from "@fortawesome/free-solid-svg-icons";
 const Div = styled.div`
   background-color: white;
   padding: 30px;
@@ -52,7 +53,10 @@ const Contact_me_form = () => {
       console.log(error_field);
       setonCheckedContactForm(true);
     }
+
   }
+
+  console.log("this check"+onCheckedContactForm);
   function onChange(e) {
     seterror_field({ ...error_field, [e.target.name]: false });
 

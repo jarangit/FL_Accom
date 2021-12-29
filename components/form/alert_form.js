@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { AuthContext } from "../../appState/authProviceder";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,6 +22,7 @@ const Div = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 5;
     p {
       transition: 0.3s;
       margin: 0px;
@@ -40,41 +41,65 @@ const Alert_form = () => {
     setonCheckedContactForm,
   } = useContext(AuthContext);
 
+  const [show, setShow] = useState(false);
+  useEffect(
+    () => {
+      let timer1 = setTimeout(() => setShow(true), 2 * 1000);
+      console.log("Set time");
+      // this will clear Timeout
+      // when component unmount like in willComponentUnmount
+      // and show will not change to true
+
+      return () => {
+        clearTimeout(timer1);
+        console.log("clear");
+      }
+    },
+
+    // useEffect will run only one time with empty []
+    // if you pass a value to array,
+    // like this - [data]
+    // than clearTimeout will run every time
+    // this value changes (useEffect re-run)
+    []
+  );
+
+  console.log("this component alert");
   return (
     <Div display_show={onCheckedContactForm}>
       {onConpleteContactForm === true ? (
-        <div className="modal_content_alert">
-          <FontAwesomeIcon
-            className="jr_icon"
-            icon={faCheckCircle}
-            style={{ color: "green", fontSize: "20px" }}
-          />
-          <div>
-            <h3 className="jr_f18">Massage sent</h3>
-            <p>Thank you for your interest! we’ll reply back shortly</p>
-          </div>
-          <FontAwesomeIcon
-            icon={faTimes}
-            onClick={() => setonCheckedContactForm(false)}
-          />
-        </div>
-      ) : (
-        <div className="modal_content_alert">
-          <FontAwesomeIcon
-            className="jr_icon"
-            icon={faExclamationCircle}
-            style={{ color: "red", fontSize: "20px" }}
-          />
-          <div>
-            <h3 className="jr_f18">Request error</h3>
-            <p>Sorry for your inconvenience Please resend your request.</p>
-          </div>
-          <FontAwesomeIcon
-            icon={faTimes}
-            onClick={() => setonCheckedContactForm(false)}
-          />
-        </div>
-      )}
+            <div className="modal_content_alert">
+              <FontAwesomeIcon
+                className="jr_icon"
+                icon={faCheckCircle}
+                style={{ color: "green", fontSize: "20px" }}
+              />
+              <div>
+                <h3 className="jr_f18">Massage sent</h3>
+                <p>Thank you for your interest! we’ll reply back shortly</p>
+              </div>
+              <FontAwesomeIcon
+                icon={faTimes}
+                onClick={() => setonCheckedContactForm(false)}
+              />
+            </div>
+          ) : (
+            <div className="modal_content_alert">
+              <FontAwesomeIcon
+                className="jr_icon"
+                icon={faExclamationCircle}
+                style={{ color: "red", fontSize: "20px" }}
+              />
+              <div>
+                <h3 className="jr_f18">Request error</h3>
+                <p>Sorry for your inconvenience Please resend your request.</p>
+              </div>
+              <FontAwesomeIcon
+                icon={faTimes}
+                onClick={() => setonCheckedContactForm(false)}
+              />
+            </div>
+          )}
     </Div>
   );
 };
