@@ -188,14 +188,14 @@ p {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 3px;
   position: absolute;
   right: 0;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  /* background: #f1f1f1; */
 }
 
 /* Handle */
@@ -205,7 +205,7 @@ p {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--color_primary);
 }
 
 .jr_select {

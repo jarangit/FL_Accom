@@ -15,7 +15,7 @@ const Div = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor:pointer;
+    cursor: pointer;
   }
 
   .input_search {
@@ -40,6 +40,8 @@ const Div = styled.div`
     }
   }
   .dropdown_search {
+    height: 500px;
+    overflow: scroll;
     display: block;
     padding: 10px;
     min-width: 280px;
@@ -52,7 +54,6 @@ const Div = styled.div`
     text-align: left;
   }
 
-  
   .items_keyword {
     font-size: 14px;
     display: block;
@@ -96,7 +97,7 @@ const Search_input = () => {
           onChange={OnInputSearchChange}
         />
         <button className="but_search">
-          <SearchIcon sx={{ verticalAlign: "middle", }} />
+          <SearchIcon sx={{ verticalAlign: "middle" }} />
         </button>
       </form>
       {dataSearch != "" ? (
