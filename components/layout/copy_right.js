@@ -30,7 +30,7 @@ const Div = styled.div`
   .img_logo_coppy {
     display: none;
   }
-  @media (max-width: 375px) {
+  @media (max-width: 414px) {
     .grid_1 {
       justify-content: center;
     }
