@@ -28,10 +28,10 @@ export default function Home() {
       <Alert_form />
        <CustomSeparator />
       <div>
-        <Typography variant="h1" className="jr_sky jr_blod">
+        <h1 className="jr_sky jr_blod">
           Property for sale in Bangkok, Thailand
-        </Typography>
-        <Typography variant="h2" sx={{ fontSize: "400" }}>
+        </h1>
+        <Typography variant="h2">
           4,200 properties available on Accomasia
         </Typography>
         <p>

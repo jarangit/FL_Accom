@@ -68,7 +68,7 @@ const Div = styled.div`
   .but_show::before {
     position: relative;
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+   font-weight: 900;
     content: "\f078";
     margin-right: 10px;
     padding: 0;
