@@ -1,37 +1,55 @@
 import { Button, Stack, Typography, Switch } from "@mui/material";
-import Head from "next/head";
-import Image from "next/image";
 import CustomSeparator from "../components/layout/bread";
-import Filter_bar from "../components/layout/filter";
-import styles from "../styles/Home.module.css";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Product_item from "../components/layout/product_item";
 import Nav_contact from "../components/layout/nav/nav_contact";
-import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import Accordion_items from "../components/layout/accordion";
-import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import Pagination_jr from "../components/layout/pagination";
 import Nav_request from "../components/layout/nav/nav_request";
 import Nav_call from "../components/layout/nav/nav_call";
+import Alert_form from "../components/form/alert_form";
+import React, { useState, useContext, useEffect } from "react";
+import { AuthContext } from "../appState/authProviceder";
 
 export default function Home() {
   const label = { inputProps: { "aria-label": "Switch demo" } };
+
   function GoToReadMore() {
     window.scrollTo({
       top: 4300,
       behavior: "smooth",
     });
   }
-  
+
+  const [show, setShow] = useState(false);
+  const { onCheckedContactForm } = useContext(AuthContext);
+  useEffect(
+    () => {
+      let timer1 = setTimeout(() => setShow(true), 2 * 1000);
+
+      // this will clear Timeout
+      // when component unmount like in willComponentUnmount
+      // and show will not change to true
+      return () => {
+        clearTimeout(timer1);
+      };
+    },
+    // useEffect will run only one time with empty []
+    // if you pass a value to array,
+    // like this - [data]
+    // than clearTimeout will run every time
+    // this value changes (useEffect re-run)
+    []
+  );
   return (
     <div>
+      <Alert_form />
       <CustomSeparator />
       <div>
         <Typography variant="h1" className="jr_sky jr_blod">
           Property for sale in Bangkok, Thailand
         </Typography>
-        <Typography variant="h2" sx = {{ fontSize: "400" }} >
+        <Typography variant="h2" sx={{ fontSize: "400" }}>
           4,200 properties available on Accomasia
         </Typography>
         <p>
@@ -70,9 +88,7 @@ export default function Home() {
       <Product_item />
       <Nav_call />
       <Product_item />
-
       <Pagination_jr />
-
       <Accordion_items />
     </div>
   );

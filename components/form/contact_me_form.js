@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { TextField } from "@mui/material";
 import styled from "styled-components";
-
+import { AuthContext } from "../../appState/authProviceder";
 const Div = styled.div`
   background-color: white;
   padding: 30px;
@@ -14,55 +14,52 @@ const Div = styled.div`
   }
 `;
 const Contact_me_form = () => {
-  const [ErrorInputName, setErrorInputName] = useState(false);
-  const [ErrorInputEmail, setErrorInputEmail] = useState(false);
-  const [ErrorInputPhone, setErrorInputPhone] = useState(false);
-  const [dataName, setdataName] = useState("");
-  const [dataEmail, setdataEmail] = useState("");
-  const [dataPhone, setdataPhone] = useState("");
-  const [dataForm, setdataForm] = useState({
-    name: {
-      text_value: "",
-      error_input: "",
-    },
-    email: {
-      text_value: "",
-      error_input: "",
-    },
-    phone: {
-      text_value: "",
-      error_input: "",
-    },
-    massage: {
-      text_value: "",
-      error_input: "",
-    },
+  const {
+    onConpleteContactForm,
+    setonConpleteContactForm,
+    onCheckedContactForm,
+    setonCheckedContactForm,
+  } = useContext(AuthContext);
+  const [ErrorInput, setErrorInput] = useState(false);
+
+  const [error_field, seterror_field] = useState({
+    name: false,
+    email: false,
+    phone: false,
   });
+  const [dataForm, setdataForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
   function onSubmit(e) {
     e.preventDefault();
-    console.log(dataName);
-
-    if (dataName === "") {
-      setErrorInputName(true);
-    } else if (dataEmail === "") {
-      setErrorInputEmail(true)
-    }else if (dataPhone === "") {
-      setErrorInputPhone(true)
+    for (let key in dataForm) {
+      if (
+        dataForm.hasOwnProperty(key) &&
+        dataForm[key] === "" &&
+        key != "massage"
+      ) {
+        console.log(key);
+        console.log("Some field error");
+        setonCheckedContactForm(true);
+        setonConpleteContactForm(false);
+        return seterror_field({ ...error_field, [key]: true });
+      } else {
+        setonConpleteContactForm(true);
+      }
+      console.log(error_field);
+      setonCheckedContactForm(true);
     }
   }
   function onChange(e) {
-    setdataName(e.target.value);
-    console.log(dataName);
-    console.log(dataEmail);
-    console.log(dataPhone);
-    if (e.target.name === "name") {
-      setdataName(e.target.value)
-    }else if (e.target.name === "email") {
-      // setdataEmail(e.target.value)
-    } else if (e.target.name === 'phone') {
-      setdataPhone(e.target.value)
-    } else ''
+    seterror_field({ ...error_field, [e.target.name]: false });
+
+    setdataForm({ ...dataForm, [e.target.name]: e.target.value });
+    console.log(dataForm);
   }
+
   return (
     <Div>
       <form onSubmit={onSubmit} onChange={onChange}>
@@ -71,11 +68,11 @@ const Contact_me_form = () => {
           label="Your name"
           variant="outlined"
           margin="dense"
-          value={dataName}
+          value={dataForm.name.text}
           name="name"
           fullWidth
-          error={ErrorInputName}
-          helperText={ErrorInputName ? "Please fill your name" : false}
+          error={error_field.name}
+          helperText={error_field.name ? "Please fill your name" : false}
         />
         <TextField
           id="outlined-basic"
@@ -83,26 +80,27 @@ const Contact_me_form = () => {
           variant="outlined"
           margin="dense"
           name="email"
-          value={dataEmail}
+          value={dataForm.email}
           fullWidth
-          error={ErrorInputEmail}
-          helperText={ErrorInputEmail ? "Please fill your email" : false}
+          error={error_field.email}
+          helperText={error_field.email ? "Please fill your email" : false}
         />
         <TextField
+          type="number"
           id="outlined-basic"
           label="Phone no."
           variant="outlined"
           margin="dense"
-          value={dataPhone}
+          value={dataForm.phone}
           name="phone"
           fullWidth
-          error={ErrorInputPhone}
-          helperText={ErrorInputPhone ? "Please fill your phone no." : false}
+          error={error_field.phone}
+          helperText={error_field.phone ? "Please fill your phone no." : false}
         />
         <TextField
           placeholder="Type your massage"
           margin="dense"
-          value={dataForm.massage.text_value}
+          value={dataForm.massage}
           name="massage"
           fullWidth
           multiline
