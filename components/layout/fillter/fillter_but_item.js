@@ -217,16 +217,12 @@ const Fillter_but_item = () => {
         <button
           name="Amenties"
           className={
-            getButName === "Specail" && ShowMore
+            getButName === "Amenties" && ShowMore
               ? "jr_f14 text_label jr_color_blue but_show active_arrow"
               : "jr_f14 text_label jr_color_blue but_show "
           }
           onClick={check_show_all}
         >
-          <FontAwesomeIcon
-            icon={faChevronDown}
-            style={{ marginRight: "12px" }}
-          />
           {getButName === "Amenties" && ShowMore ? "Hide" : "Show all"}
         </button>
         <hr />
@@ -263,17 +259,12 @@ const Fillter_but_item = () => {
         <button
           name="Facilities"
           className={
-            getButName === "Specail" && ShowMore
+            getButName === "Facilities" && ShowMore
               ? "jr_f14 text_label jr_color_blue but_show active_arrow"
               : "jr_f14 text_label jr_color_blue but_show "
           }
           onClick={check_show_all}
         >
-          <FontAwesomeIcon
-            icon={faChevronDown}
-            style={{ marginRight: "12px" }}
-            onClick={check_show_all}
-          />
           {getButName === "Facilities" && ShowMore ? "Hide" : "Show all"}
         </button>
         <hr />
