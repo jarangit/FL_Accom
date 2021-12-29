@@ -10,6 +10,7 @@ const AuthProvider = ({ children, userData }) => {
     min: "",
     max: "",
   });
+  const [data_check_rent, setdata_check_rent] = useState('Rent')
   const [onCheckedContactForm, setonCheckedContactForm] = useState(false);
   const [onConpleteContactForm, setonConpleteContactForm] = useState(false);
   return (
@@ -25,6 +26,7 @@ const AuthProvider = ({ children, userData }) => {
         setonCheckedContactForm,
         onConpleteContactForm,
         setonConpleteContactForm,
+        data_check_rent, setdata_check_rent,
       }}
     >
       {children}

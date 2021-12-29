@@ -113,7 +113,7 @@ const Div = styled.div`
 const Filter_bar = () => {
   const [toggle, settoggle] = useState(false);
   const [getName_main_menu, setgetName_main_menu] = useState("");
-  const { data_selected, setdata_selected } = useContext(AuthContext);
+  const { data_selected, data_check_rent } = useContext(AuthContext);
 
   const menu_api = [
     {
@@ -179,6 +179,15 @@ const Filter_bar = () => {
     }
   };
 
+  const ShowMain_menu = (props) => {
+    if (props.dataItems === "Price range" && data_selected.min !== "") {
+      return `฿${data_selected.min} - ฿${data_selected.max}`;
+    } else if (props.dataItems === "Rent") {
+      return <>{data_check_rent}</>;
+    } else {
+      return <>{props.dataItems}</>;
+    }
+  };
   return (
     <Div>
       <Fillter_mb className="jr_mb_open" />
@@ -203,9 +212,10 @@ const Filter_bar = () => {
                   verticalAlign: "middle",
                 }}
               />
-              {items.name === "Price range" && data_selected.min !== ""
+              <ShowMain_menu dataItems={items.name} />
+              {/* {items.name === "Price range" && data_selected.min !== ""
                 ? `฿${data_selected.min} - ฿${data_selected.max}`
-                : `${items.name}`}
+                : `${items.name}`} */}
 
               {toggle ? (
                 <span>

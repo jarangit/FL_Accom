@@ -1,20 +1,13 @@
 import React, { useState, useContext } from "react";
 import {
-  TextField,
-  SearchIconWrapper,
-  StyledInputBase,
-  Box,
-  Button,
-  Typography,
-  FormGroup,
-  Checkbox,
   FormControlLabel,
   FormControl,
-  FormLabel,
   RadioGroup,
 } from "@mui/material";
 import Radio from "@mui/material/Radio";
 import { makeStyles } from "@mui/styles";
+import { AuthContext } from "../../../appState/authProviceder";
+
 
 const useStyles = makeStyles({
   fontSize: {
@@ -27,11 +20,15 @@ const useStyles = makeStyles({
 const Rent_dropdowm_pc = (props) => {
   const classes = useStyles();
 
+  const { data_check_rent, setdata_check_rent,} = useContext(AuthContext);
+
+
   const [selected, setselected] = useState(false);
   const [getValueSelected, setgetValueSelected] = useState("");
 
   function onSelect(e) {
     setgetValueSelected(e.target.value);
+    setdata_check_rent(e.target.value)
     console.log(e.target.value);
   }
 
