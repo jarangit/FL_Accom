@@ -51,6 +51,12 @@ h1,
 h2 {
   margin: 15px 0;
 }
+
+h3,h4{
+  margin: 3px 0;
+}
+
+
 h1 {
   font-size: 32px;
 }

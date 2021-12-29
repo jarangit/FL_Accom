@@ -36,36 +36,38 @@ const Div = styled.div`
   }
 `;
 
-
 const Product_item = () => {
-  const [hoverDiv, sethoverDiv] = useState(false)
- function hoverHandler() {
-    sethoverDiv(true)
-    console.log(hoverDiv)
-}
- function LeaveHandler() {
-    sethoverDiv(false)
-    console.log(hoverDiv)
-}
-
+  const [hoverDiv, sethoverDiv] = useState(false);
+  function hoverHandler() {
+    sethoverDiv(true);
+    console.log(hoverDiv);
+  }
+  function LeaveHandler() {
+    sethoverDiv(false);
+    console.log(hoverDiv);
+  }
 
   return (
-    <Div className="box_item" onMouseEnter={hoverHandler} onMouseLeave={LeaveHandler}>
+    <Div
+      className="box_item"
+      onMouseEnter={hoverHandler}
+      onMouseLeave={LeaveHandler}
+    >
       <Grid container spacing={1} className="grid_des_center">
         <Grid item xs={12} sm={4} justifyContent="center">
-          <Card_image_product tackHover = {hoverDiv}  />
+          <Card_image_product tackHover={hoverDiv} />
         </Grid>
         <Grid item xs={12} sm={8}>
           <Grid container rowGap={2} alignItems="center">
             <Grid item md={12} lg={9}>
-              <Typography variant="h3" color="primary" className="jr_blod">
+              <h3 className="jr_color_primary jr_blod">
                 Property for sale in Bangkok, Thailand
-              </Typography>
-              <Typography variant="h4"  className="jr_blod jr_f16">
+              </h3>
+              <h4 className="jr_blod jr_f16">
                 3 br Condominium For Sale in ploenchit, Bangkok
-              </Typography>
+              </h4>
               <div className="jr_f12">
-                <Typography variant="body1">
+                <p>
                   <Stack direction="row" spacing={1} className="jr_f14">
                     <div>
                       <img
@@ -90,7 +92,7 @@ const Product_item = () => {
                       2 baths
                     </div>
                   </Stack>
-                </Typography>
+                </p>
               </div>
 
               <div>
@@ -116,7 +118,7 @@ const Product_item = () => {
                 </a>
               </div>
 
-              <Typography variant="body2">
+              <p>
                 <Stack direction="row" spacing={1}>
                   <button className="jr_chip">Penthouse</button>
                   <button className="jr_chip">Penthouse</button>
@@ -131,7 +133,7 @@ const Product_item = () => {
                     Penthouse
                   </button>
                 </Stack>
-              </Typography>
+              </p>
             </Grid>
             <Grid item md={12} lg={3}>
               <div className="grid_price">

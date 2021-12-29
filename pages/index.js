@@ -31,9 +31,9 @@ export default function Home() {
         <h1 className="jr_sky jr_blod">
           Property for sale in Bangkok, Thailand
         </h1>
-        <Typography variant="h2">
+        <h2 >
           4,200 properties available on Accomasia
-        </Typography>
+        </h2>
         <p>
           Explore 3,134 properties for sale in Bangkok. View 360 , full details.
           Update new properties. Talk and tour properties with our expert agents

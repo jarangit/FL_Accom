@@ -24,9 +24,9 @@ export default function Accordion_items() {
   console.log(open_readMore);
   return (
     <Div style={{ margin: "50px 0" }}>
-      <Typography variant="h2" color="primary">
+      <h2 className="jr_color_primary">
         <strong>Welcome To Bangkok, Thailand!</strong>
-      </Typography>
+      </h2>
       <div>
         <p className="jr_f16" style={{ paddingTop: "20px" }}>
           {`

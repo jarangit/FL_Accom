@@ -36,9 +36,9 @@ export default function Price_range_mb() {
 
   return (
     <div style={{ alignItems: "center" }}>
-      <Typography variant="h4" className="jr_underline_text">
+      <h4  className="jr_underline_text">
         Price range
-      </Typography>
+      </h4>
       <div
         style={{
           alignItems: "center",
