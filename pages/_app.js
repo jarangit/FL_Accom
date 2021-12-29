@@ -9,12 +9,12 @@ import {
 } from "@mui/material";
 import { fontWeight, letterSpacing } from "@mui/system";
 import AuthProvider from "../appState/authProviceder";
-import LinearProgress from '@mui/material/LinearProgress';
+import LinearProgress from "@mui/material/LinearProgress";
 
 const theme = createTheme({
   typography: {
     fontSize: 12,
-    fontFamily: ["Montserrat","Sarabun", " sans-serif"].join(","),
+    fontFamily: ["Montserrat", "Sarabun", " sans-serif"].join(","),
     h1: {
       fontSize: 32,
       marginTop: 5,
@@ -40,11 +40,11 @@ const theme = createTheme({
       // fontSize: "16px",
     },
     button: {
-      textTransform: 'none',
-      fontSize: "16px"
-
-    }
+      textTransform: "none",
+      fontSize: "16px",
+    },
   },
+  
   palette: {
     primary: {
       main: "#002161",
@@ -52,25 +52,24 @@ const theme = createTheme({
       // dark: "#002884",
     },
   },
+  
 });
 
 function MyApp({ Component, pageProps }) {
   if (typeof window === "undefined") {
-    return(
-      <LinearProgress />
-    )
+    return <LinearProgress />;
   }
   return (
     // <ApolloProvider client={apollo}>
-      <AuthProvider>
-        <ThemeProvider theme={theme}>
-          <Layout>
-            <div>
-              <Component {...pageProps} />
-            </div>
-          </Layout>
-        </ThemeProvider>
-      </AuthProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <div>
+            <Component {...pageProps} />
+          </div>
+        </Layout>
+      </ThemeProvider>
+    </AuthProvider>
     // </ApolloProvider>
   );
 }

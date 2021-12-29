@@ -14,14 +14,21 @@ import {
   RadioGroup,
 } from "@mui/material";
 import Radio from "@mui/material/Radio";
+import { makeStyles } from "@mui/styles";
 
+const useStyles = makeStyles({
+  fontSize: {
+    "& span:last-child": {
+      fontSize: 14,
+    },
+  },
+});
 
 const Rent_dropdowm_pc = (props) => {
+  const classes = useStyles();
+
   const [selected, setselected] = useState(false);
   const [getValueSelected, setgetValueSelected] = useState("");
-
-
-
 
   function onSelect(e) {
     setgetValueSelected(e.target.value);
@@ -37,7 +44,7 @@ const Rent_dropdowm_pc = (props) => {
             <>
               {props.dataRadio.dataSub.sub_menu.map((sub_items, key) => (
                 <FormControlLabel
-                  className="jr_hover_blue jr_f18"
+                  className={`jr_hover_blue ${classes.fontSize}`}
                   key={key}
                   value={sub_items}
                   control={<Radio name={sub_items} sx={{ fontSize: "19px" }} />}
@@ -58,4 +65,4 @@ const Rent_dropdowm_pc = (props) => {
   );
 };
 
-export default  Rent_dropdowm_pc;
+export default Rent_dropdowm_pc;

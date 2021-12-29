@@ -12,8 +12,19 @@ import {
 } from "@mui/material";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  fontSize: {
+    "& span:last-child": {
+      fontSize: 14,
+    },
+  },
+});
 
 const Property_sub_menu = () => {
+  const classes = useStyles();
+
   const [selected, setselected] = useState(false);
   const [getValueSelected, setgetValueSelected] = useState("");
 
@@ -73,7 +84,7 @@ const Property_sub_menu = () => {
               {dataFetch.data.property_types.map((items, key) => (
                 <FormControlLabel
                   key={key}
-                  className="jr_f14 jr_hover_blue"
+                  className={`jr_f14 jr_hover_blue ${classes.fontSize}`}
                   control={
                     <Checkbox
                       icon={<CheckBoxOutlineBlankIcon />}
