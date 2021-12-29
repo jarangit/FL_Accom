@@ -14,7 +14,6 @@ const Div = styled.div`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* Add some styling */
     background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
     -ms-word-break: normal;
     word-break: normal;
@@ -48,7 +47,7 @@ const SelectSty = styled.select`
 `;
 export default function Price_range_sub_menu() {
   const [age, setAge] = React.useState("");
-  const {data_selected, setdata_selected} = useContext(AuthContext)
+  const { data_selected, setdata_selected } = useContext(AuthContext);
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -73,9 +72,8 @@ export default function Price_range_sub_menu() {
         }}
       >
         <div className="selectdiv">
-          <SelectSty onChange={onChange} name="min">
-            <option selected="">Minimun</option>
-            <option value="">No min</option>
+          <SelectSty onChange={onChange} name="min" value={data_selected.min}>
+            <option value="">Minimun</option>
             <option value="3">฿ 3M</option>
             <option value="5">฿ 5M</option>
             <option value="8">฿ 8M</option>
@@ -87,8 +85,8 @@ export default function Price_range_sub_menu() {
         </div>
         <RemoveIcon sx={{ color: "#ced4da" }} className="jr_icon" />
         <div className="selectdiv">
-          <SelectSty onChange={onChange} name="max">
-            <option selected="0">Maximum</option>
+          <SelectSty onChange={onChange} name="max" value={data_selected.max}>
+            <option selected>Maximum</option>
             <option value="10">฿ 10M</option>
             <option value="15">฿ 15M</option>
             <option value="20">฿ 20M</option>
@@ -97,6 +95,7 @@ export default function Price_range_sub_menu() {
             <option value="100">฿ 100M</option>
           </SelectSty>
         </div>
+      
       </div>
     </Div>
   );

@@ -47,8 +47,8 @@ export default function Price_range_mb() {
         }}
       >
         <div className="custom-select">
-          <SelectSty>
-            <option selected="">Minimun</option>
+          <SelectSty value="gggg">
+            <option value="0">Minimun</option>
             <option value="">฿ 3M</option>
             <option value="">฿ 5M</option>
             <option value="">฿ 8M</option>
