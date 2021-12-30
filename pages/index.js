@@ -36,7 +36,7 @@ export default function Home() {
   }
   function GoToReadMore_MB() {
     window.scrollTo({
-      top: 9210,
+      top: 9480,
       behavior: "smooth",
     });
   }

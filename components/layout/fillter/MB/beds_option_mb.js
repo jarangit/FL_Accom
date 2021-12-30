@@ -3,39 +3,29 @@ import { Stack, Typography } from "@mui/material";
 import styled from "styled-components";
 
 const Div = styled.div`
-  .stack_but {
-    button {
-      margin-left: -4px;
-      border-radius: 0px 3px 3px 0px;
-      border-color: #d8d8d8;
-    }
-    .but_primary {
-      border-radius: 3px;
-    }
-    .but_primary_w {
-      padding: 10px 18px;
-      margin: 10px 0;
-      
-    }
-    .but_primary_w:focus{
-      background-color: #E0EEFC;
-      color: #002161
-    }
+  display: flex;
+  justify-content: space-between;
+  .button_w {
+    border-radius: 0px 3px 3px 0px;
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    margin: 10px 0;
+    background: white;
+  }
+  .button_w:focus {
+    background-color: #e0eefc;
+    color: #002161;
   }
 `;
 const Beds_option_mb = () => {
   return (
     <Div>
-      <Stack direction="row" justifyContent="center">
-        <button className="but_primary">Studio</button>
-        <div className="stack_but">
-          <button className="but_primary_w">+1</button>
-          <button className="but_primary_w">+1</button>
-          <button className="but_primary_w">+1</button>
-          <button className="but_primary_w">+1</button>
-          <button className="but_primary_w">+1</button>
-        </div>
-      </Stack>
+      <button className="but_primary">Studio</button>
+      <button className="button_w">+1</button>
+      <button className="button_w">+2</button>
+      <button className="button_w">+3</button>
+      <button className="button_w">+4</button>
+      <button className="button_w">+5</button>
     </Div>
   );
 };

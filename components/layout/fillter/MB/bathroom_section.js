@@ -15,15 +15,30 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 const Section_1 = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-style: solid none solid none;
-  padding: 15px;
+  padding:  0 15px;
   p {
-    /* margin: 15px 0; */
+    margin: 15px 0;
   }
+  .selectdiv select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
+    -ms-word-break: normal;
+    word-break: normal;
+    background-position: calc(100% - 5px) center;
+    background-repeat: no-repeat;
+    background-size: auto 20px;
+    appearance: none;
+  }
+  
 `;
 
 const Section_2 = styled.div`
   text-align: center;
   margin-bottom: 200px;
+  
+  
   .but_primary {
     border-radius: 3px;
   }
@@ -81,7 +96,7 @@ const Bathroom_section = () => {
           <p>
             <strong>Usable Area (Sq.M)</strong>
           </p>
-          <div>
+          <div className="selectdiv" >
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">
                 No min
@@ -100,7 +115,7 @@ const Bathroom_section = () => {
           <p>
             <strong>Land Size (Sq.W)</strong>
           </p>
-          <div>
+          <div className="selectdiv" >
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">
                 No min
@@ -119,7 +134,7 @@ const Bathroom_section = () => {
           <p>
             <strong>Transportation Radius (BTS/MRT)</strong>
           </p>
-          <div>
+          <div className="selectdiv" >
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">
                 No min

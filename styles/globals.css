@@ -52,21 +52,20 @@ h2 {
   margin: 15px 0;
 }
 
-h3,h4{
+h3,
+h4 {
   margin: 3px 0;
 }
-
 
 h1 {
   font-size: 2rem;
 }
-h2{
+h2 {
   font-size: 1.5rem;
 }
-h3{
+h3 {
   font-size: 1.125rem;
 }
-
 
 p {
   margin: 5px 0;
@@ -209,13 +208,23 @@ p {
 }
 
 .jr_select {
+  cursor: pointer;
   height: 35px;
   background: white;
   color: gray;
   border-radius: 0.25rem;
-  padding: 6px 12px;
+  padding: 6px 28px 6px 12px;
   border-color: #ced4da;
   font-size: 14px;
+}
+.jr_selcet option {
+  color: #002161;
+  font-weight: small;
+  display: flex;
+  white-space: pre;
+  min-height: 20px;
+  padding: 10px;
+  margin: 10px;
 }
 .jr_option {
   color: black;

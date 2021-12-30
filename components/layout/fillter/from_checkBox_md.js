@@ -4,7 +4,8 @@ import { AuthContext } from "../../../appState/authProviceder";
 const Div = styled.div`
   .checkBox_icon {
     position: absolute;
-    left: 0;
+    left: 15px;
+
   }
   .items {
     margin: 10px 0;

@@ -91,7 +91,11 @@ const Fillter_items_md = () => {
     if (props.data.name === "Price") {
       return <Price_range_mb />;
     } else if (props.data.name === "Beds") {
-      return <Beds_option_mb />;
+      return (
+        <div style={{ padding: "0 15px"}} >
+          <Beds_option_mb />
+        </div>
+      )
     } else {
       return <From_checkBox_md dataSub={props.data} />;
     }
@@ -121,11 +125,6 @@ const Fillter_items_md = () => {
                   {items.name}
                   <span className="arrow_icon"></span>
                 </p>
-                {/* <img
-                  className="jr_icon_fillter"
-                  src="https://i.ibb.co/NxhY2hK/arrow-close.png"
-                  width="20px"
-                /> */}
                 {openFilter_mb && (
                   <>
                     {items.name === get_name_sub ? (
