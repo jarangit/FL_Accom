@@ -9,6 +9,22 @@ const Div = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  input {
+    width: 56px;
+    text-align: center;
+  }
+  #input1 {
+    color: #001743;
+    border: 1px solid #001743;
+    border-radius: 3px;
+    margin-left: -3px;
+    ::placeholder {
+       color: #001743;
+        opacity: 1;
+      }
+    }
+  }
+  
   @media (max-width: 375px) {
     .but_primary_w {
       width: 100%;
@@ -34,8 +50,8 @@ const Pagination_jr = () => {
           <Button variant="contained" color="primary">
             <ArrowLeftIcon />
           </Button>
-          <Button variant="outlined">10</Button>
-          <Button variant="text">of 420</Button>{" "}
+          <input id="input1" placeholder="10" type="text" />
+          <input placeholder="of 427" type="text" />
           <Button variant="contained" color="primary">
             <ArrowRightIcon />
           </Button>

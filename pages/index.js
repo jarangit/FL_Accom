@@ -10,7 +10,21 @@ import Nav_call from "../components/layout/nav/nav_call";
 import Alert_form from "../components/form/alert_form";
 import React, { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../appState/authProviceder";
+import styled from "styled-components";
 
+const Div = styled.div`
+  .but_readMore_mb {
+    display: none;
+  }
+  @media (max-width: 414px) {
+    .but_readMore_pc {
+      display: none;
+    }
+    .but_readMore_mb {
+      display: block;
+    }
+  }
+`;
 export default function Home() {
   const label = { inputProps: { "aria-label": "Switch demo" } };
 
@@ -20,20 +34,22 @@ export default function Home() {
       behavior: "smooth",
     });
   }
-
-  const { onCheckedContactForm } = useContext(AuthContext);
+  function GoToReadMore_MB() {
+    window.scrollTo({
+      top: 9210,
+      behavior: "smooth",
+    });
+  }
 
   return (
-    <div>
+    <Div>
       <Alert_form />
-       <CustomSeparator />
+      <CustomSeparator />
       <div>
         <h1 className="jr_sky jr_blod">
           Property for sale in Bangkok, Thailand
         </h1>
-        <h2 >
-          4,200 properties available on Accomasia
-        </h2>
+        <h2>4,200 properties available on Accomasia</h2>
         <p>
           Explore 3,134 properties for sale in Bangkok. View 360 , full details.
           Update new properties. Talk and tour properties with our expert agents
@@ -41,7 +57,17 @@ export default function Home() {
         </p>
       </div>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <button className="but_primary_w" onClick={GoToReadMore}>
+        <button
+          className="but_primary_w but_readMore_pc"
+          onClick={GoToReadMore}
+        >
+          Learn more
+          <ArrowDownwardIcon className="jr_icon" />
+        </button>
+        <button
+          className="but_primary_w but_readMore_mb"
+          onClick={GoToReadMore_MB}
+        >
           Learn more
           <ArrowDownwardIcon className="jr_icon" />
         </button>
@@ -70,6 +96,6 @@ export default function Home() {
       <Product_item />
       <Pagination_jr />
       <Accordion_items />
-    </div>
+    </Div>
   );
 }

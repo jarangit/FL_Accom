@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ProD_items_his from "./proD_items_his";
 
 const Div = styled.div`
-margin-bottom:20px;
+  margin-bottom: 20px;
   .header {
     padding: 10px 0;
     border: 2px solid #65acf0;
@@ -19,6 +19,9 @@ margin-bottom:20px;
   .flex_jr {
     display: flex;
     flex-wrap: wrap;
+    a {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -53,7 +56,7 @@ const Properties_for_sale = () => {
       </div>
       <div>
         <p className="header jr_blod">Properties for sale in CBD Bangkok</p>
-        <div className="flex_jr">
+        <div className="flex_jr ">
           <a href="#" className="items">
             items
           </a>
@@ -79,7 +82,7 @@ const Properties_for_sale = () => {
       </div>
       <div>
         <p className="header jr_blod">Hot properties</p>
-        <ProD_items_his/>
+        <ProD_items_his />
       </div>
     </Div>
   );

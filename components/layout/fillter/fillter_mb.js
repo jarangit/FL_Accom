@@ -61,7 +61,7 @@ const Fillter_mb = () => {
 
   return (
     <div>
-      <Div display_show={open_form_filter_mb}>
+      <Div display_show={open_form_filter_mb} className="jr_container">
         <div className="modal">
           <div className="modal_content">
             <Grid container className="nav_grid">

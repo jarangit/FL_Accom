@@ -190,7 +190,6 @@ const Filter_bar = () => {
   };
   return (
     <Div>
-      <Fillter_mb className="jr_mb_open" />
       <Desk_fillter className="jr_mb_close" toggle={toggle}>
         <div>
           <Search_input />

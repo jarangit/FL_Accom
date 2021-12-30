@@ -89,8 +89,8 @@ const Card_image_product = (props) => {
         </button>
       </div>
       <div className="bottom_left">
-        <button className="but_blue_jr">
-          <span>Leangsua villa</span>
+        <button className="but_blue_jr ">
+          <span className="jr_f12">Leangsua villa</span>
         </button>
       </div>
       <div className="bottom_right">

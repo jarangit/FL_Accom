@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
-import {
-  TextField,
-  SearchIconWrapper,
-  StyledInputBase,
-  Box,
-  Button,
-  Typography,
-  FormGroup,
-  Checkbox,
-  FormControlLabel,
-  Select,
-  MenuItem,
-  FormControl,
-} from "@mui/material";
-import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import CircleIcon from "@mui/icons-material/Circle";
+import { FormGroup, Checkbox, FormControlLabel } from "@mui/material";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import styled from "styled-components";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  fontSize: {
+    "& span:last-child": {
+      fontSize: 14,
+    },
+  },
+});
+
 const Div = styled.div`
   max-height: 320px;
   overflow: scroll;
@@ -68,7 +60,7 @@ const Div = styled.div`
   .but_show::before {
     position: relative;
     font-family: "Font Awesome 5 Free";
-   font-weight: 900;
+    font-weight: 900;
     content: "\f078";
     margin-right: 10px;
     padding: 0;
@@ -91,6 +83,8 @@ const Div = styled.div`
   }
 `;
 const Fillter_but_item = () => {
+  const classes = useStyles();
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [dataFetch, setdataFetch] = useState([]);
@@ -156,7 +150,7 @@ const Fillter_but_item = () => {
               {dataFetch.data.special_charecter.map((items, key) => (
                 <FormControlLabel
                   key={key}
-                  className="text_label"
+                  className={`text_label ${classes.fontSize}`}
                   control={
                     <Checkbox
                       icon={<CheckBoxOutlineBlankIcon />}
@@ -199,7 +193,7 @@ const Fillter_but_item = () => {
               {dataFetch.data.amenities.map((items, key) => (
                 <FormControlLabel
                   key={key}
-                  className="text_label"
+                  className={`text_label ${classes.fontSize}`}
                   control={
                     <Checkbox
                       icon={<CheckBoxOutlineBlankIcon />}
@@ -241,7 +235,7 @@ const Fillter_but_item = () => {
               {dataFetch.data.facilities.map((items, key) => (
                 <FormControlLabel
                   key={key}
-                  className="text_label"
+                  className={`text_label ${classes.fontSize}`}
                   control={
                     <Checkbox
                       icon={<CheckBoxOutlineBlankIcon />}
