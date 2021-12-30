@@ -4,6 +4,7 @@ import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import styled from "styled-components";
 import { makeStyles } from "@mui/styles";
+import Beds_option_mb from "./MB/beds_option_mb";
 
 const useStyles = makeStyles({
   fontSize: {
@@ -266,12 +267,7 @@ const Fillter_but_item = () => {
 
       <div className="add_mlr">
         <p>Bathrooms</p>
-        <button className="but_primary">Any+</button>
-        <button className="but_primary_w">1+</button>
-        <button className="but_primary_w">2+</button>
-        <button className="but_primary_w">3+</button>
-        <button className="but_primary_w">4+</button>
-        <button className="but_primary_w">5+</button>
+        <Beds_option_mb />
       </div>
 
       <div className="add_mlr">

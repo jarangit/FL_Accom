@@ -20,7 +20,7 @@ const Div = styled.div`
 const Beds_option_mb = () => {
   return (
     <Div>
-      <button className="but_primary">Studio</button>
+      <button className="but_primary">Any+</button>
       <button className="button_w">+1</button>
       <button className="button_w">+2</button>
       <button className="button_w">+3</button>
