@@ -1,11 +1,5 @@
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import React, { useState, useContext } from "react";
-import { Typography } from "@mui/material";
-import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
+
+import React, { useContext } from "react";
 import styled from "styled-components";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { AuthContext } from "../../../../appState/authProviceder";

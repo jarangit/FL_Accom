@@ -1,4 +1,4 @@
-import { Button, Stack, Typography, Switch } from "@mui/material";
+import { Stack, Switch } from "@mui/material";
 import CustomSeparator from "../components/layout/items/bread";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Product_item from "../components/layout/product/product_item";
@@ -8,9 +8,9 @@ import Pagination_jr from "../components/layout/items/pagination";
 import Nav_request from "../components/layout/nav/nav_request";
 import Nav_call from "../components/layout/nav/nav_call";
 import Alert_form from "../components/form/alert_form";
-import React, { useState, useContext, useEffect } from "react";
-import { AuthContext } from "../appState/authProviceder";
+import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 
 const Div = styled.div`
   .but_readMore_mb {
@@ -80,7 +80,14 @@ export default function Home() {
       <Product_item />
       <Product_item />
       <a href="#">
-        <img src="https://i.ibb.co/d7RbVn4/discount-banner.jpg" width="100%" />
+        <Image
+          src="https://i.ibb.co/d7RbVn4/discount-banner.jpg"
+          alt="Picture of the author"
+          width={16}
+          height={5}
+          layout="responsive"
+          quality={6}
+        />
       </a>
       <Product_item />
       <Product_item />

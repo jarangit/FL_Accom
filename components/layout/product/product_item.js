@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Stack, Typography } from "@mui/material/";
-import AddLocationOutlinedIcon from "@mui/icons-material/AddLocationOutlined";
+import { Grid, Stack } from "@mui/material/";
 import Card_image_product from "./card_image_product";
 import styled from "styled-components";
 

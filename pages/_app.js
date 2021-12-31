@@ -1,11 +1,8 @@
 import Layout from "../components/layout/layout";
 import "../styles/globals.css";
 import {
-  Button,
   createTheme,
-  Grid,
   ThemeProvider,
-  Typography,
 } from "@mui/material";
 import { fontWeight, letterSpacing } from "@mui/system";
 import AuthProvider from "../appState/authProviceder";

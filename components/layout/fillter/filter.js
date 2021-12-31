@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import styled, { ThemeContext } from "styled-components";
+import styled from "styled-components";
 import CircleIcon from "@mui/icons-material/Circle";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Price_range_sub_menu from "./price_range_sub_menu";
