@@ -80,8 +80,8 @@ const Card_image_product = (props) => {
       <div className="img_thumb">
         <Image
           src="https://i.ibb.co/1RDJj8Y/1.png"
-          width={350}
-          height={260}
+          width={365}
+          height={270}
         />
     
       </div>
