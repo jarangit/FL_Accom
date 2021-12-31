@@ -84,9 +84,8 @@ export default function Home() {
           src="https://i.ibb.co/d7RbVn4/discount-banner.jpg"
           alt="Picture of the author"
           width={16}
-          height={5}
+          height={6}
           layout="responsive"
-          quality={6}
         />
       </a>
       <Product_item />

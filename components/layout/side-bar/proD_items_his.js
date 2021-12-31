@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Grid } from "@mui/material";
 import styled from "styled-components";
-
+import Image from "next/image";
 const Div_image = styled.div`
   width: 100%;
   overflow: hidden;
@@ -53,14 +53,20 @@ const ProD_items_his = () => {
     <>
       {fake_data.map((items, key) => (
         <a href="#" key={key}>
-          <Grid container spacing={2} >
+          <Grid container spacing={2}>
             <Grid item xs={5} sm={5}>
               <Div_image>
-                <img
+                <Image
+                  src="https://i.ibb.co/1RDJj8Y/1.png"
+                  width={180}
+                  height={140}
+                  className="image_thumb"
+                />
+                {/* <img
                   src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png"
                   width="135"
                   className="image_thumb"
-                />
+                /> */}
               </Div_image>
             </Grid>
             <Grid item xs={7} sm={7}>

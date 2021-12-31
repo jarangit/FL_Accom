@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
+import Image from "next/image";
 const Div = styled.div`
   position: relative;
   :hover {
@@ -23,9 +24,10 @@ const Div = styled.div`
     height: 100%;
     width: 100%;
     bottom: 0;
-    opacity: ${(props) =>props.tavkHoverFormMain === true ? "1": "0"};
+    opacity: ${(props) => (props.tavkHoverFormMain === true ? "1" : "0")};
     transition: height 0.5s ease-out;
     background: linear-gradient(to bottom, transparent 0%, black 100%);
+    z-index: 5;
   }
 
   .bottom_left {
@@ -34,7 +36,6 @@ const Div = styled.div`
     left: 12px;
     background: #9bdeff;
     font-size: 12px;
-
   }
   .bottom_right {
     position: absolute;
@@ -54,14 +55,13 @@ const Div = styled.div`
     background: #9bdeff;
   }
   .centered {
-    display: ${(props) =>props.tavkHoverFormMain == true ? "block": "none"};
+    display: ${(props) => (props.tavkHoverFormMain == true ? "block" : "none")};
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 150px;
     transition: 0.5s;
-
   }
   .button_center {
     background: none;
@@ -74,14 +74,16 @@ const Div = styled.div`
   }
 `;
 const Card_image_product = (props) => {
-  console.log(props.tackHover)
+  console.log(props.tackHover);
   return (
-    <Div tavkHoverFormMain = {props.tackHover} >
+    <Div tavkHoverFormMain={props.tackHover}>
       <div className="img_thumb">
-        <img
-          src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png"
-          width="100%"
+        <Image
+          src="https://i.ibb.co/1RDJj8Y/1.png"
+          width={350}
+          height={260}
         />
+    
       </div>
       <div className="centered">
         <button className="button_center">
@@ -95,7 +97,7 @@ const Card_image_product = (props) => {
       </div>
       <div className="bottom_right">
         <PhotoOutlinedIcon className="jr_icon" />
-        <span >12</span>
+        <span>12</span>
       </div>
     </Div>
   );
