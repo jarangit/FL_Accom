@@ -11,9 +11,9 @@ import {
 import React from "react";
 import styled from "styled-components";
 import LanguageIcon from "@mui/icons-material/Language";
-import Menu_mobile from "./menu/menu_mobile";
-import Fillter_mb from "./fillter/fillter_mb";
-import { FakeData_menu_pc } from "../fakeData/menu_pc";
+import Menu_mobile from "./menu_mobile";
+import Fillter_mb from "../fillter/MB/fillter_mb";
+import { FakeData_menu_pc } from "../../../fakeData/menu_pc";
 
 const Div = styled.div`
   background-color: #f9f9f9;

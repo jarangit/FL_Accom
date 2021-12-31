@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-import { FakeData_filter_menu_md } from "../../fakeData/filter_menu_md";
+import { FakeData_filter_menu_md } from "../../../../fakeData/filter_menu_md";
 import {
   FormControl,
   FormGroup,
@@ -9,14 +9,14 @@ import {
 } from "@mui/material";
 import { Checkbox } from "@mui/material";
 import From_checkBox_md from "./from_checkBox_md";
-import { AuthContext } from "../../../appState/authProviceder";
+import { AuthContext } from "../../../../appState/authProviceder";
 import CloseIcon from "@mui/icons-material/Close";
-import Price_range_sub_menu from "./price_range_sub_menu";
-import Price_range_mb from "./MB/price_range_mb";
-import Beds_option_mb from "./MB/beds_option_mb";
+import Price_range_sub_menu from "../price_range_sub_menu";
+import Price_range_mb from "./price_range_mb";
+import Beds_option_mb from "./beds_option_mb";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
-import Bathroom_section from "./MB/bathroom_section";
+import Bathroom_section from "./bathroom_section";
 const Section_menu = styled.div`
   background-color: white;
   position: relative;

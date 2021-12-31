@@ -4,7 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import styled from "styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { FakeData_menu_mb } from "../../fakeData/menu_mb";
+import { FakeData_menu_mb } from "../../../fakeData/menu_mb";
 import LanguageIcon from "@mui/icons-material/Language";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

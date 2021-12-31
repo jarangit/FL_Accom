@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddIcon from "@mui/icons-material/Add";
 import { Button } from "@mui/material";
-import { FakeData_Q_A } from "../fakeData/questions";
+import { FakeData_Q_A } from "../../../fakeData/questions";
 import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
 import styled from "styled-components";
 

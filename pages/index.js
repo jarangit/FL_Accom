@@ -1,10 +1,10 @@
 import { Button, Stack, Typography, Switch } from "@mui/material";
-import CustomSeparator from "../components/layout/bread";
+import CustomSeparator from "../components/layout/items/bread";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import Product_item from "../components/layout/product_item";
+import Product_item from "../components/layout/product/product_item";
 import Nav_contact from "../components/layout/nav/nav_contact";
-import Accordion_items from "../components/layout/accordion";
-import Pagination_jr from "../components/layout/pagination";
+import Accordion_items from "../components/layout/items/accordion";
+import Pagination_jr from "../components/layout/items/pagination";
 import Nav_request from "../components/layout/nav/nav_request";
 import Nav_call from "../components/layout/nav/nav_call";
 import Alert_form from "../components/form/alert_form";

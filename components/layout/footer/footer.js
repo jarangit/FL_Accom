@@ -6,7 +6,7 @@ import LocalPhoneOutlinedIcon from "@mui/icons-material/LocalPhoneOutlined";
 import PhoneAndroidOutlinedIcon from "@mui/icons-material/PhoneAndroidOutlined";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import Contact_me_form from "../form/contact_me_form";
+import Contact_me_form from "../../form/contact_me_form";
 import styled from "styled-components";
 
 const Div = styled.div`

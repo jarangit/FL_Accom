@@ -1,14 +1,13 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import Alert_form from "../form/alert_form";
-import Fillter_mb from "./fillter/fillter_mb";
-import Filter_bar from "./filter";
-import Footer from "./footer";
-import History from "./history";
-import Menu from "./menu";
-import Show_menu_mb from "./menu/show_menu_mb";
-import Properties_for_sale from "./properties_for_sale";
-import Ultimate_guide from "./ultimate_guide";
+import Fillter_mb from "./fillter/MB/fillter_mb";
+import Filter_bar from "./fillter/filter";
+import Footer from "./footer/footer";
+import History from "./side-bar/history";
+import Menu from "./menu/menu";
+import Properties_for_sale from "./side-bar/properties_for_sale";
+import Ultimate_guide from "./items/ultimate_guide";
 
 const Layout = ({ children }) => {
   return (

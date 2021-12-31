@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { AuthContext } from "../../../appState/authProviceder";
+import { AuthContext } from "../../../../appState/authProviceder";
 const Div = styled.div`
   .checkBox_icon {
     position: absolute;

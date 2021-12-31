@@ -2,14 +2,13 @@ import React, { useState, useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
 import CircleIcon from "@mui/icons-material/Circle";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import Price_range_sub_menu from "./fillter/price_range_sub_menu";
-import Beds_sub_menu from "./fillter/beds_sub_menu";
-import Fillter_but_item from "./fillter/fillter_but_item";
-import Search_input from "./fillter/search_input";
-import Fillter_mb from "./fillter/fillter_mb";
-import Property_sub_menu from "./dropdown/property_sub_menu";
-import Rent_dropdowm_pc from "./dropdown/rent_dropdowm_pc";
-import { AuthContext } from "../../appState/authProviceder";
+import Price_range_sub_menu from "./price_range_sub_menu";
+import Beds_sub_menu from "./beds_sub_menu";
+import Fillter_but_item from "./fillter_but_item";
+import Search_input from "./search_input";
+import Property_sub_menu from "../dropdown/property_sub_menu";
+import Rent_dropdowm_pc from "../dropdown/rent_dropdowm_pc";
+import { AuthContext } from "../../../appState/authProviceder";
 
 const Desk_fillter = styled.div`
   margin: 15px 0;
