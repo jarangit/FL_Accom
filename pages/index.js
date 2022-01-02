@@ -8,9 +8,10 @@ import Pagination_jr from "../components/layout/items/pagination";
 import Nav_request from "../components/layout/nav/nav_request";
 import Nav_call from "../components/layout/nav/nav_call";
 import Alert_form from "../components/form/alert_form";
-import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { AuthContext } from "../appState/authProviceder";
+import React, { useContext } from "react";
 
 const Div = styled.div`
   .but_readMore_mb {
@@ -25,9 +26,14 @@ const Div = styled.div`
     }
   }
 `;
-export default function Home() {
+const Home = (props) => {
+  const {  setgobal_filter_menu_api,  setGobal_search_filter_api } = useContext(AuthContext);
+  if(props){
+    setgobal_filter_menu_api(props.flilter_menu_api)
+    setGobal_search_filter_api(props.search_menu_api.data.list)
+  }
   const label = { inputProps: { "aria-label": "Switch demo" } };
-
+  console.log(props);
   function GoToReadMore() {
     window.scrollTo({
       top: 4300,
@@ -104,4 +110,25 @@ export default function Home() {
       <Accordion_items />
     </Div>
   );
+};
+
+export async function getStaticProps() {
+  const res_flilter_menu_api = await fetch(
+    "https://www.accomasia.co.th/api/v1/masterdata"
+  );
+  const flilter_menu_api = await res_flilter_menu_api.json();
+
+  const res_search_menu_api = await fetch(
+    "https://www.accomasia.co.th/api/v1/search_advanced?search_txt=bts"
+  );
+  const search_menu_api = await res_search_menu_api.json();
+
+
+  return {
+    props: {
+      flilter_menu_api: flilter_menu_api,
+      search_menu_api: search_menu_api,
+    },
+  };
 }
+export default Home;

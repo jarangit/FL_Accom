@@ -10,9 +10,11 @@ const AuthProvider = ({ children, userData }) => {
     min: "",
     max: "",
   });
-  const [data_check_rent, setdata_check_rent] = useState('Rent')
+  const [data_check_rent, setdata_check_rent] = useState("Rent");
   const [onCheckedContactForm, setonCheckedContactForm] = useState(false);
   const [onConpleteContactForm, setonConpleteContactForm] = useState(false);
+  const [gobal_filter_menu_api, setgobal_filter_menu_api] = useState([]);
+  const [Gobal_search_filter_api, setGobal_search_filter_api] = useState([]);
   return (
     <AuthContext.Provider
       value={{
@@ -26,7 +28,12 @@ const AuthProvider = ({ children, userData }) => {
         setonCheckedContactForm,
         onConpleteContactForm,
         setonConpleteContactForm,
-        data_check_rent, setdata_check_rent,
+        data_check_rent,
+        setdata_check_rent,
+        gobal_filter_menu_api,
+        setgobal_filter_menu_api,
+        Gobal_search_filter_api,
+        setGobal_search_filter_api,
       }}
     >
       {children}

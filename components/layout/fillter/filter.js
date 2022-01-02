@@ -192,7 +192,7 @@ const Filter_bar = () => {
       <Desk_fillter className="jr_mb_close" toggle={toggle}>
         <div>
           <Search_input />
-        </div>
+          </div>
         {menu_api.map((items, key) => (
           <div className="dropdown_jr" key={key}>
             <button

@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
-import { Typography } from "@mui/material";
-
+import { AuthContext } from "../../../appState/authProviceder";
 const Div = styled.div`
   .jr_icon_inside_input {
     position: absolute;
@@ -66,8 +65,16 @@ const Div = styled.div`
     }
   }
 `;
+
 const Search_input = () => {
+  const { Gobal_search_filter_api } = useContext(AuthContext);
   const [dataSearch, setdataSearch] = useState("");
+  const [after_filter, setafter_filter] = useState();
+  //Find from seach input
+  const find_list = Gobal_search_filter_api.filter((item) => {
+    let label = item.label.toLowerCase();
+    return label.includes(dataSearch);
+  });
 
   function OnInputSearchChange(e) {
     setdataSearch(e.target.value);
@@ -76,7 +83,7 @@ const Search_input = () => {
   function ClearDataSearch() {
     setdataSearch("");
   }
-  console.log(dataSearch);
+  console.log(find_list);
   return (
     <Div>
       <form style={{ alignItems: "center", position: "relative" }}>
@@ -100,6 +107,13 @@ const Search_input = () => {
           <SearchIcon sx={{ verticalAlign: "middle" }} />
         </button>
       </form>
+      {find_list.length !== 48 ? (
+        <div>
+          {find_list.map((items, key) => (
+            <div key={key}>{items.label}</div>
+          ))}
+        </div>
+      ):""}
       {dataSearch != "" ? (
         <div className="dropdown_search">
           <div>
@@ -254,4 +268,3 @@ const Search_input = () => {
 };
 
 export default Search_input;
-Typography;

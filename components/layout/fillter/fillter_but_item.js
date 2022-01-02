@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FormGroup, Checkbox, FormControlLabel } from "@mui/material";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import styled from "styled-components";
 import { makeStyles } from "@mui/styles";
 import Beds_option_mb from "./MB/beds_option_mb";
-
+import { AuthContext } from "../../../appState/authProviceder";
 const useStyles = makeStyles({
   fontSize: {
     "& span:last-child": {
@@ -85,13 +85,14 @@ const Div = styled.div`
 `;
 const Fillter_but_item = () => {
   const classes = useStyles();
-
+  const { gobal_filter_menu_api, setgobal_filter_menu_api } =
+    useContext(AuthContext);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [dataFetch, setdataFetch] = useState([]);
   const [ShowMore, setShowMore] = useState(false);
   const [getButName, setgetButName] = useState();
-  console.log(ShowMore);
+  console.log(gobal_filter_menu_api );
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
@@ -148,7 +149,7 @@ const Fillter_but_item = () => {
         >
           {dataFetch.length !== 0 ? (
             <>
-              {dataFetch.data.special_charecter.map((items, key) => (
+              {gobal_filter_menu_api.data.special_charecter.map((items, key) => (
                 <FormControlLabel
                   key={key}
                   className={`text_label ${classes.fontSize}`}
