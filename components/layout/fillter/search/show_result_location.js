@@ -14,18 +14,18 @@ const Div = styled.div`
     }
   }
 `;
-const ShowResultProject = (props) => {
+const Show_result_location = (props) => {
   console.log(props);
   return (
     <Div>
-      <strong className="underline_text jr_f16">Project building</strong>
+      <strong className="underline_text jr_f16">Location</strong>
       {props.data.length !== 0 ? (
         <>
           {props.data.map((items, key) => (
             <div key={key}>
               <a href="#" className="items_keyword jr_color_gray">
                 <img
-                  src="https://i.ibb.co/2MSKkxQ/building.png"
+                  src="https://i.ibb.co/HHFDHrR/location.png"
                   className="jr_icon"
                 />
                 {items.label}
@@ -40,4 +40,4 @@ const ShowResultProject = (props) => {
   );
 };
 
-export default ShowResultProject;
+export default Show_result_location;

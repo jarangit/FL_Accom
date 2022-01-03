@@ -1,9 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
 import { AuthContext } from "../../../appState/authProviceder";
 import ShowResultProject from "./search/show_result_project";
+import Show_result_location from "./search/show_result_location";
+import Show_result_Train from "./search/show_result_train";
+import Show_result_school from "./search/show_result_school";
 const Div = styled.div`
   .jr_icon_inside_input {
     position: absolute;
@@ -46,7 +49,7 @@ const Div = styled.div`
     overflow: scroll;
     display: block;
     padding: 10px;
-    min-width: 280px;
+    width: 280px;
     position: absolute;
     background-color: white;
     border-radius: 5px;
@@ -73,11 +76,23 @@ const Search_input = () => {
   const { Gobal_search_filter_api } = useContext(AuthContext);
   const [dataSearch, setdataSearch] = useState("");
   const [after_filter, setafter_filter] = useState();
-  //Find from seach input
-  const find_list = Gobal_search_filter_api.filter((item) => {
-    let label = item.label.toLowerCase();
-    return label.includes(dataSearch);
-  });
+  const [DataFecth, setDataFecth] = useState([]);
+  useEffect(() => {
+    fetch(
+      `https://www.accomasia.co.th/api/v1/search_advanced?search_txt=${dataSearch}`
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setDataFecth(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  }, [dataSearch]);
+
+  // console.log(DataFecth.data.list);
 
   function OnInputSearchChange(e) {
     setdataSearch(e.target.value);
@@ -86,17 +101,35 @@ const Search_input = () => {
   function ClearDataSearch() {
     setdataSearch("");
   }
-  console.log(find_list);
 
   const ShowResult = (props) => {
-    for (let i = 0; i < find_list.length; i++) {
-      const Items = find_list[i];
-      if (Items.mode === "project") {
-        const resultProject = find_list.filter((e) => {
-          return e.mode.includes("project");
-        });
-        return <ShowResultProject data={resultProject} />;
-      }
+    let MainElemrnt = [];
+    if (!DataFecth.data) {
+      return <div>No result</div>;
+    }
+    console.log(DataFecth);
+
+    if (DataFecth.data.list[0].mode !== null) {
+      const resultLocation = DataFecth.data.list.filter((e) =>
+        e.mode.includes("street")
+      );
+      const resultProject = DataFecth.data.list.filter((e) =>
+        e.mode.includes("project")
+      );
+      const resultTrain = DataFecth.data.list.filter((e) =>
+        e.mode.includes("Train")
+      );
+      const resultSchool = DataFecth.data.list.filter((e) =>
+        e.mode.includes("school")
+      );
+      return (
+        <>
+          <Show_result_location data={resultLocation} />
+          <ShowResultProject data={resultProject} />
+          <Show_result_Train data={resultTrain} />
+          <Show_result_school data={resultSchool} />
+        </>
+      );
     }
     return "";
   };
@@ -123,162 +156,13 @@ const Search_input = () => {
           <SearchIcon sx={{ verticalAlign: "middle" }} />
         </button>
       </form>
-      {dataSearch !== '' ? (
+      {dataSearch !== "" ? (
         <div className="dropdown_search">
-          <ShowResult data={find_list} />
+          <ShowResult data={DataFecth} />
         </div>
       ) : (
         ""
       )}
-      {/* {dataSearch != "" ? (
-        <div className="dropdown_search">
-          <div>
-            <strong className="underline_text jr_f16">Location</strong>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HHFDHrR/location.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HHFDHrR/location.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HHFDHrR/location.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HHFDHrR/location.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-          </div>
-
-          <div>
-            <strong className="underline_text jr_f16">Transportation</strong>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/xMzRyCL/transportation.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/xMzRyCL/transportation.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/xMzRyCL/transportation.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/xMzRyCL/transportation.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-          </div>
-
-          <div>
-            <strong className="underline_text jr_f16">Project building</strong>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/2MSKkxQ/building.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/2MSKkxQ/building.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/2MSKkxQ/building.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/2MSKkxQ/building.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-          </div>
-
-          <div>
-            <strong className="underline_text jr_f16">School</strong>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HD4nZTK/school.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HD4nZTK/school.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HD4nZTK/school.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HD4nZTK/school.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-          </div>
-        </div>
-      ) : (
-        ""
-      )} */}
     </Div>
   );
 };
