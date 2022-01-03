@@ -3,6 +3,7 @@ import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
 import { AuthContext } from "../../../appState/authProviceder";
+import ShowResultProject from "./search/show_result_project";
 const Div = styled.div`
   .jr_icon_inside_input {
     position: absolute;
@@ -39,6 +40,8 @@ const Div = styled.div`
     }
   }
   .dropdown_search {
+    z-index: 5;
+
     height: 500px;
     overflow: scroll;
     display: block;
@@ -84,6 +87,19 @@ const Search_input = () => {
     setdataSearch("");
   }
   console.log(find_list);
+
+  const ShowResult = (props) => {
+    for (let i = 0; i < find_list.length; i++) {
+      const Items = find_list[i];
+      if (Items.mode === "project") {
+        const resultProject = find_list.filter((e) => {
+          return e.mode.includes("project");
+        });
+        return <ShowResultProject data={resultProject} />;
+      }
+    }
+    return "";
+  };
   return (
     <Div>
       <form style={{ alignItems: "center", position: "relative" }}>
@@ -107,14 +123,14 @@ const Search_input = () => {
           <SearchIcon sx={{ verticalAlign: "middle" }} />
         </button>
       </form>
-      {find_list.length !== 48 ? (
-        <div>
-          {find_list.map((items, key) => (
-            <div key={key}>{items.label}</div>
-          ))}
+      {dataSearch !== '' ? (
+        <div className="dropdown_search">
+          <ShowResult data={find_list} />
         </div>
-      ):""}
-      {dataSearch != "" ? (
+      ) : (
+        ""
+      )}
+      {/* {dataSearch != "" ? (
         <div className="dropdown_search">
           <div>
             <strong className="underline_text jr_f16">Location</strong>
@@ -262,7 +278,7 @@ const Search_input = () => {
         </div>
       ) : (
         ""
-      )}
+      )} */}
     </Div>
   );
 };

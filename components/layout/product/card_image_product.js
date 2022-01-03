@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PhotoOutlinedIcon from "@mui/icons-material/PhotoOutlined";
 import Image from "next/image";
 const Div = styled.div`
+
   position: relative;
   :hover {
     .centered {
@@ -27,7 +28,7 @@ const Div = styled.div`
     opacity: ${(props) => (props.tavkHoverFormMain === true ? "1" : "0")};
     transition: height 0.5s ease-out;
     background: linear-gradient(to bottom, transparent 0%, black 100%);
-    z-index: 5;
+    z-index: 1;
   }
 
   .bottom_left {

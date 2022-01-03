@@ -113,13 +113,14 @@ const Home = (props) => {
 };
 
 export async function getStaticProps() {
+  let search_input = "a"
   const res_flilter_menu_api = await fetch(
     "https://www.accomasia.co.th/api/v1/masterdata"
   );
   const flilter_menu_api = await res_flilter_menu_api.json();
 
   const res_search_menu_api = await fetch(
-    "https://www.accomasia.co.th/api/v1/search_advanced?search_txt=bts"
+    `https://www.accomasia.co.th/api/v1/search_advanced?search_txt=${search_input}`
   );
   const search_menu_api = await res_search_menu_api.json();
 
