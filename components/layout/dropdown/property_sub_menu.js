@@ -26,7 +26,7 @@ const Property_sub_menu = () => {
   const classes = useStyles();
 
   const [selected, setselected] = useState(false);
-  const [getValueSelected, setgetValueSelected] = useState("");
+  const [getValueSelected, setgetValueSelected] = useState("Villa");
 
   const [age, setAge] = React.useState("");
 
@@ -34,9 +34,6 @@ const Property_sub_menu = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [dataFetch, setdataFetch] = useState([]);
 
-  // Note: the empty deps array [] means
-  // this useEffect will run once
-  // similar to componentDidMount()
   useEffect(() => {
     fetch("https://www.accomasia.co.th/api/v1/masterdata")
       .then((res) => res.json())
@@ -45,26 +42,21 @@ const Property_sub_menu = () => {
           setIsLoaded(true);
           setdataFetch(result);
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           setIsLoaded(true);
           setError(error);
         }
       );
-  }, []);
+  }, [getValueSelected]);
   console.log(isLoaded);
   console.log(dataFetch);
 
-
-
-
-
   function onSelect(e, isInputChecked) {
-    setgetValueSelected(e.target.value);
+    getValueSelected.push(e.target.value);
+    // setgetValueSelected(e.target.value);
     console.log(isInputChecked);
     console.log(e.target.value);
+    console.log(getValueSelected);
 
     if (isInputChecked === true) {
       setselected(true);
@@ -79,7 +71,7 @@ const Property_sub_menu = () => {
       <div className="dropdown-content ">
         {/* <p className="underline_text jr_f16">{props.headText}</p> */}
         <FormGroup>
-          {dataFetch.length !== 0 ?(
+          {dataFetch.length !== 0 ? (
             <>
               {dataFetch.data.property_types.map((items, key) => (
                 <FormControlLabel
@@ -87,6 +79,9 @@ const Property_sub_menu = () => {
                   className={`jr_f14 jr_hover_blue ${classes.fontSize}`}
                   control={
                     <Checkbox
+                      checked={
+                        items.name.en === getValueSelected ? true : false
+                      }
                       icon={<CheckBoxOutlineBlankIcon />}
                       checkedIcon={<CheckBoxIcon />}
                       onChange={onSelect}
@@ -98,7 +93,9 @@ const Property_sub_menu = () => {
                 />
               ))}
             </>
-          ):''}
+          ) : (
+            ""
+          )}
         </FormGroup>
       </div>
     </div>

@@ -112,7 +112,8 @@ const Div = styled.div`
 const Filter_bar = () => {
   const [toggle, settoggle] = useState(false);
   const [getName_main_menu, setgetName_main_menu] = useState("");
-  const { data_selected, data_check_rent } = useContext(AuthContext);
+  const { data_selected, data_check_rent, Selected_bads } =
+    useContext(AuthContext);
 
   const menu_api = [
     {
@@ -148,7 +149,6 @@ const Filter_bar = () => {
   };
 
   const ShowDropDown = (props) => {
-    console.log(props.dataSub);
     if (props.dataSub.name === "Price range") {
       return (
         <div className="dropdown-content">
@@ -183,6 +183,8 @@ const Filter_bar = () => {
       return `฿${data_selected.min} - ฿${data_selected.max}`;
     } else if (props.dataItems === "Rent") {
       return <>{data_check_rent}</>;
+    } else if (props.dataItems === "Beds") {
+      return `${Selected_bads} Beds`
     } else {
       return <>{props.dataItems}</>;
     }

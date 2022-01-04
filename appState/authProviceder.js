@@ -13,6 +13,7 @@ const AuthProvider = ({ children, userData }) => {
   const [data_check_rent, setdata_check_rent] = useState('Rent')
   const [onCheckedContactForm, setonCheckedContactForm] = useState(false);
   const [onConpleteContactForm, setonConpleteContactForm] = useState(false);
+  const [Selected_bads, setSelected_bads] = useState("")
   return (
     <AuthContext.Provider
       value={{
@@ -27,6 +28,7 @@ const AuthProvider = ({ children, userData }) => {
         onConpleteContactForm,
         setonConpleteContactForm,
         data_check_rent, setdata_check_rent,
+        Selected_bads, setSelected_bads,
       }}
     >
       {children}
