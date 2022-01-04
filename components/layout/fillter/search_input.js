@@ -3,6 +3,10 @@ import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
 import { Typography } from "@mui/material";
+import Transportation_svg from "../../../lib/img/svg/transportation";
+import Location_svg from "../../../lib/img/svg/location";
+import Buildding_svg from "../../../lib/img/svg/buildding";
+import School_svg from "../../../lib/img/svg/school";
 
 const Div = styled.div`
   .jr_icon_inside_input {
@@ -104,145 +108,65 @@ const Search_input = () => {
         <div className="dropdown_search">
           <div>
             <strong className="underline_text jr_f16">Location</strong>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HHFDHrR/location.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HHFDHrR/location.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HHFDHrR/location.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HHFDHrR/location.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
+            <a
+              href="#"
+              className="items_keyword jr_color_gray"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Location_svg />
+              <div>
+                <span className="jr_color_primary">Keyword </span>
+                no-keyword
+              </div>
             </a>
           </div>
 
           <div>
             <strong className="underline_text jr_f16">Transportation</strong>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/xMzRyCL/transportation.png"
+            <a
+              href="#"
+              className="items_keyword jr_color_gray"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Transportation_svg
+                width={100}
+                height={100}
                 className="jr_icon"
               />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/xMzRyCL/transportation.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/xMzRyCL/transportation.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/xMzRyCL/transportation.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
+              <div>
+                <span className="jr_color_primary">Keyword </span>
+                no-keyword
+              </div>
             </a>
           </div>
 
           <div>
             <strong className="underline_text jr_f16">Project building</strong>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/2MSKkxQ/building.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/2MSKkxQ/building.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/2MSKkxQ/building.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/2MSKkxQ/building.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
+            <a
+              href="#"
+              className="items_keyword jr_color_gray"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Buildding_svg />
+              <div>
+                <span className="jr_color_primary">Keyword </span>
+                no-keyword
+              </div>
             </a>
           </div>
 
           <div>
             <strong className="underline_text jr_f16">School</strong>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HD4nZTK/school.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HD4nZTK/school.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HD4nZTK/school.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
-            </a>
-            <a href="#" className="items_keyword jr_color_gray">
-              <img
-                src="https://i.ibb.co/HD4nZTK/school.png"
-                className="jr_icon"
-              />
-              <span className="jr_color_primary">Keyword </span>
-              no-keyword
+            <a
+              href="#"
+              className="items_keyword jr_color_gray"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <School_svg />
+              <div>
+                <span className="jr_color_primary">Keyword </span>
+                no-keyword
+              </div>
             </a>
           </div>
         </div>
@@ -254,4 +178,3 @@ const Search_input = () => {
 };
 
 export default Search_input;
-Typography;
