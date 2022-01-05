@@ -56,11 +56,12 @@ const Desk_fillter = styled.div`
     padding-top: -5px;
   }
   .but_menu {
-    padding: 10px 5px;
+    position: relative;
+
+    padding: 10px 20px;
     background-color: white;
   }
-  .but_menu_blue {
-    padding: 10px 5px;
+  .but_menu.active {
     background-color: rgba(101, 172, 240, 0.2);
     border-radius: 8px;
     background-color: rgba(101, 172, 240, 0.2);
@@ -69,18 +70,65 @@ const Desk_fillter = styled.div`
       opacity: 1;
     }
   }
-  .but_menu:hover {
-    .jr_icon_dot {
-      opacity: 1;
-    }
+  .dot_icon_pop {
+    position: absolute;
+    transition: 0.3s;
+    left: 5px;
+    display: inline-block;
+  }
+  .dot_icon_pop::before {
+    display: inline;
+    position: absolute;
+    background-color: #9bdeff;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    left: 3px;
+    top: 5px;
+    z-index: 1;
+    content: "";
+  }
+  .dot_icon {
+    position: absolute;
+    transition: 0.3s;
+    left: 5px;
+    display: inline-block;
+  }
+  .dot_icon::before {
+    display: none;
+    position: absolute;
+    background-color: #9bdeff;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    left: 3px;
+    top: 5px;
+    z-index: 1;
+    content: "";
+  }
+  .but_menu.active .dot_icon::before {
+    display: inline;
+  }
 
-    background-color: red;
-    border-radius: 8px;
-    background-color: rgba(101, 172, 240, 0.2);
-    transition: 0.5s;
-  }
   .but_menu:hover.dropdown-content {
     display: none;
+  }
+  .arrow_icon {
+    position: absolute;
+    transition: 0.3s;
+    right: 0px;
+  }
+  .arrow_icon::before {
+    background-image: url("https://i.ibb.co/NxhY2hK/arrow-close.png");
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    transition: 0.2s;
+  }
+  .but_menu.active .arrow_icon::before {
+    background-image: url("https://i.ibb.co/CK4mbLR/arrow-open.png");
   }
   .dropdown-content {
     padding: 8px 16px;
@@ -112,9 +160,10 @@ const Div = styled.div`
 const Filter_bar = () => {
   const [toggle, settoggle] = useState(false);
   const [getName_main_menu, setgetName_main_menu] = useState("");
-  const { data_selected, data_check_rent, Selected_bads } =
+  const { data_selected, data_check_rent, Selected_bads, ArrPopertyChecked } =
     useContext(AuthContext);
 
+  console.log(ArrPopertyChecked.length);
   const menu_api = [
     {
       name: "Rent",
@@ -184,7 +233,20 @@ const Filter_bar = () => {
     } else if (props.dataItems === "Rent") {
       return <>{data_check_rent}</>;
     } else if (props.dataItems === "Beds") {
-      return `${Selected_bads} Beds`
+      return `${Selected_bads} Beds`;
+    } else if (props.dataItems === "Property type") {
+      return (
+        <>
+          {ArrPopertyChecked.length !== 0 ? (
+            <>
+              <span className="dot_icon_pop"></span>
+              Property type
+            </>
+          ) : (
+            "Property type"
+          )}
+        </>
+      );
     } else {
       return <>{props.dataItems}</>;
     }
@@ -200,46 +262,15 @@ const Filter_bar = () => {
             <button
               name={items.name}
               className={
-                items.name === getName_main_menu ? "but_menu_blue" : "but_menu"
+                items.name === getName_main_menu && toggle
+                  ? "but_menu active"
+                  : "but_menu"
               }
               onClick={onOpen_dropdown}
             >
-              <CircleIcon
-                className="jr_icon_dot"
-                sx={{
-                  fontSize: "10px",
-                  color: "#65acf0",
-                  verticalAlign: "middle",
-                }}
-              />
+              <span className="dot_icon"></span>
               <ShowMain_menu dataItems={items.name} />
-              {/* {items.name === "Price range" && data_selected.min !== ""
-                ? `฿${data_selected.min} - ฿${data_selected.max}`
-                : `${items.name}`} */}
-
-              {toggle ? (
-                <span>
-                  {items.name === getName_main_menu ? (
-                    <img
-                      className="jr_icon"
-                      src="https://i.ibb.co/CK4mbLR/arrow-open.png"
-                      width="20px"
-                    />
-                  ) : (
-                    <img
-                      className="jr_icon"
-                      src="https://i.ibb.co/NxhY2hK/arrow-close.png"
-                      width="20px"
-                    />
-                  )}
-                </span>
-              ) : (
-                <img
-                  className="jr_icon"
-                  src="https://i.ibb.co/NxhY2hK/arrow-close.png"
-                  width="20px"
-                />
-              )}
+              <span className="arrow_icon"></span>
             </button>
             {toggle && (
               <div>
