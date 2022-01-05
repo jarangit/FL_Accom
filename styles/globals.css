@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Sarabun:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;700&family=Sarabun:wght@300&display=swap");
 @import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 
 html,
@@ -61,7 +61,7 @@ h1 {
   font-size: 2rem;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 20px;
 }
 h3 {
   font-size: 1.125rem;
