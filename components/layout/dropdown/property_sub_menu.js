@@ -13,6 +13,7 @@ import {
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import { makeStyles } from "@mui/styles";
+import { AuthContext } from "../../../appState/authProviceder";
 
 const useStyles = makeStyles({
   fontSize: {
@@ -24,9 +25,9 @@ const useStyles = makeStyles({
 
 const Property_sub_menu = () => {
   const classes = useStyles();
-
+  const { ArrPopertyChecked, setArrPopertyChecked } = useContext(AuthContext);
   const [selected, setselected] = useState(false);
-  const [getValueSelected, setgetValueSelected] = useState("Villa");
+  const [getValueSelected, setgetValueSelected] = useState(["Villa", "House"]);
 
   const [age, setAge] = React.useState("");
 
@@ -47,24 +48,52 @@ const Property_sub_menu = () => {
           setError(error);
         }
       );
-  }, [getValueSelected]);
+  }, []);
   console.log(isLoaded);
   console.log(dataFetch);
 
   function onSelect(e, isInputChecked) {
-    getValueSelected.push(e.target.value);
+    const found = ArrPopertyChecked.find((items) => {
+      return items === e.target.value;
+    });
+    const update = (e) => {
+      console.log("UpdatIng");
+      const getIndex = ArrPopertyChecked.indexOf(e.toString())
+      console.log(e);
+      console.log(getIndex);
+      if(getIndex >= 0){
+        ArrPopertyChecked.splice(getIndex,1)
+        console.log("Deleted")
+      }
+      console.log(ArrPopertyChecked);
+    };
+    console.log(found);
+    if (!found) {
+      ArrPopertyChecked.push(e.target.value);
+    } else {
+      const delArr = ArrPopertyChecked.filter((items) => {
+        return items === e.target.value;
+      });
+      return update(delArr);
+    }
     // setgetValueSelected(e.target.value);
     console.log(isInputChecked);
     console.log(e.target.value);
-    console.log(getValueSelected);
+    console.log(ArrPopertyChecked);
 
     if (isInputChecked === true) {
       setselected(true);
     } else {
       setselected(false);
     }
-    // console.log(selected);
   }
+
+  const checkedArr = (e) =>
+    ArrPopertyChecked.find((items) => {
+      return items === e;
+    });
+
+  // console.log(checkedArr("Villa"));
 
   return (
     <div>
@@ -79,12 +108,13 @@ const Property_sub_menu = () => {
                   className={`jr_f14 jr_hover_blue ${classes.fontSize}`}
                   control={
                     <Checkbox
-                      checked={
-                        items.name.en === getValueSelected ? true : false
+                      defaultChecked={
+                        checkedArr(items.name.en) !== undefined ? true : false
                       }
                       icon={<CheckBoxOutlineBlankIcon />}
                       checkedIcon={<CheckBoxIcon />}
                       onChange={onSelect}
+                      name={items.name.en}
                     />
                   }
                   color="primary"
