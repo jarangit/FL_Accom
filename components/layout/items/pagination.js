@@ -50,7 +50,7 @@ const Pagination_jr = () => {
           <Button variant="contained" color="primary">
             <ArrowLeftIcon />
           </Button>
-          <input id="input1" placeholder="10" type="text" />
+          <input id="input1" placeholder="" type="text" />
           <input placeholder="of 427" type="text" />
           <Button variant="contained" color="primary">
             <ArrowRightIcon />

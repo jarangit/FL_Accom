@@ -27,7 +27,7 @@ const Div = styled.div`
     opacity: ${(props) => (props.tavkHoverFormMain === true ? "1" : "0")};
     transition: height 0.5s ease-out;
     background: linear-gradient(to bottom, transparent 0%, black 100%);
-    z-index: 5;
+    z-index: 1;
   }
 
   .bottom_left {
@@ -36,8 +36,12 @@ const Div = styled.div`
     left: 12px;
     background: #9bdeff;
     font-size: 12px;
+    z-index: 2;
+
   }
   .bottom_right {
+    z-index: 2;
+
     position: absolute;
     bottom: 12px;
     right: 0;
@@ -55,6 +59,8 @@ const Div = styled.div`
     background: #9bdeff;
   }
   .centered {
+    z-index: 2;
+
     display: ${(props) => (props.tavkHoverFormMain == true ? "block" : "none")};
     position: absolute;
     top: 50%;

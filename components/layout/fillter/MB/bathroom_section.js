@@ -16,6 +16,7 @@ const Section_1 = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-style: solid none solid none;
   padding:  0 15px;
+  padding-bottom: 20px;
   p {
     margin: 15px 0;
   }

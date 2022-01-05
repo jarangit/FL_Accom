@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { Grid, Stack } from "@mui/material/";
 import Card_image_product from "./card_image_product";
 import styled from "styled-components";
-
-const Div = styled.div`
+import Location_svg from "../../../lib/img/svg/location";
+import Bts_svg from "../../../lib/img/svg/bts";
+const Div = styled.a`
   border: 1px solid #d8d8d8;
   padding: 10px;
   margin: 20px 0;
   transition: 0.3s;
+  display: block;
+
   :hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
@@ -48,6 +51,7 @@ const Product_item = () => {
 
   return (
     <Div
+      href="#"
       className="box_item"
       onMouseEnter={hoverHandler}
       onMouseLeave={LeaveHandler}
@@ -95,23 +99,20 @@ const Product_item = () => {
               </div>
 
               <div>
-                <a href="#">
+                <a href="#" style={{ display: "flex", alignItems: "center" }}>
+                  <Location_svg width={14} height={14} />
                   <p className="jr_sky jr_f14 jr_hover_blue">
-                    <img
-                      src="https://i.ibb.co/HHFDHrR/location.png"
-                      className="jr_icon"
-                      width="20px"
-                    />
                     Lumphini, Pathumwan, Bangkok (Ploenchit)
                   </p>
                 </a>
-                <a href="#">
+                <a href="#" style={{ display: "flex", alignItems: "center" }}>
+                  <img
+                    src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/7A82D8F6-BE22-4CB9-B911-8EA48BB04ABE.png"
+                    // className="jr_icon"
+                    width="14px"
+                  />
                   <p className="jr_sky jr_f14 jr_hover_blue">
-                    <img
-                      src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/7A82D8F6-BE22-4CB9-B911-8EA48BB04ABE.png"
-                      className="jr_icon"
-                      width="20px"
-                    />
+                    {/* <Bts_svg/> */}
                     BTS Chitlom ( 500 M )
                   </p>
                 </a>
