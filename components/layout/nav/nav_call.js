@@ -40,9 +40,11 @@ const Nav_call = () => {
         Call us in official hours | MON - FRI 09.00 AM - 05.00 PM (GMT+7) IT’S
         FREE!{" "}
       </p>
-        <a href="tel:+6623675321" className="but_blue" >
+      <form action="tel:+6623675321">
+        <button className="but_blue" type="submit">
           Call now
-        </a>
+        </button>
+      </form>
     </Div>
   );
 };
