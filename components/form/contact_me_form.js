@@ -37,26 +37,24 @@ const Contact_me_form = () => {
   function onSubmit(e) {
     e.preventDefault();
     for (let key in dataForm) {
-      if (
-        dataForm.hasOwnProperty(key) &&
-        dataForm[key] === "" &&
-        key != "massage"
-      ) {
+      if (dataForm.hasOwnProperty(key) && dataForm[key] === "") {
         console.log(key);
+        console.log(dataForm);
         console.log("Some field error");
         setonCheckedContactForm(true);
         setonConpleteContactForm(false);
-        return seterror_field({ ...error_field, [key]: true });
+        seterror_field((error_field) => ({ ...error_field, [key]: true }));
       } else {
+        console.log("set compelete");
+
         setonConpleteContactForm(true);
       }
-      console.log(error_field);
       setonCheckedContactForm(true);
     }
-
+    console.log(error_field);
   }
 
-  console.log("this check"+onCheckedContactForm);
+  console.log("this check" + onCheckedContactForm);
   function onChange(e) {
     seterror_field({ ...error_field, [e.target.name]: false });
 

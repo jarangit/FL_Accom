@@ -24,8 +24,8 @@ const Div = styled.div`
     font-size: 19;
     color: #65acf0;
   }
-  
-  .but_blue{
+
+  .but_blue {
     min-height: auto;
   }
   @media (max-width: 375px) {
@@ -44,13 +44,13 @@ const Nav_call = () => {
         Call us in official hours | MON - FRI 09.00 AM - 05.00 PM (GMT+7) IT’S
         FREE!{" "}
       </p>
-     <div  className="but_blue">
-     <a href="tel:+6623675321">
-        {/* <button className="but_blue"> */}
+      <div>
+        <a href="tel:+6623675321" className="but_blue">
+          {/* <button className="but_blue"> */}
           Call now
-        {/* </button> */}
-      </a>
-     </div>
+          {/* </button> */}
+        </a>
+      </div>
     </Div>
   );
 };
