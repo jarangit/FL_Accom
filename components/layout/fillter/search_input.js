@@ -2,14 +2,22 @@ import React, { useState, useContext, useEffect } from "react";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
+<<<<<<< z
+import { AuthContext } from "../../../appState/authProviceder";
+import ShowResultProject from "./search/show_result_project";
+import Show_result_location from "./search/show_result_location";
+import Show_result_Train from "./search/show_result_train";
+import Show_result_school from "./search/show_result_school";
+=======
 import { Typography } from "@mui/material";
 import Transportation_svg from "../../../lib/img/svg/transportation";
 import Location_svg from "../../../lib/img/svg/location";
 import Buildding_svg from "../../../lib/img/svg/buildding";
 import School_svg from "../../../lib/img/svg/school";
-import { AuthContext } from "../../../appState/authProviceder";
+
+>>>>>>> main
 const Div = styled.div`
-  .jr_icon_inside_input 
+  .jr_icon_inside_input {
     position: absolute;
     right: 65px;
     top: 0;
@@ -159,6 +167,9 @@ const Search_input = () => {
       </form>
       {dataSearch !== "" ? (
         <div className="dropdown_search">
+<<<<<<< HEAD
+          <ShowResult data={DataFecth} />
+=======
           <div>
             <strong className="underline_text jr_f16">Location</strong>
             <a
@@ -222,6 +233,7 @@ const Search_input = () => {
               </div>
             </a>
           </div>
+>>>>>>> main
         </div>
       ) : (
         ""
