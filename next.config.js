@@ -1,3 +1,5 @@
+
+
 module.exports = {
   reactStrictMode: true,
   optimizeFonts: false,
@@ -6,4 +8,13 @@ module.exports = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     domains: ['i.ibb.co'],
   },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"]
+    });
+
+    return config;
+  },
+  
 }

@@ -2,11 +2,20 @@ import React, { useState, useContext, useEffect } from "react";
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
+<<<<<<< HEAD
 import { AuthContext } from "../../../appState/authProviceder";
 import ShowResultProject from "./search/show_result_project";
 import Show_result_location from "./search/show_result_location";
 import Show_result_Train from "./search/show_result_train";
 import Show_result_school from "./search/show_result_school";
+=======
+import { Typography } from "@mui/material";
+import Transportation_svg from "../../../lib/img/svg/transportation";
+import Location_svg from "../../../lib/img/svg/location";
+import Buildding_svg from "../../../lib/img/svg/buildding";
+import School_svg from "../../../lib/img/svg/school";
+
+>>>>>>> main
 const Div = styled.div`
   .jr_icon_inside_input {
     position: absolute;
@@ -158,7 +167,73 @@ const Search_input = () => {
       </form>
       {dataSearch !== "" ? (
         <div className="dropdown_search">
+<<<<<<< HEAD
           <ShowResult data={DataFecth} />
+=======
+          <div>
+            <strong className="underline_text jr_f16">Location</strong>
+            <a
+              href="#"
+              className="items_keyword jr_color_gray"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Location_svg />
+              <div>
+                <span className="jr_color_primary">Keyword </span>
+                no-keyword
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <strong className="underline_text jr_f16">Transportation</strong>
+            <a
+              href="#"
+              className="items_keyword jr_color_gray"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Transportation_svg
+                width={100}
+                height={100}
+                className="jr_icon"
+              />
+              <div>
+                <span className="jr_color_primary">Keyword </span>
+                no-keyword
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <strong className="underline_text jr_f16">Project building</strong>
+            <a
+              href="#"
+              className="items_keyword jr_color_gray"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <Buildding_svg />
+              <div>
+                <span className="jr_color_primary">Keyword </span>
+                no-keyword
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <strong className="underline_text jr_f16">School</strong>
+            <a
+              href="#"
+              className="items_keyword jr_color_gray"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <School_svg />
+              <div>
+                <span className="jr_color_primary">Keyword </span>
+                no-keyword
+              </div>
+            </a>
+          </div>
+>>>>>>> main
         </div>
       ) : (
         ""

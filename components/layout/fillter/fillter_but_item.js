@@ -91,11 +91,16 @@ const Fillter_but_item = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [dataFetch, setdataFetch] = useState([]);
   const [ShowMore, setShowMore] = useState(false);
+<<<<<<< HEAD
   const [getButName, setgetButName] = useState();
   console.log(gobal_filter_menu_api );
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
+=======
+  const [getButName, setgetButName] = useState("");
+  console.log(ShowMore);
+>>>>>>> main
   useEffect(() => {
     fetch("https://www.accomasia.co.th/api/v1/masterdata")
       .then((res) => res.json())
@@ -112,7 +117,7 @@ const Fillter_but_item = () => {
           setError(error);
         }
       );
-  }, [1]);
+  }, [getButName]);
   console.log(isLoaded);
   console.log(dataFetch);
 
@@ -120,26 +125,29 @@ const Fillter_but_item = () => {
     setAge(event.target.value);
   };
 
-  async function check_show_all(e) {
+  const check_show_all = (e) => {
     e.preventDefault();
     console.log(e.target.name);
-    setgetButName(e.target.name);
     try {
       console.log("Doing");
-      if (e.target.name === getButName) {
-        setShowMore(!ShowMore);
+      console.log(getButName);
+      if (e.target.name !== getButName) {
+        setShowMore(true);
         console.log(getButName);
         console.log("ChecK-name");
-      } else "";
+      } else {
+        setShowMore(!ShowMore);
+      }
     } catch (error) {
       console.lov(error);
     }
+    setgetButName(e.target.name);
     console.log("Complete");
-  }
+  };
   return (
     <Div show={ShowMore}>
       <div className="add_mlr">
-        <p>Specail need</p>
+        <p>Special need</p>
         <FormGroup
           className={
             getButName === "Specail" && ShowMore

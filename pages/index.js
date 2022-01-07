@@ -52,7 +52,7 @@ const Home = (props) => {
       <Alert_form />
       <CustomSeparator />
       <div>
-        <h1 className="jr_sky jr_blod">
+        <h1 className="jr_sky">
           Property for sale in Bangkok, Thailand
         </h1>
         <h2>4,200 properties available on Accomasia</h2>

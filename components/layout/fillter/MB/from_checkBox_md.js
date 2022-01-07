@@ -5,7 +5,6 @@ const Div = styled.div`
   .checkBox_icon {
     position: absolute;
     left: 15px;
-
   }
   .items {
     margin: 10px 0;
@@ -21,12 +20,14 @@ const From_checkBox_md = (props) => {
         <>
           {props.dataSub.options_menu.map((items, key) => (
             <div className="items" key={key}>
-              {props.dataSub.name === "Rent" ? (
-                <input type="radio" className="checkBox_icon" />
-              ) : (
-                <input type="checkbox" className="checkBox_icon" />
-              )}
-              <span>{items}</span>
+              <label>
+                {props.dataSub.name === "Rent" ? (
+                  <input type="radio" className="checkBox_icon" />
+                ) : (
+                  <input type="checkbox" className="checkBox_icon" />
+                )}
+                <span>{items}</span>
+              </label>
             </div>
           ))}
         </>

@@ -76,9 +76,8 @@ const Copy_right = () => {
             className="img_logo_coppy"
           />
           <div>
-            <p className="jr_f14" >
+            <p className="jr_f14">
               Copyright © 2021 Accom Group. All rights reserved. Building By
-              jaranstudio.com
             </p>
           </div>
         </Grid>

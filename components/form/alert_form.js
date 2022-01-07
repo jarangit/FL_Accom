@@ -75,7 +75,7 @@ const Alert_form = () => {
                 style={{ color: "green", fontSize: "20px" }}
               />
               <div>
-                <h3 className="jr_f18">Massage sent</h3>
+                <p className="jr_f18 jr_blod">Massage sent</p>
                 <p>Thank you for your interest! we’ll reply back shortly</p>
               </div>
               <FontAwesomeIcon
@@ -91,7 +91,7 @@ const Alert_form = () => {
                 style={{ color: "red", fontSize: "20px" }}
               />
               <div>
-                <h3 className="jr_f18">Request error</h3>
+                <p className="jr_f18 jr_blod">Request error</p>
                 <p>Sorry for your inconvenience Please resend your request.</p>
               </div>
               <FontAwesomeIcon

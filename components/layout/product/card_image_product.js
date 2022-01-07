@@ -37,8 +37,12 @@ const Div = styled.div`
     left: 12px;
     background: #9bdeff;
     font-size: 12px;
+    z-index: 2;
+
   }
   .bottom_right {
+    z-index: 2;
+
     position: absolute;
     bottom: 12px;
     right: 0;
@@ -56,6 +60,8 @@ const Div = styled.div`
     background: #9bdeff;
   }
   .centered {
+    z-index: 2;
+
     display: ${(props) => (props.tavkHoverFormMain == true ? "block" : "none")};
     position: absolute;
     top: 50%;
@@ -93,7 +99,7 @@ const Card_image_product = (props) => {
       </div>
       <div className="bottom_left">
         <button className="but_blue_jr ">
-          <span className="jr_f12">Leangsua villa</span>
+          <span className="jr_f12 jr_blod">Leangsua villa</span>
         </button>
       </div>
       <div className="bottom_right">

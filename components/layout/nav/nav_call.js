@@ -15,7 +15,7 @@ const Div = styled.div`
   position: relative;
 
   .jr_f14 {
-    width: 70%;
+    width: 80%;
   }
   .left_icon {
     position: absolute;
@@ -23,6 +23,10 @@ const Div = styled.div`
     top: 18px;
     font-size: 19;
     color: #65acf0;
+  }
+
+  .but_blue {
+    min-height: auto;
   }
   @media (max-width: 375px) {
     .but_blue {
@@ -40,11 +44,13 @@ const Nav_call = () => {
         Call us in official hours | MON - FRI 09.00 AM - 05.00 PM (GMT+7) IT’S
         FREE!{" "}
       </p>
-      <form action="tel:662-367-5321">
-        <button className="but_blue" type="submit">
+      <div>
+        <a href="tel:+6623675321" className="but_blue">
+          {/* <button className="but_blue"> */}
           Call now
-        </button>
-      </form>
+          {/* </button> */}
+        </a>
+      </div>
     </Div>
   );
 };

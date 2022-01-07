@@ -2,12 +2,23 @@ import React, { useState } from "react";
 import { Grid, Stack } from "@mui/material/";
 import Card_image_product from "./card_image_product";
 import styled from "styled-components";
-
-const Div = styled.div`
+import Location_svg from "../../../lib/img/svg/location";
+import Bts_svg from "../../../lib/img/svg/bts";
+import Bathtub_svg from "../../../lib/img/svg/bathtub";
+import Bed_svg from "../../../lib/img/svg/bed";
+const Div = styled.a`
   border: 1px solid #d8d8d8;
   padding: 10px;
   margin: 20px 0;
   transition: 0.3s;
+  display: block;
+  .jr_flex_align_center{
+    display: flex;
+    align-items: center;
+  }
+  svg{
+    margin: 0 5px;
+  }
   :hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
@@ -48,6 +59,7 @@ const Product_item = () => {
 
   return (
     <Div
+      href="#"
       className="box_item"
       onMouseEnter={hoverHandler}
       onMouseLeave={LeaveHandler}
@@ -76,42 +88,27 @@ const Product_item = () => {
                       />
                       491.96 SQ.M.
                     </div>
-                    <div>
-                      <img
-                        className="jr_icon"
-                        src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/9C68BA6B-F37A-45E9-9370-98E8B995ADCB.svg"
-                      />
-                      2 beds
+                    <div className="jr_flex_align_center">
+                      <Bed_svg />2 beds
                     </div>
-                    <div>
-                      <img
-                        src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/2DB963AF-B1E0-4E66-B52D-71E8CE7242C7.svg"
-                        className="jr_icon"
-                      />
-                      2 baths
+                    <div className="jr_flex_align_center" >
+                      <Bathtub_svg />2 baths
                     </div>
                   </Stack>
                 </p>
               </div>
 
               <div>
-                <a href="#">
+                <a href="#" style={{ display: "flex", alignItems: "center" }}>
+                  <Location_svg width={14} height={14} />
                   <p className="jr_sky jr_f14 jr_hover_blue">
-                    <img
-                      src="https://i.ibb.co/HHFDHrR/location.png"
-                      className="jr_icon"
-                      width="20px"
-                    />
                     Lumphini, Pathumwan, Bangkok (Ploenchit)
                   </p>
                 </a>
-                <a href="#">
+                <a href="#" style={{ display: "flex", alignItems: "center" }}>
+                  <Bts_svg />
+
                   <p className="jr_sky jr_f14 jr_hover_blue">
-                    <img
-                      src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/7A82D8F6-BE22-4CB9-B911-8EA48BB04ABE.png"
-                      className="jr_icon"
-                      width="20px"
-                    />
                     BTS Chitlom ( 500 M )
                   </p>
                 </a>
