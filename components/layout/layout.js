@@ -7,6 +7,7 @@ import History from "./side-bar/history";
 import Menu from "./menu/menu";
 import Properties_for_sale from "./side-bar/properties_for_sale";
 import Ultimate_guide from "./items/ultimate_guide";
+import HotProperty from "./side-bar/hotproperty";
 
 const Layout = ({ children }) => {
   return (
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
             <History />
             <Ultimate_guide />
             <Properties_for_sale />
+            <HotProperty/>
           </Grid>
         </Grid>
       </div>

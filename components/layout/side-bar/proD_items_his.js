@@ -20,36 +20,7 @@ const Div_image = styled.div`
 `;
 const ProD_items_his = (props) => {
   console.log(props);
-  const fake_data = [
-    {
-      image:
-        "https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png",
-      name: "Langsuan ville",
-      des: "491.96 SQ.M. | 3 beds | 3+1 baths",
-      price: 77000000,
-    },
-    {
-      image:
-        "https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png",
-      name: "Langsuan ville",
-      des: "491.96 SQ.M. | 3 beds | 3+1 baths",
-      price: 77000000,
-    },
-    {
-      image:
-        "https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png",
-      name: "Langsuan ville",
-      des: "491.96 SQ.M. | 3 beds | 3+1 baths",
-      price: 77000000,
-    },
-    {
-      image:
-        "https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/CCC24B5E-39B2-49B4-826C-0FF410C11756.png",
-      name: "Langsuan ville",
-      des: "491.96 SQ.M. | 3 beds | 3+1 baths",
-      price: 77000000,
-    },
-  ];
+
   return (
     <>
       {props.data ? (

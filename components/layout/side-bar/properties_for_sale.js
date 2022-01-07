@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import HotProperty from "./hotproperty";
 import ProD_items_his from "./proD_items_his";
 
 const Div = styled.div`
@@ -80,10 +81,7 @@ const Properties_for_sale = () => {
           </a>
         </div>
       </div>
-      <div>
-        <p className="header jr_blod">Hot properties</p>
-        <ProD_items_his />
-      </div>
+    
     </Div>
   );
 };
