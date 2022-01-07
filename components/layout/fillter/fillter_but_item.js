@@ -91,16 +91,11 @@ const Fillter_but_item = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [dataFetch, setdataFetch] = useState([]);
   const [ShowMore, setShowMore] = useState(false);
-<<<<<<< HEAD
   const [getButName, setgetButName] = useState();
   console.log(gobal_filter_menu_api );
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
-=======
-  const [getButName, setgetButName] = useState("");
-  console.log(ShowMore);
->>>>>>> main
   useEffect(() => {
     fetch("https://www.accomasia.co.th/api/v1/masterdata")
       .then((res) => res.json())
