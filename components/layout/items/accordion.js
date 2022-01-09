@@ -55,6 +55,7 @@ export default function Accordion_items() {
           padding: "0",
           margin: "10px 0",
           color: "#65acf0",
+          fontSize: "14px"
         }}
         onClick={() => setopen_readMore(!open_readMore)}
       >
@@ -74,13 +75,13 @@ export default function Accordion_items() {
           }}
         >
           <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
-            <p className="jr_f14 jr_icon">
+            <p className="jr_f18 jr_icon">
               <AddIcon className="jr_icon" />
               <strong>{items.question}</strong>
             </p>
           </AccordionSummary>
           <AccordionDetails>
-            <p className="jr_f14 jr_icon">{items.answer}</p>
+            <p className="jr_f16 jr_icon">{items.answer}</p>
           </AccordionDetails>
         </Accordion>
       ))}
