@@ -41,7 +41,7 @@ const Div = styled.div`
 
   }
   .bottom_right {
-    z-index: 2;
+    z-index: 1;
 
     position: absolute;
     bottom: 12px;

@@ -71,10 +71,10 @@ const Product_item = () => {
         <Grid item xs={12} sm={8}>
           <Grid container rowGap={2} alignItems="center">
             <Grid item md={12} lg={9}>
-              <h3 className="jr_color_primary jr_blod">
+              <h3 className="jr_color_primary">
                 Property for sale in Bangkok, Thailand
               </h3>
-              <h4 className="jr_blod jr_f16">
+              <h4 className=" jr_f16">
                 3 br Condominium For Sale in ploenchit, Bangkok
               </h4>
               <div className="jr_f12">
