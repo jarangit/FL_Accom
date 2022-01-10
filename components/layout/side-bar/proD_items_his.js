@@ -70,7 +70,7 @@ const ProD_items_his = () => {
               </Div_image>
             </Grid>
             <Grid item xs={7} sm={7}>
-              <p className="jr_f14">Langsuan ville</p>
+              <p className="jr_f16">Langsuan ville</p>
               <p className="jr_f14">491.96 SQ.M. | 3 beds | 3+1 baths</p>
               <p className="jr_f14 jr_blod">for sale</p>
               <p className="text_color_sky jr__f16 jr_blod">฿ 77,000,000</p>

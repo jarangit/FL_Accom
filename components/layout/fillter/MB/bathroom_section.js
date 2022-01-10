@@ -87,14 +87,12 @@ const Bathroom_section = () => {
       <Section_1>
         <div>
           <p>
-            <strong>Bathrooms</strong>
+            Bathrooms
+          </p>
             <Beds_option_mb />
-          </p>
         </div>
         <div>
-          <p>
-            <strong>Usable Area (Sq.M)</strong>
-          </p>
+          <p>Usable Area (Sq.M)</p>
           <div className="selectdiv">
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">
@@ -111,9 +109,7 @@ const Bathroom_section = () => {
           </div>
         </div>
         <div>
-          <p>
-            <strong>Land Size (Sq.W)</strong>
-          </p>
+          <p>Land Size (Sq.W)</p>
           <div className="selectdiv">
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">
@@ -130,9 +126,7 @@ const Bathroom_section = () => {
           </div>
         </div>
         <div>
-          <p>
-            <strong>Transportation Radius (BTS/MRT)</strong>
-          </p>
+          <p>Transportation Radius (BTS/MRT)</p>
           <div className="selectdiv">
             <select className="jr_select jr_fullWidth">
               <option className="jr_option" selected="">

@@ -1,12 +1,10 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
 import styled from "styled-components";
-import CloseIcon from "@mui/icons-material/Close";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { FakeData_menu_mb } from "../../../fakeData/menu_mb";
 import LanguageIcon from "@mui/icons-material/Language";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FakeData_menu_pc } from "../../../fakeData/menu_pc";
 
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 const Div = styled.div`
@@ -138,7 +136,7 @@ const Menu_mobile = () => {
           <Div_mb_menu toggle={toggle_subMenu}>
             <Stack direction="column" textAlign="center">
               <p className="header_menu jr_f14">Menus</p>
-              {FakeData_menu_mb.map((items, key) => (
+              {FakeData_menu_pc.map((items, key) => (
                 <div className="menu_item" key={key}>
                   <p
                     id={items.name}
@@ -157,11 +155,18 @@ const Menu_mobile = () => {
                     <>
                       {items.name === get_name_sub ? (
                         <>
-                          {items.sub_item.map((itemSub, key) => (
+                          {items.sub_item.map((sub_items, key) => (
+                            <div className="sub_menu jr_f16" key={key}>
+                              <a href={sub_items.url} key={key}>
+                                {sub_items.sub_name}
+                              </a>
+                            </div>
+                          ))}
+                          {/* {items.sub_item.map((itemSub, key) => (
                             <div className="sub_menu jr_f16" key={key}>
                               <a href="#">{itemSub}</a>
                             </div>
-                          ))}
+                          ))} */}
                         </>
                       ) : (
                         ""
