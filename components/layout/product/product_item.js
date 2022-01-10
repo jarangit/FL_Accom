@@ -12,11 +12,11 @@ const Div = styled.a`
   margin: 20px 0;
   transition: 0.3s;
   display: block;
-  .jr_flex_align_center{
+  .jr_flex_align_center {
     display: flex;
     align-items: center;
   }
-  svg{
+  svg {
     margin: 0 5px;
   }
   :hover {
@@ -46,108 +46,148 @@ const Div = styled.a`
   }
 `;
 
-const Product_item = () => {
+const Product_item = (props) => {
+  console.log(props.data_list.data);
+  const [getId, setgetId] = useState()
   const [hoverDiv, sethoverDiv] = useState(false);
-  function hoverHandler() {
-    sethoverDiv(true);
-    console.log(hoverDiv);
+  function hoverHandler(id) {
+    if (id) {
+      setgetId(id);
+      sethoverDiv(true)
+    }
+    console.log(getId);
   }
   function LeaveHandler() {
     sethoverDiv(false);
     console.log(hoverDiv);
   }
 
-  return (
-    <Div
-      href="#"
-      className="box_item"
-      onMouseEnter={hoverHandler}
-      onMouseLeave={LeaveHandler}
-    >
-      <Grid container spacing={1} className="grid_des_center">
-        <Grid item xs={12} sm={4} justifyContent="center">
-          <Card_image_product tackHover={hoverDiv} />
-        </Grid>
-        <Grid item xs={12} sm={8}>
-          <Grid container rowGap={2} alignItems="center">
-            <Grid item md={12} lg={9}>
-              <h3 className="jr_color_primary">
-                Property for sale in Bangkok, Thailand
-              </h3>
-              <h4 className=" jr_f16">
-                3 br Condominium For Sale in ploenchit, Bangkok
-              </h4>
-              <div className="jr_f12">
+  const Showitems = (props) => {
+    console.log(props);
+    const {
+      id,
+      photo,
+      link,
+      property_name,
+      rent_price,
+      photo_count,
+      landvalue,
+      bathroom,
+      bedroom,
+      big_area,
+      district_name,
+      property_code,
+      province_name,
+      subdistrict_name,
+    } = props.data;
+    return (
+      <Div
+        id={id}
+        href="#"
+        className="box_item"
+        onMouseEnter={() => hoverHandler(id)}
+        onMouseLeave={LeaveHandler}
+      >
+        <Grid container spacing={1} className="grid_des_center">
+          <Grid item xs={12} sm={4} justifyContent="center">
+            <Card_image_product
+              tackHover={hoverDiv && id === getId}
+              url={photo}
+              photo_count={photo_count}
+            />
+          </Grid>
+          <Grid item xs={12} sm={8}>
+            <Grid container rowGap={2} alignItems="center">
+              <Grid item md={12} lg={9}>
+                <h3 className="jr_color_primary">{subdistrict_name}</h3>
+                <h4 className=" jr_f16">{property_name}</h4>
+                <div className="jr_f12">
+                  <p>
+                    <Stack direction="row" spacing={1} className="jr_f14">
+                      <div>
+                        <img
+                          src="https://i.ibb.co/94FVT2C/size.png"
+                          width="14px"
+                          className="jr_icon"
+                        />
+                        {landvalue}
+                      </div>
+                      <div className="jr_flex_align_center">
+                        <Bed_svg />
+                        {bedroom} beds
+                      </div>
+                      <div className="jr_flex_align_center">
+                        <Bathtub_svg />
+                        {bathroom} baths
+                      </div>
+                    </Stack>
+                  </p>
+                </div>
+
+                <div>
+                  <a href="#" style={{ display: "flex", alignItems: "center" }}>
+                    <Location_svg width={14} height={14} />
+                    <p className="jr_sky jr_f14 jr_hover_blue">
+                      Lumphini, Pathumwan, Bangkok (Ploenchit)
+                    </p>
+                  </a>
+                  <a href="#" style={{ display: "flex", alignItems: "center" }}>
+                    <Bts_svg />
+
+                    <p className="jr_sky jr_f14 jr_hover_blue">
+                      BTS Chitlom ( 500 M )
+                    </p>
+                  </a>
+                </div>
+
                 <p>
-                  <Stack direction="row" spacing={1} className="jr_f14">
-                    <div>
-                      <img
-                        src="https://i.ibb.co/94FVT2C/size.png"
-                        width="14px"
-                        className="jr_icon"
-                      />
-                      491.96 SQ.M.
-                    </div>
-                    <div className="jr_flex_align_center">
-                      <Bed_svg />2 beds
-                    </div>
-                    <div className="jr_flex_align_center" >
-                      <Bathtub_svg />2 baths
-                    </div>
+                  <Stack direction="row" spacing={1}>
+                    <button className="jr_chip">Penthouse</button>
+                    <button className="jr_chip">Penthouse</button>
+                    <button
+                      className="jr_chip"
+                      style={{
+                        background: "#28a745",
+                        color: "white",
+                        border: "none",
+                      }}
+                    >
+                      Penthouse
+                    </button>
                   </Stack>
                 </p>
-              </div>
-
-              <div>
-                <a href="#" style={{ display: "flex", alignItems: "center" }}>
-                  <Location_svg width={14} height={14} />
-                  <p className="jr_sky jr_f14 jr_hover_blue">
-                    Lumphini, Pathumwan, Bangkok (Ploenchit)
-                  </p>
-                </a>
-                <a href="#" style={{ display: "flex", alignItems: "center" }}>
-                  <Bts_svg />
-
-                  <p className="jr_sky jr_f14 jr_hover_blue">
-                    BTS Chitlom ( 500 M )
-                  </p>
-                </a>
-              </div>
-
-              <p>
-                <Stack direction="row" spacing={1}>
-                  <button className="jr_chip">Penthouse</button>
-                  <button className="jr_chip">Penthouse</button>
-                  <button
-                    className="jr_chip"
-                    style={{
-                      background: "#28a745",
-                      color: "white",
-                      border: "none",
-                    }}
-                  >
-                    Penthouse
-                  </button>
-                </Stack>
-              </p>
-            </Grid>
-            <Grid item md={12} lg={3}>
-              <div className="grid_price">
-                <div>
-                  <button className="bg_blue jr_blod jr_f14">For sale</button>
-                  <p className="jr_blod jr_f16">฿ 77,000,000</p>
+              </Grid>
+              <Grid item md={12} lg={3}>
+                <div className="grid_price">
+                  <div>
+                    <button className="bg_blue jr_blod jr_f14">For sale</button>
+                    <p className="jr_blod jr_f16">{rent_price}</p>
+                  </div>
+                  <div>
+                    <button className="bg_blue jr_blod jr_f14">For sale</button>
+                    <p className="jr_blod jr_f16">฿ 77,000,000</p>
+                  </div>
+                  <p className="jr_f14">Code: {property_code}</p>
                 </div>
-                <div>
-                  <button className="bg_blue jr_blod jr_f14">For sale</button>
-                  <p className="jr_blod jr_f16">฿ 77,000,000</p>
-                </div>
-                <p className="jr_f14">Code: AA20487</p>
-              </div>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </Div>
+      </Div>
+    );
+  };
+  return (
+    <>
+      {props.data_list.data.featured.lenght !== 0 ? (
+        <>
+          {props.data_list.data.featured.map((items, key) => (
+            <Showitems data={items} key={key} />
+          ))}
+        </>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 

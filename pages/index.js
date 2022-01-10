@@ -82,9 +82,8 @@ const Home = (props) => {
           <Switch {...label} />
         </div>
       </Stack>
-      <Product_item />
-      <Product_item />
-      <Product_item />
+      <Product_item  data_list  = {props.data_filter_list} />
+ 
       <a href="#">
         <Image
           src="https://i.ibb.co/d7RbVn4/discount-banner.jpg"
@@ -94,18 +93,8 @@ const Home = (props) => {
           layout="responsive"
         />
       </a>
-      <Product_item />
-      <Product_item />
       <Nav_contact />
-      <Product_item />
-      <Product_item />
-      <Product_item />
-      <Nav_request />
-      <Product_item />
-      <Product_item />
-      <Product_item />
       <Nav_call />
-      <Product_item />
       <Pagination_jr />
       <Accordion_items />
     </Div>
@@ -123,12 +112,18 @@ export async function getStaticProps() {
     `https://www.accomasia.co.th/api/v1/search_advanced?search_txt=${search_input}`
   );
   const search_menu_api = await res_search_menu_api.json();
+  
+  const res_filter_list = await fetch(
+    `https://www.accomasia.co.th/api/v1/property?purpose=rent`
+  );
+  const filter_list = await res_filter_list.json();
 
 
   return {
     props: {
       flilter_menu_api: flilter_menu_api,
       search_menu_api: search_menu_api,
+      data_filter_list: filter_list,
     },
   };
 }

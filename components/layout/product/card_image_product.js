@@ -83,12 +83,12 @@ const Div = styled.div`
 const Card_image_product = (props) => {
   console.log(props.tackHover);
   return (
-    <Div tavkHoverFormMain={props.tackHover}>
+    <Div tavkHoverFormMain={props.tackHover} >
       <div className="img_thumb">
-        <Image
-          src="https://i.ibb.co/1RDJj8Y/1.png"
-          width={365}
-          height={270}
+        <img
+          src={props.url}
+          width="100%"
+          height="270"
         />
     
       </div>
@@ -104,7 +104,7 @@ const Card_image_product = (props) => {
       </div>
       <div className="bottom_right">
         <PhotoOutlinedIcon className="jr_icon" />
-        <span>12</span>
+        <span>{props.photo_count}</span>
       </div>
     </Div>
   );
