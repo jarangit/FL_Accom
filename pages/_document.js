@@ -5,12 +5,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
-            rel="preload"
-            href="../styles/font/Montserrat-Regular.ttf"
-            as="font"
-            crossOrigin=""
-          />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet" />
+
         </Head>
         <body>
           <Main />
