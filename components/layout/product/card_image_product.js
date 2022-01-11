@@ -10,9 +10,11 @@ const Card_image_product = (props) => {
     <Div>
       <div className="spc_img_thumb">
         {props.url ? (
-        <img src={props.url} height="100%" />
-
-        ):(<div>LOADDING</div>)}
+          // <img src={props.url} height="100%" />
+          <Image src={props.url} width={640} height={270} layout="fill" />
+        ) : (
+          <div>LOADDING</div>
+        )}
       </div>
       <div className="spc_centered">
         <button className="spc_button_center">
