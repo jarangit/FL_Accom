@@ -26,22 +26,21 @@ const ProD_items_his = (props) => {
       {props.data ? (
         <>
           {props.data.hotproperty.map((items, key) => (
-            <a href = {items.link} key={key}>
+            <a href={items.link} key={key}>
               <Grid container spacing={2}>
                 <Grid item xs={5} sm={5}>
                   <Div_image>
-                    {/* <Image
-                      src="https://i.ibb.co/1RDJj8Y/1.png"
+                    <Image
+                      src={items.photo}
                       width={180}
                       height={140}
                       className="image_thumb"
-                    /> */}
-                    <img
+                    />
+                    {/* <img
                   src={items.photo}
-                  // width="180"
                   height="140"
                   className="image_thumb"
-                />
+                /> */}
                   </Div_image>
                 </Grid>
                 <Grid item xs={7} sm={7}>
