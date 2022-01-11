@@ -4,9 +4,9 @@ import {
   createTheme,
   ThemeProvider,
 } from "@mui/material";
-import { fontWeight, letterSpacing } from "@mui/system";
 import AuthProvider from "../appState/authProviceder";
 import LinearProgress from "@mui/material/LinearProgress";
+import "../components/layout/product/sty_product_component.css"
 
 const theme = createTheme({
   typography: {
