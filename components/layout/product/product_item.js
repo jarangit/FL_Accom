@@ -44,6 +44,7 @@ const Product_item = (props) => {
       property_code,
       province_name,
       subdistrict_name,
+      trains
     } = props.data;
     return (
         <Div
@@ -93,8 +94,8 @@ const Product_item = (props) => {
                       style={{ display: "flex", alignItems: "center" }}
                     >
                       <Location_svg width={14} height={14} />
-                      <p className="spc_jr_sky jr_f14 jr_hover_blue">
-                        Lumphini, Pathumwan, Bangkok (Ploenchit)
+                      <p className="jr_color_blue jr_f14 jr_hover_blue">
+                        {district_name}, {subdistrict_name}, {province_name} ({district_name})
                       </p>
                     </a>
                     <a
@@ -103,8 +104,8 @@ const Product_item = (props) => {
                     >
                       <Bts_svg />
 
-                      <p className="spc_jr_sky jr_f14 jr_hover_blue">
-                        BTS Chitlom ( 500 M )
+                      <p className="jr_color_blue jr_f14 jr_hover_blue">
+                        {trains.trian_type} {trains.en} ( {trains.radius} M )
                       </p>
                     </a>
                   </div>
@@ -153,7 +154,7 @@ const Product_item = (props) => {
     <>
       {props.data_list.data.featured.lenght !== 0 ? (
         <>
-          {props.data_list.data.featured.map((items, key) => (
+          {props.data_list.data.featured.slice(0, 5).map((items, key) => (
             <Showitems data={items} key={key} />
           ))}
         </>

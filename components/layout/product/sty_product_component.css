@@ -110,6 +110,11 @@ svg {
   align-items: center;
 }
 
+.spc_jr_chip{
+  font-size: 12px;
+  border-radius: 3px;
+  border: 1px solid rgb(0, 0, 39);
+}
 @media (max-width: 1024px) {
   .spc_grid_des_center {
     align-items: stretch;
