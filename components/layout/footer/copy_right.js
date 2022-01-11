@@ -59,7 +59,6 @@ const Copy_right = () => {
     >
       <Grid container>
         <Grid item xs={12} sm={6} className="grid_1" alignItems="center">
-          <Logo_svg width={80} className="img_logo" />
 
           <a href="#">About us</a>
           <a href="#">Contact us</a>
