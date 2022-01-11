@@ -8,8 +8,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import Menu_mobile from "./menu_mobile";
 import { FakeData_menu_pc } from "../../../fakeData/menu_pc";
 import Image from 'next/image'
-// import Logo_svg from '../../../lib/img/svg/logo.svg'
-import Icon from '../../../lib/img/svg/logo'
+import Logo_svg from "../../../lib/img/svg/logo";
 
 const Div = styled.div`
   background-color: #f9f9f9;
@@ -90,7 +89,7 @@ const Menu = () => {
             alignItems="center"
           >
             <a href="https://www.accomasia.co.th/">
-            <Icon fill="#9a9a9a" width={100} height={100} />
+            <Logo_svg fill="#9a9a9a" width={100} height={100} />
               {/* <Image src="C:\Users\Jaran\Documents\Work\Dev\FL\asscom\React\my-app\lib\img\logo.svg" width="2000" height="2000" /> */}
               {/* <img
                 src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
