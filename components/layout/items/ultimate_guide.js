@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Stack, Button } from "@mui/material";
+import Image from "next/image";
 
 const Div = styled.div`
   ul {
@@ -35,20 +36,25 @@ const Ultimate_guide = () => {
       >
         Ultimate guide
       </p>
-
       <div className="jr_f14">
         <p>Buying guide</p>
         <ul>
-        {FakeDataTag.map((items, key) => (
-            <li key = {key}>
+          {FakeDataTag.map((items, key) => (
+            <li key={key}>
               <a href="#" className="text_color_primary card_sky">
-               {items}
+                {items}
               </a>
             </li>
-        ))}
+          ))}
         </ul>
       </div>
-      <img src="https://i.ibb.co/vDZgq5K/banner-covid.jpg" width="100%" />
+      <Image
+        src="https://i.ibb.co/vDZgq5K/banner-covid.jpg"
+        width={1111}
+        height={555}
+        // layout="fill"
+      />
+      ]
     </Div>
   );
 };
