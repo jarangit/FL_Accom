@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Grid } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import Logo_svg from "../../../lib/img/svg/logo";
 const Div = styled.div`
   .grid_1 {
     display: flex;
@@ -58,11 +59,8 @@ const Copy_right = () => {
     >
       <Grid container>
         <Grid item xs={12} sm={6} className="grid_1" alignItems="center">
-          <img
-            src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
-            width="80"
-            className="img_logo"
-          />
+          <Logo_svg width={80} className="img_logo" />
+
           <a href="#">About us</a>
           <a href="#">Contact us</a>
           <a href="#">Career</a>
@@ -70,11 +68,8 @@ const Copy_right = () => {
           <a href="#">Sitemap</a>
         </Grid>
         <Grid item xs={12} sm={6} className="grid_2">
-          <img
-            src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
-            width="80"
-            className="img_logo_coppy"
-          />
+          <Logo_svg width={80} className="img_logo_coppy" />
+
           <div>
             <p className="jr_f14">
               Copyright © 2021 Accom Group. All rights reserved. Building By

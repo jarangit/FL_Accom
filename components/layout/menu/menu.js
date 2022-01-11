@@ -1,13 +1,10 @@
-import {
-  Button,
-  Stack,
-} from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import LanguageIcon from "@mui/icons-material/Language";
 import Menu_mobile from "./menu_mobile";
 import { FakeData_menu_pc } from "../../../fakeData/menu_pc";
-import Image from 'next/image'
+import Image from "next/image";
 import Logo_svg from "../../../lib/img/svg/logo";
 
 const Div = styled.div`
@@ -76,7 +73,6 @@ const Div = styled.div`
   }
 `;
 const Menu = () => {
-
   return (
     <>
       <Menu_mobile />
@@ -89,12 +85,7 @@ const Menu = () => {
             alignItems="center"
           >
             <a href="https://www.accomasia.co.th/">
-            <Logo_svg fill="#9a9a9a" width={100} height={100} />
-              {/* <Image src="C:\Users\Jaran\Documents\Work\Dev\FL\asscom\React\my-app\lib\img\logo.svg" width="2000" height="2000" /> */}
-              {/* <img
-                src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/59B582B6-D023-406B-8BE0-F90FE96E2CCB.png"
-                width="80"
-              /> */}
+              <Logo_svg fill="#9a9a9a" width={100} height={100} />
             </a>
             {FakeData_menu_pc.map((items, key) => (
               <div id="link_items" className="dropdown link_items" key={key}>

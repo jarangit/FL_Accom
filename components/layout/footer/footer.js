@@ -8,6 +8,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Contact_me_form from "../../form/contact_me_form";
 import styled from "styled-components";
+import Logo_svg from "../../../lib/img/svg/logo";
 
 const Div = styled.div`
   background: #002161;
@@ -68,10 +69,8 @@ const Footer = () => {
             <Stack direction="row" spacing={2} mt={4} mb={4}>
               <YouTubeIcon fontSize="large" />
               <FacebookIcon fontSize="large" />
-              <img
-                src="https://cdn.zeplin.io/5e6c97d09536901139b8706b/assets/EA3365E2-4164-4014-BA64-A75404BED7EA.png"
-                width="30px"
-              />
+              <Logo_svg width={30}/>
+            
             </Stack>
           </Grid>
           <Grid item xs={12} sm={4}>
