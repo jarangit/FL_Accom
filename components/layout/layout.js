@@ -26,10 +26,10 @@ const Layout = ({ children }) => {
             {children}
           </Grid>
           <Grid item xs={12} lg={4} md = {12}>
-            <History />
+            {/* <History />
             <Ultimate_guide />
             <Properties_for_sale />
-            <HotProperty/>
+            <HotProperty/> */}
           </Grid>
         </Grid>
       </div>
