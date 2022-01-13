@@ -82,7 +82,7 @@ const Home = (props) => {
           <Switch {...label} />
         </div>
       </Stack>
-      {/* <Product_item  data_list  = {props.data_filter_list} /> */}
+      <Product_item  data_list  = {props.data_filter_list} />
  
       <a href="#">
         <Image
