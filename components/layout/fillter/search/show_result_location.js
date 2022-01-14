@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -23,13 +24,15 @@ const Show_result_location = (props) => {
         <>
           {props.data.map((items, key) => (
             <div key={key}>
-              <a href="#" className="items_keyword jr_color_gray">
-                <img
-                  src="https://i.ibb.co/HHFDHrR/location.png"
-                  className="jr_icon"
-                />
-                {items.label}
-              </a>
+              <Link href="location/[location_ID]" as={`location/${items.label}`}>
+                <a className="items_keyword jr_color_gray">
+                  <img
+                    src="https://i.ibb.co/HHFDHrR/location.png"
+                    className="jr_icon"
+                  />
+                  {items.label}
+                </a>
+              </Link>
             </div>
           ))}
         </>

@@ -130,7 +130,7 @@ const Search_input = () => {
       );
       return (
         <>
-          <Show_result_location data={resultLocation} />
+          <Show_result_location data={resultLocation} text_search = {dataSearch}/>
           <ShowResultProject data={resultProject} />
           <Show_result_Train data={resultTrain} />
           <Show_result_school data={resultSchool} />

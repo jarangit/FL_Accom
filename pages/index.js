@@ -120,7 +120,7 @@ export async function getStaticProps({ params }) {
   const search_menu_api = await res_search_menu_api.json();
 
   const res_filter_list = await fetch(
-    `https://www.accomasia.co.th/api/v1/property?purpose=rent`
+    `https://www.accomasia.co.th/api/v1/property?txtsearch=Assumption`
   );
   const filter_list = await res_filter_list.json();
 
