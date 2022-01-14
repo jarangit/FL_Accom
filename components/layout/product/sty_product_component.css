@@ -3,6 +3,7 @@
   height: 270px;
   overflow: hidden;
   border-radius: 8px;
+  position: relative;
 }
 
 .spc_img_thumb:before {

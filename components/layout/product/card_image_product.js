@@ -11,7 +11,7 @@ const Card_image_product = (props) => {
       <div className="spc_img_thumb">
         {props.url ? (
           // <img src={props.url} height="100%" />
-          <Image src={props.url} width={640} height={270} layout="fill" />
+          <Image src={props.url}  layout="fill" />
         ) : (
           <div>LOADDING</div>
         )}

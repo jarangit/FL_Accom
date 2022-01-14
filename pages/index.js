@@ -27,10 +27,15 @@ const Div = styled.div`
   }
 `;
 const Home = (props) => {
-  const {  setgobal_filter_menu_api,  setGobal_search_filter_api } = useContext(AuthContext);
-  if(props){
-    setgobal_filter_menu_api(props.flilter_menu_api)
-    setGobal_search_filter_api(props.search_menu_api.data.list)
+  const {
+    setgobal_filter_menu_api,
+    setGobal_search_filter_api,
+    Purpose_filter,
+    setPurpose_filter,
+  } = useContext(AuthContext);
+  if (props) {
+    setgobal_filter_menu_api(props.flilter_menu_api);
+    setGobal_search_filter_api(props.search_menu_api.data.list);
   }
   const label = { inputProps: { "aria-label": "Switch demo" } };
   console.log(props);
@@ -52,9 +57,7 @@ const Home = (props) => {
       <Alert_form />
       <CustomSeparator />
       <div>
-        <h1 className="jr_sky">
-          Property for sale in Bangkok, Thailand
-        </h1>
+        <h1 className="jr_sky">Property for sale in Bangkok, Thailand</h1>
         <h2>4,200 properties available on Accomasia</h2>
         <p>
           Explore 3,134 properties for sale in Bangkok. View 360 , full details.
@@ -82,8 +85,8 @@ const Home = (props) => {
           <Switch {...label} />
         </div>
       </Stack>
-      <Product_item  data_list  = {props.data_filter_list} />
- 
+      <Product_item data_list={props.data_filter_list} />
+
       <a href="#">
         <Image
           src="https://i.ibb.co/d7RbVn4/discount-banner.jpg"
@@ -101,8 +104,11 @@ const Home = (props) => {
   );
 };
 
-export async function getStaticProps() {
-  let search_input = "a"
+
+export async function getStaticProps({ params }) {
+  console.log(params);
+  let search_input = "";
+  console.log();
   const res_flilter_menu_api = await fetch(
     "https://www.accomasia.co.th/api/v1/masterdata"
   );
@@ -112,12 +118,11 @@ export async function getStaticProps() {
     `https://www.accomasia.co.th/api/v1/search_advanced?search_txt=${search_input}`
   );
   const search_menu_api = await res_search_menu_api.json();
-  
+
   const res_filter_list = await fetch(
     `https://www.accomasia.co.th/api/v1/property?purpose=rent`
   );
   const filter_list = await res_filter_list.json();
-
 
   return {
     props: {

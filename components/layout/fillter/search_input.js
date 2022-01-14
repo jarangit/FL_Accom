@@ -165,7 +165,7 @@ const Search_input = () => {
       {dataSearch !== "" ? (
         <div className="dropdown_search">
           <ShowResult data={DataFecth} />
-          <div>
+          {/* <div>
             <strong className="underline_text jr_f16">Location</strong>
             <a
               href="#"
@@ -227,7 +227,7 @@ const Search_input = () => {
                 no-keyword
               </div>
             </a>
-          </div>
+          </div> */}
         </div>
       ) : (
         ""

@@ -15,8 +15,9 @@ const AuthProvider = ({ children, userData }) => {
   const [onConpleteContactForm, setonConpleteContactForm] = useState(false);
   const [gobal_filter_menu_api, setgobal_filter_menu_api] = useState([]);
   const [Gobal_search_filter_api, setGobal_search_filter_api] = useState([]);
-  const [Selected_bads, setSelected_bads] = useState("")
-  const [ArrPopertyChecked, setArrPopertyChecked] = useState([])
+  const [Selected_bads, setSelected_bads] = useState("");
+  const [ArrPopertyChecked, setArrPopertyChecked] = useState([]);
+  const [Purpose_filter, setPurpose_filter] = useState();
   return (
     <AuthContext.Provider
       value={{
@@ -36,9 +37,14 @@ const AuthProvider = ({ children, userData }) => {
         setgobal_filter_menu_api,
         Gobal_search_filter_api,
         setGobal_search_filter_api,
-        data_check_rent, setdata_check_rent,
-        Selected_bads, setSelected_bads,
-        ArrPopertyChecked, setArrPopertyChecked,
+        data_check_rent,
+        setdata_check_rent,
+        Selected_bads,
+        setSelected_bads,
+        ArrPopertyChecked,
+        setArrPopertyChecked,
+        Purpose_filter,
+        setPurpose_filter,
       }}
     >
       {children}
