@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-
 const Div = styled.div`
   .items_keyword {
     font-size: 14px;

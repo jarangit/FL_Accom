@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const Div = styled.div`
   .items_keyword {
@@ -23,13 +24,18 @@ const ShowResultProject = (props) => {
         <>
           {props.data.map((items, key) => (
             <div key={key}>
-              <a href="#" className="items_keyword jr_color_gray">
-                <img
-                  src="https://i.ibb.co/2MSKkxQ/building.png"
-                  className="jr_icon"
-                />
-                {items.label}
-              </a>
+              <Link
+                href="/project/[project_ID]"
+                as={`/project/${items.label.toLowerCase()}`}
+              >
+                <a className="items_keyword jr_color_gray">
+                  <img
+                    src="https://i.ibb.co/2MSKkxQ/building.png"
+                    className="jr_icon"
+                  />
+                  {items.label}
+                </a>
+              </Link>
             </div>
           ))}
         </>
