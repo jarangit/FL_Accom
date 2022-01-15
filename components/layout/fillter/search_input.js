@@ -60,7 +60,7 @@ const Div = styled.div`
     background-color: white;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    z-index: 2;
+    z-index: 3;
     /* min-width: 160px; */
     text-align: left;
   }

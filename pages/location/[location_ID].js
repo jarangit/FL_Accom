@@ -7,7 +7,7 @@ const Location_single_page = () => {
   const router = useRouter();
   useEffect(() => {
     fetch(
-      `https://www.accomasia.co.th/api/v1/property?txtseach=${router.query.location_ID}`
+      `https://www.accomasia.co.th/api/v1/property?txtsearch=${router.query.location_ID}`
     )
       .then((res) => res.json())
       .then(
@@ -24,7 +24,7 @@ const Location_single_page = () => {
   return (
     <div>
       this Location_single_page from : {router.query.location_ID}
-      {DataFecth.data ? <Product_item data_list={DataFecth} /> : ""}
+      {DataFecth.data ? <Product_item data_list={DataFecth} /> : "Loadding"}
     </div>
   );
 };
