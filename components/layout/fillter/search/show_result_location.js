@@ -24,7 +24,7 @@ const Show_result_location = (props) => {
         <>
           {props.data.map((items, key) => (
             <div key={key}>
-              <Link href="location/[location_ID]" as={`location/${items.label}`}>
+              <Link href="/location/[location_ID]" as={`/location/${items.label.toLowerCase()}`}>
                 <a className="items_keyword jr_color_gray">
                   <img
                     src="https://i.ibb.co/HHFDHrR/location.png"
