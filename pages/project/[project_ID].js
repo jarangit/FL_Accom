@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Product_item from "../../components/layout/product/product_item";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const Project_single_page = () => {
   const [DataFecth, setDataFecth] = useState([]);
@@ -24,7 +25,13 @@ const Project_single_page = () => {
   return (
     <div>
       this Location_single_page from : {router.query.project_ID}
-      {DataFecth.data ? <Product_item data_list={DataFecth} /> : "Loadding"}
+      {DataFecth.data ? (
+        <Product_item data_list={DataFecth} />
+      ) : (
+        <div style={{ textAlign: "center" }}>
+          <CircularProgress />
+        </div>
+      )}
     </div>
   );
 };
